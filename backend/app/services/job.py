@@ -2,9 +2,9 @@
 import logging
 from sqlalchemy.orm import Session
 
-from app.models.job import Job
+from app.models import Job
 from app.repositories import job as job_repository
-from app.schemas.job import JobCreate, JobResponse
+from app.schemas import JobCreate, JobResponse
 from app.cache import jobs as job_cache
 from app.core.exceptions import JobNotFoundException
 

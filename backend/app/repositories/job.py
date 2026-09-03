@@ -1,7 +1,7 @@
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from app.models.job import Job
+from app.models import Job
 
 
 def get_all(db: Session):
