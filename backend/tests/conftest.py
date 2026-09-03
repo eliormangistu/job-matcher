@@ -6,7 +6,7 @@ from sqlalchemy.pool import StaticPool
 
 from app.main import app
 from app.db.session import Base, get_db
-
+from app.cache.redis import redis_client
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///:memory:"
 
@@ -37,6 +37,8 @@ def client():
     app.dependency_overrides[get_db] = override_get_db
 
     yield TestClient(app)
+    
+    redis_client.delete("jobs:all")
 
     app.dependency_overrides.clear()
     Base.metadata.drop_all(bind=engine)
