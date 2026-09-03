@@ -1,7 +1,7 @@
 from sqlalchemy import String, Boolean, Text
 from sqlalchemy.orm import Mapped, mapped_column
 
-from database import Base
+from app.db.session import Base
 
 
 class Job(Base):

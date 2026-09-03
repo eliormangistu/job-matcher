@@ -1,18 +1,8 @@
-import os
-
-from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, DeclarativeBase
 
-load_dotenv()
+from app.core.config import DATABASE_URL
 
-DATABASE_URL = (
-    f"postgresql://"
-    f"{os.getenv('POSTGRES_USER')}:"
-    f"{os.getenv('POSTGRES_PASSWORD')}@"
-    f"localhost:5432/"
-    f"{os.getenv('POSTGRES_DB')}"
-)
 
 engine = create_engine(DATABASE_URL)
 
@@ -25,3 +15,12 @@ SessionLocal = sessionmaker(
 
 class Base(DeclarativeBase):
     pass
+
+
+def get_db():
+    db = SessionLocal()
+
+    try:
+        yield db
+    finally:
+        db.close()

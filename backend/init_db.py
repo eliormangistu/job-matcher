@@ -1,5 +1,5 @@
-from database import engine, Base
-from models import Job
+from app.db.session import engine, Base
+from app.models.job import Job
 
 Base.metadata.create_all(bind=engine)
 
