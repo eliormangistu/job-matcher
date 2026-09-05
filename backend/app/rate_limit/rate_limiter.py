@@ -1,4 +1,6 @@
-import time
+import logging
+
+from redis.exceptions import RedisError
 
 from app.cache.redis import redis_client
 from app.core.config import (
@@ -6,23 +8,18 @@ from app.core.config import (
     RATE_LIMIT_WINDOW_SECONDS
 )
 
+logger = logging.getLogger("job-matcher")
+
 
 def is_allowed(client_id: str) -> bool:
     key = f"rate_limit:{client_id}"
 
-    current_count = redis_client.get(key)
-
-    if current_count is None:
-        redis_client.set(
-            key,
-            1,
-            ex=RATE_LIMIT_WINDOW_SECONDS
-        )
+    try:
+        current_count = redis_client.incr(key)
+        if current_count == 1:
+            redis_client.expire(key, RATE_LIMIT_WINDOW_SECONDS)
+    except RedisError:
+        logger.warning("Redis unavailable, skipping rate limit")
         return True
 
-    if int(current_count) >= RATE_LIMIT:
-        return False
-
-    redis_client.incr(key)
-
-    return True
+    return current_count <= RATE_LIMIT

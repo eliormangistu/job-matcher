@@ -5,7 +5,8 @@
 # Virtual environment
 .venv/
 venv/
-env/
+.env
+.env.*
 
 # Python cache
 __pycache__/
@@ -20,9 +21,9 @@ htmlcov/
 # Environment variables
 # =========================
 
-.env
-.env.*
 !.env.example
+!backend/env/
+!backend/env/.env.example
 
 # =========================
 # Node / React / Next.js

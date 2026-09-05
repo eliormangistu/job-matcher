@@ -9,7 +9,7 @@ from app.core.messages import ErrorMessage
 class RateLimitMiddleware(BaseHTTPMiddleware):
 
     async def dispatch(self, request: Request, call_next):
-        client_ip = request.client.host
+        client_ip = request.client.host if request.client else "unknown"
 
         if not is_allowed(client_ip):
             return JSONResponse(
