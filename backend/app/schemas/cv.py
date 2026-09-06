@@ -1,9 +1,9 @@
 from pydantic import AliasChoices, BaseModel, Field
 
-from app.schemas.match import MatchResult
+from app.schemas.match import JobMatch
 
 
-class CandidateProfile(BaseModel):
+class CvCandidateProfile(BaseModel):
     summary: str | None = None
     skills: list[str] = Field(default_factory=list)
     roles: list[str] = Field(
@@ -23,8 +23,5 @@ class CandidateProfile(BaseModel):
 
 class CVUploadData(BaseModel):
     filename: str
-    profile: CandidateProfile
-    matches: list[MatchResult]
-
-
-CVProfile = CandidateProfile
+    profile: CvCandidateProfile
+    matches: list[JobMatch]

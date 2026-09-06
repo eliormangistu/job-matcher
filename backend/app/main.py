@@ -1,5 +1,4 @@
 import logging
-
 from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError
 from app.api.router import api_router
@@ -17,27 +16,15 @@ from app.core.exception_handlers import (
 )
 from app.middleware.rate_limit import RateLimitMiddleware
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(levelname)s: %(message)s"
-)
+logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
 app = FastAPI(title="Job Matcher")
 
-app.add_exception_handler(
-    RequestValidationError,
-    validation_exception_handler
-)
+app.add_exception_handler(RequestValidationError, validation_exception_handler)
 
-app.add_exception_handler(
-    JobNotFoundException,
-    job_not_found_handler
-)
+app.add_exception_handler(JobNotFoundException, job_not_found_handler)
 
-app.add_exception_handler(
-    AuthenticationException,
-    authentication_exception_handler
-)
+app.add_exception_handler(AuthenticationException, authentication_exception_handler)
 
 app.add_middleware(RateLimitMiddleware)
 app.add_middleware(RequestLoggingMiddleware)

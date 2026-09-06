@@ -1,13 +1,31 @@
 from app.models import Job
-from app.schemas import CandidateProfile, JobResponse, MatchResult
+from app.schemas import JobResponse
+from app.schemas.match import JobMatch
+from app.schemas.cv import CvCandidateProfile
+from app.services.ai.job_analyzer import analyze_job
 from app.services.matching import rules
 from app.services.matching.scorer import score
 
 
-def match(candidate: CandidateProfile, job: Job) -> MatchResult:
+def match(candidate: CvCandidateProfile, job: Job) -> JobMatch | None:
+    if not rules.role_matches(candidate, job):
+        return None
+
+    if not rules.experience_matches(candidate, job):
+        return None
+
+    if not rules.languages_match(candidate, job):
+        return None
+
+    if not rules.education_matches(candidate, job):
+        return None
+
+    job_analysis = analyze_job(job.requirements or "")
+    job.required_skills = job_analysis.required_skills
+
     matched_skills, missing_skills = rules.skill_matches(candidate, job)
 
-    return MatchResult(
+    return JobMatch(
         job_id=job.id,
         score=score(candidate, job, matched_skills),
         matched_skills=matched_skills,
@@ -17,10 +35,17 @@ def match(candidate: CandidateProfile, job: Job) -> MatchResult:
 
 
 def rank_jobs(
-    candidate: CandidateProfile,
+    candidate: CvCandidateProfile,
     jobs: list[Job],
     limit: int = 10,
-) -> list[MatchResult]:
-    matches = [match(candidate, job) for job in jobs]
+) -> list[JobMatch]:
+
+    matches = [result for job in jobs if (result := match(candidate, job)) is not None]
+
     relevant_matches = [result for result in matches if result.score > 0]
-    return sorted(relevant_matches, key=lambda result: result.score, reverse=True)[:limit]
+
+    return sorted(
+        relevant_matches,
+        key=lambda result: result.score,
+        reverse=True,
+    )[:limit]

@@ -32,7 +32,7 @@ def _verify_dev_user():
 
 
 def verify_user(authorization: str | None = Header(default=None)):
-    if APP_ENV == "dev":
+    if APP_ENV != "prod":
         return _verify_dev_user()
 
     return verify_google_token(authorization)

@@ -36,11 +36,6 @@ try:
             requirements=job_data.get("requirements"),
             language_requirement=job_data.get("language_requirement"),
             education_requirements=job_data.get("education_requirements"),
-            salary=job_data.get("salary"),
-            point_of_contact=job_data.get("point_of_contact"),
-            linkedin=job_data.get("linkedin"),
-            email=job_data.get("email"),
-            phone=job_data.get("phone"),
             posted=(
                 datetime.fromisoformat(job_data["posted"].replace("Z", "+00:00"))
                 .date()

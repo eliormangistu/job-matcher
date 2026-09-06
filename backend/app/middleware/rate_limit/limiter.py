@@ -3,10 +3,7 @@ import logging
 from redis.exceptions import RedisError
 
 from app.cache.redis import redis_client
-from app.core.config import (
-    RATE_LIMIT,
-    RATE_LIMIT_WINDOW_SECONDS
-)
+from app.core.config import RATE_LIMIT, RATE_LIMIT_WINDOW_SECONDS
 
 logger = logging.getLogger("job-matcher")
 

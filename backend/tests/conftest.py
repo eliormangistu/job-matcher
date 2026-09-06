@@ -1,13 +1,18 @@
+import os
 import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from fastapi.testclient import TestClient
 from sqlalchemy.pool import StaticPool
 
+
+os.environ["APP_ENV"] = "test"
+
 from app.main import app
 from app.db.session import Base, get_db
 from app.cache.redis import redis_client
 from app.services.auth import verify_google_token
+
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///:memory:"
 
@@ -18,8 +23,6 @@ engine = create_engine(
 )
 
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-from app.services.auth import verify_google_token
 
 
 @pytest.fixture

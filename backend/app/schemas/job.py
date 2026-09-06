@@ -1,6 +1,4 @@
-from pydantic import BaseModel, Field
-
-
+from pydantic import BaseModel
 
 
 class JobResponse(BaseModel):
@@ -15,11 +13,11 @@ class JobResponse(BaseModel):
     company_industry: list[str] | None
     min_experience: int | None
     requirements: str | None
+    required_skills: list[str]
     language_requirement: list[str] | None
     education_requirements: str | None
-    salary: str | None
-    point_of_contact: str | None
-    linkedin: str | None
-    email: str | None
-    phone: str | None
     posted: str | None
+
+
+class JobAnalysis(BaseModel):
+    required_skills: list[str]

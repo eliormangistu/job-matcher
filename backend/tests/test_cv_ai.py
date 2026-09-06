@@ -5,17 +5,13 @@ from unittest.mock import Mock, patch
 from app.services.ai.cv_analyzer import analyze_cv_pdf
 
 
-MOCK_CV_PATH = (
-    Path(__file__).parent.parent
-    / "data"
-    / "mock_cv_response.json"
-)
+MOCK_CV_PATH = Path(__file__).parent.parent / "data" / "mock_cv_response.json"
 
 
 def test_analyze_cv_pdf(tmp_path):
 
-    fake_pdf = tmp_path / "fake_cv.pdf"
-    fake_pdf.write_bytes(b"fake pdf content")
+    fake_pdf = tmp_path / "mock_cv.pdf"
+    fake_pdf.write_bytes(b"mock pdf content")
 
     with open(MOCK_CV_PATH, "r", encoding="utf-8") as file:
         mock_data = json.load(file)
@@ -24,8 +20,8 @@ def test_analyze_cv_pdf(tmp_path):
     mock_response.text = json.dumps(mock_data)
 
     with patch(
-        "app.services.ai.cv_analyzer.client.models.generate_content",
-        return_value=mock_response
+        "app.services.ai.cv_analyzer.gemini_generate_content",
+        return_value=mock_response,
     ):
         profile = analyze_cv_pdf(str(fake_pdf))
 

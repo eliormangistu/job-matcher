@@ -1,21 +1,14 @@
-from google import genai
 from google.genai import types
 
-from app.core.config import GEMINI_API_KEY
-from app.schemas.cv import CVProfile
+from app.schemas.cv import CvCandidateProfile
+from .gemini import gemini_generate_content
 
 
-client = genai.Client(
-    api_key=GEMINI_API_KEY
-)
-
-
-def analyze_cv_pdf(pdf_path: str) -> CVProfile:
+def analyze_cv_pdf(pdf_path: str) -> CvCandidateProfile:
     with open(pdf_path, "rb") as pdf_file:
         pdf_data = pdf_file.read()
 
-    response = client.models.generate_content(
-        model="gemini-3.6-flash",
+    response = gemini_generate_content(
         contents=[
             types.Part.from_bytes(
                 data=pdf_data,
@@ -36,10 +29,7 @@ Return:
 Use only information that appears in the CV.
 """,
         ],
-        config=types.GenerateContentConfig(
-            response_mime_type="application/json",
-            response_schema=CVProfile,
-        ),
+        response_schema=CvCandidateProfile,
     )
 
-    return CVProfile.model_validate_json(response.text)
+    return CvCandidateProfile.model_validate_json(response.text)

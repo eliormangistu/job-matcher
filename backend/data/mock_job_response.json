@@ -1,0 +1,7 @@
+{
+    "required_skills": [
+      "Python",
+      "FastAPI",
+      "PostgreSQL"
+    ]
+  }

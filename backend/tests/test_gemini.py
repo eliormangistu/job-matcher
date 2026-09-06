@@ -15,3 +15,19 @@
 # )
 
 # print(response.text)
+
+import pytest
+from app.services.ai.job_analyzer import analyze_job
+
+
+@pytest.mark.integration
+def test_analyze_job():
+    requirements = """
+    3+ years of experience with Python and FastAPI.
+    Experience with PostgreSQL and Docker.
+    """
+
+    result = analyze_job(requirements)
+
+    assert result.required_skills
+    assert "Python" in result.required_skills

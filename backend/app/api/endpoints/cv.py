@@ -9,10 +9,10 @@ from app.repositories import job as job_repository
 from app.schemas import BaseResponse, CVUploadData
 from app.core import SuccessMessage, StatusCode
 
-router = APIRouter()
+router = APIRouter(prefix="/cv", tags=["cv"])
 
 
-@router.post("/cv", response_model=BaseResponse[CVUploadData])
+@router.post("/upload_cv", response_model=BaseResponse[CVUploadData])
 async def upload_cv(
     file: UploadFile = File(...),
     user=Depends(verify_user),
@@ -21,7 +21,7 @@ async def upload_cv(
     profile = await process_cv(file)
     matches = rank_jobs(profile, job_repository.get_all_for_matching(db))
 
-    return BaseResponse(
+    return BaseResponse[CVUploadData](
         True,
         StatusCode.OK,
         SuccessMessage.CV_UPLOADED,

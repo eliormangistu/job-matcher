@@ -87,14 +87,15 @@ for row in rows:
     min_experience = values.get("fldfuYXHAHe1DsL8X")
 
     if min_experience is not None:
-     try:
-        if int(min_experience) > 5:
-            continue
-     except (ValueError, TypeError):
-        pass
+        try:
+            if int(min_experience) > 5:
+                continue
+        except (ValueError, TypeError):
+            pass
 
     job = {
         "id": row.get("id"),
+        "job_id": values.get("fldiWYpIMh67vZGjh"),
         "created_time": row.get("createdTime"),
         "discovered": values.get("fld0IWlQzimjOyKcm"),
         "field": field,
@@ -114,13 +115,7 @@ for row in rows:
             choice_maps.get("Language requirement", {}),
         ),
         "education_requirements": values.get("fldfEcfdf2i8poBck"),
-        "salary": values.get("fld2iXGjCqY0y2jbT"),
-        "point_of_contact": values.get("fldGIE6tCNlj6MQwD"),
-        "linkedin": values.get("fldELqhH0PkwXqdod"),
-        "email": values.get("fldCEYOJHJndLti9m"),
-        "phone": values.get("fldIXyeUs16eNxkBY"),
         "posted": posted_value,
-        "job_id": values.get("fldiWYpIMh67vZGjh"),
     }
 
     jobs.append(job)
