@@ -56,22 +56,6 @@ def verify_google_token(authorization: str | None = Header(default=None)):
     return idinfo
 
 
-def _verify_dev_user():
-    logger.info(
-        "Using development user",
-        extra={
-            "service": "auth",
-            "action": "verify_dev_user",
-            "user_id": "dev-user",
-        },
-    )
-
-    return {
-        "sub": "dev-user",
-        "email": "dev@example.com",
-    }
-
-
 def verify_user(authorization: str | None = Header(default=None)):
     logger.info(
         "User authentication requested",
@@ -81,8 +65,5 @@ def verify_user(authorization: str | None = Header(default=None)):
             "environment": APP_ENV,
         },
     )
-
-    if APP_ENV != "prod":
-        return _verify_dev_user()
 
     return verify_google_token(authorization)
