@@ -19,5 +19,15 @@ class JobResponse(BaseModel):
     posted: str | None
 
 
-class JobAnalysis(BaseModel):
+class JobAnalysisRequest(BaseModel):
+    job_id: int
+    requirements: str
+
+
+class JobAnalysisItem(BaseModel):
+    job_id: int
     required_skills: list[str]
+
+
+class JobAnalysisBatch(BaseModel):
+    jobs: list[JobAnalysisItem]

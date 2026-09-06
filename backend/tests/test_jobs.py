@@ -1,7 +1,8 @@
 from app.models.job import Job
-from app.core import SuccessMessage,ErrorMessage, StatusCode
+from app.core import SuccessMessage, ErrorMessage, StatusCode
 
-def test_get_jobs(client,db):
+
+def test_get_jobs(client, db):
 
     job = Job(
         airtable_id="test-job-1",
@@ -25,7 +26,7 @@ def test_get_jobs(client,db):
 
     assert body["success"] is True
     assert body["status_code"] == StatusCode.OK
-    assert body["message"] == "Jobs retrieved successfully"
+    assert body["message"] == SuccessMessage.JOBS_RETRIEVED
 
     jobs = body["data"]
 
@@ -36,7 +37,7 @@ def test_get_jobs(client,db):
 def test_get_job_by_id_not_found(client):
     response = client.get("/jobs/999")
 
-    assert response.status_code ==  StatusCode.NOT_FOUND
+    assert response.status_code == StatusCode.NOT_FOUND
 
     assert response.json() == {
         "success": False,

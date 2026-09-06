@@ -1,10 +1,9 @@
 import json
-
 from app.db.session import SessionLocal
 from app.models.job import Job
 from datetime import datetime
 
-INPUT_FILE = "jobs.json"
+INPUT_FILE = "data/jobs.json"
 
 
 with open(INPUT_FILE, encoding="utf-8") as f:

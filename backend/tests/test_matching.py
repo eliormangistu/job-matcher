@@ -1,8 +1,9 @@
+from unittest.mock import patch
+
 from app.models.job import Job
 from app.schemas.cv import CvCandidateProfile
+from app.schemas.job import JobAnalysisBatch, JobAnalysisItem
 from app.services.matching.matcher import rank_jobs
-from unittest.mock import patch
-from app.schemas.job import JobAnalysis
 
 
 def test_rank_jobs_orders_the_best_match_first():
@@ -20,8 +21,9 @@ def test_rank_jobs_orders_the_best_match_first():
         location=["Tel Aviv"],
         remote=True,
         description="Build Python and FastAPI services with PostgreSQL.",
+        requirements="Python, FastAPI, PostgreSQL",
         min_experience=3,
-        required_skills=["Python", "FastAPI", "PostgreSQL"],
+        required_skills=[],
     )
 
     weaker_match = Job(
@@ -32,22 +34,32 @@ def test_rank_jobs_orders_the_best_match_first():
         location=["Tel Aviv"],
         remote=True,
         description="Build user interfaces with Python integrations.",
+        requirements="Python, React",
         min_experience=5,
-        required_skills=["Python", "React"],
+        required_skills=[],
     )
 
     with patch(
-        "app.services.matching.matcher.analyze_job",
+        "app.services.matching.matcher.analyze_jobs",
     ) as mock_analyze:
-        mock_analyze.return_value = JobAnalysis(
-            required_skills=best_match.required_skills
+        mock_analyze.return_value = JobAnalysisBatch(
+            jobs=[
+                JobAnalysisItem(
+                    job_id=1,
+                    required_skills=["Python", "FastAPI", "PostgreSQL"],
+                ),
+            ]
         )
 
-        matches = rank_jobs(profile, [weaker_match, best_match])
+        matches = rank_jobs(
+            profile,
+            [weaker_match, best_match],
+        )
 
         assert [match.job.title for match in matches] == [
             "Backend Engineer",
         ]
+
         assert matches[0].job_id == 1
         assert matches[0].score == 100
         assert matches[0].matched_skills == [
@@ -56,3 +68,5 @@ def test_rank_jobs_orders_the_best_match_first():
             "PostgreSQL",
         ]
         assert matches[0].missing_skills == []
+
+        mock_analyze.assert_called_once()

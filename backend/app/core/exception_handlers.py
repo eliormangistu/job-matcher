@@ -5,6 +5,7 @@ from fastapi.responses import JSONResponse
 from app.core.exceptions import (
     JobNotFoundException,
     AuthenticationException,
+    GeminiException,
 )
 from app.core import ErrorMessage, StatusCode
 from app.schemas.common import BaseResponse
@@ -35,4 +36,20 @@ async def authentication_exception_handler(
 
     return JSONResponse(
         status_code=StatusCode.UNAUTHORIZED, content=response.model_dump()
+    )
+
+
+async def gemini_exception_handler(
+    request: Request,
+    exc: GeminiException,
+):
+    response = BaseResponse(
+        False,
+        exc.status_code,
+        str(exc),
+        None,
+    )
+    return JSONResponse(
+        status_code=exc.status_code,
+        content=response.model_dump(),
     )

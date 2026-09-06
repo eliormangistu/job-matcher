@@ -5,13 +5,19 @@ from app.schemas.cv import CvCandidateProfile
 
 
 def normalize(value: str) -> str:
-    return " ".join(re.findall(r"[a-z0-9+#.]+", value.lower()))
+    return " ".join(
+        re.findall(
+            r"[a-z0-9+#.]+",
+            value.lower(),
+        )
+    )
 
 
 def skill_matches(
     candidate: CvCandidateProfile,
     job: Job,
 ) -> tuple[list[str], list[str]]:
+
     candidate_skills = {
         normalize(skill): skill for skill in candidate.skills if normalize(skill)
     }
@@ -35,8 +41,13 @@ def skill_matches(
     return matched, missing
 
 
-def role_matches(candidate: CvCandidateProfile, job: Job) -> bool:
+def role_matches(
+    candidate: CvCandidateProfile,
+    job: Job,
+) -> bool:
+
     normalized_job_title = normalize(job.title)
+
     return any(
         (normalized_role := normalize(role))
         and (
@@ -47,26 +58,41 @@ def role_matches(candidate: CvCandidateProfile, job: Job) -> bool:
     )
 
 
-def experience_matches(candidate: CvCandidateProfile, job: Job) -> bool:
+def experience_matches(
+    candidate: CvCandidateProfile,
+    job: Job,
+) -> bool:
+
     return job.min_experience is None or (
         candidate.years_of_experience is not None
         and candidate.years_of_experience >= job.min_experience
     )
 
 
-def languages_match(candidate: CvCandidateProfile, job: Job) -> bool:
+def languages_match(
+    candidate: CvCandidateProfile,
+    job: Job,
+) -> bool:
+
     required_languages = {
         normalize(language) for language in job.language_requirement or []
     }
+
     candidate_languages = {normalize(language) for language in candidate.languages}
+
     return not required_languages or bool(required_languages & candidate_languages)
 
 
-def education_matches(candidate: CvCandidateProfile, job: Job) -> bool:
+def education_matches(
+    candidate: CvCandidateProfile,
+    job: Job,
+) -> bool:
+
     if not job.education_requirements:
         return True
 
     requirements = normalize(job.education_requirements)
+
     return any(
         normalize(education) in requirements for education in candidate.education
     )

@@ -1,15 +1,40 @@
-def build_choice_maps(columns):
+from typing import Any
+
+from app.schemas.airtable import AirtableRow, AirtableColumn
+from app.ingestion.fields import AirtableField
+from app.core.logger import logger
+
+
+def build_choice_maps(columns: list[AirtableColumn]):
+    logger.info(
+        "Building Airtable choice maps",
+        extra={
+            "service": "mappers",
+            "action": "build_choice_maps",
+            "columns_count": len(columns),
+        },
+    )
+
     choice_maps = {}
 
     for column in columns:
-        column_name = column["name"]
-        type_options = column.get("typeOptions") or {}
+        column_name = column.name
+        type_options = column.typeOptions or {}
         choices = type_options.get("choices", {})
 
         if choices:
             choice_maps[column_name] = {
                 choice_id: choice["name"] for choice_id, choice in choices.items()
             }
+
+    logger.info(
+        "Airtable choice maps built",
+        extra={
+            "service": "mappers",
+            "action": "build_choice_maps",
+            "maps_count": len(choice_maps),
+        },
+    )
 
     return choice_maps
 
@@ -22,36 +47,45 @@ def map_single(value, mapping):
 
 
 def map_job(
-    row,
-    values,
+    row: AirtableRow,
+    values: dict[str, Any],
     field,
     industry_map,
     location_map,
     language_map,
+    scope_map,
     posted_value,
     min_experience,
 ):
     return {
-        "airtable_id": row.get("id"),
-        "job_id": values.get("fldiWYpIMh67vZGjh"),
-        "created_time": row.get("createdTime"),
-        "discovered": values.get("fld0IWlQzimjOyKcm"),
+        "airtable_id": row.id,
+        "job_id": values.get(AirtableField.JOB_ID),
+        "created_time": row.createdTime,
+        "discovered": values.get(AirtableField.DISCOVERED),
         "field": field,
-        "title": values.get("fldPX7uQTBeLM8qIM"),
-        "company": values.get("fldLutadLsnGiv7oZ"),
+        "title": values.get(AirtableField.JOB_TITLE),
+        "company": values.get(AirtableField.COMPANY),
         "company_industry": _map_multiple(
-            values.get("fld9UFlS0Yxfo1AuX", []), industry_map
+            values.get(AirtableField.COMPANY_INDUSTRY, []),
+            industry_map,
         ),
-        "position_link": values.get("fldDhjjRS8LR94g9q"),
-        "scope": values.get("fldcK55EmF5hONqxu"),
-        "location": _map_multiple(values.get("fldKjkUS3dypwOv9e", []), location_map),
+        "position_link": values.get(AirtableField.POSITION_LINK),
+        "scope": map_single(
+            values.get(AirtableField.SCOPE),
+            scope_map,
+        ),
+        "location": _map_multiple(
+            values.get(AirtableField.LOCATION, []),
+            location_map,
+        ),
         "min_experience": min_experience,
-        "job_description": values.get("fldwOL044G6IGcDKj"),
-        "requirements": values.get("fldIuBO23JewsToWa"),
+        "job_description": values.get(AirtableField.JOB_DESCRIPTION),
+        "requirements": values.get(AirtableField.REQUIREMENTS),
         "language_requirement": _map_multiple(
-            values.get("fld669xsm4GH6eOHc", []), language_map
+            values.get(AirtableField.LANGUAGE_REQUIREMENT, []),
+            language_map,
         ),
-        "education_requirements": values.get("fldfEcfdf2i8poBck"),
+        "education_requirements": values.get(AirtableField.EDUCATION_REQUIREMENTS),
         "posted": posted_value,
     }
 

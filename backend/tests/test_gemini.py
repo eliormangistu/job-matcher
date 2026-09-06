@@ -17,17 +17,27 @@
 # print(response.text)
 
 import pytest
-from app.services.ai.job_analyzer import analyze_job
+from app.services.ai.job_analyzer import analyze_jobs
 
 
 @pytest.mark.integration
-def test_analyze_job():
+def test_analyze_jobs():
     requirements = """
     3+ years of experience with Python and FastAPI.
+
     Experience with PostgreSQL and Docker.
     """
 
-    result = analyze_job(requirements)
+    result = analyze_jobs(
+        [
+            {
+                "job_id": 1,
+                "requirements": requirements,
+            }
+        ]
+    )
 
-    assert result.required_skills
-    assert "Python" in result.required_skills
+    assert result.jobs
+    assert result.jobs[0].job_id == 1
+    assert result.jobs[0].required_skills
+    assert "Python" in result.jobs[0].required_skills

@@ -1,12 +1,8 @@
 import json
-import logging
-
 from redis.exceptions import RedisError
-
 from app.cache.redis import redis_client
 from app.core.config import JOBS_CACHE_TTL
-
-logger = logging.getLogger("job-matcher")
+from app.core.logger import logger
 
 JOBS_PAGE_PATTERN = "jobs:page:*"
 
@@ -16,18 +12,47 @@ def get_cache_key(limit: int, offset: int) -> str:
 
 
 def get_cached_jobs(limit: int, offset: int):
+    key = get_cache_key(limit, offset)
+
     try:
-        cached_jobs = redis_client.get(
-            get_cache_key(limit, offset)
-        )
+        cached_jobs = redis_client.get(key)
     except RedisError:
-        logger.warning("Redis unavailable, skipping jobs cache read")
+        logger.warning(
+            "Redis unavailable, skipping jobs cache read",
+            extra={
+                "service": "cache",
+                "action": "get_cached_jobs",
+                "cache_key": key,
+            },
+        )
         return None
 
     if cached_jobs is None:
+        logger.info(
+            "Jobs cache miss",
+            extra={
+                "service": "cache",
+                "action": "get_cached_jobs",
+                "limit": limit,
+                "offset": offset,
+            },
+        )
         return None
 
-    return json.loads(cached_jobs)
+    jobs = json.loads(cached_jobs)
+
+    logger.info(
+        "Jobs cache hit",
+        extra={
+            "service": "cache",
+            "action": "get_cached_jobs",
+            "limit": limit,
+            "offset": offset,
+            "count": len(jobs),
+        },
+    )
+
+    return jobs
 
 
 def set_cached_jobs(jobs, limit: int, offset: int):
@@ -44,7 +69,24 @@ def set_cached_jobs(jobs, limit: int, offset: int):
 def delete_cached_jobs():
     try:
         keys = list(redis_client.scan_iter(match=JOBS_PAGE_PATTERN))
+
         if keys:
             redis_client.delete(*keys)
+
+        logger.info(
+            "Jobs cache invalidated",
+            extra={
+                "service": "cache",
+                "action": "delete_cached_jobs",
+                "deleted_keys": len(keys),
+            },
+        )
+
     except RedisError:
-        logger.warning("Redis unavailable, skipping jobs cache invalidation")
+        logger.warning(
+            "Redis unavailable, skipping jobs cache invalidation",
+            extra={
+                "service": "cache",
+                "action": "delete_cached_jobs",
+            },
+        )

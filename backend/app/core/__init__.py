@@ -3,4 +3,5 @@ from .status_codes import StatusCode
 from app.core.exceptions import (
     JobNotFoundException,
     AuthenticationException,
+    GeminiException,
 )
