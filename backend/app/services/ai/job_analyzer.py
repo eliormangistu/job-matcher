@@ -19,11 +19,11 @@ def analyze_jobs(
 
     jobs_text = "\n\n".join(
         f"""
-Job ID: {job["job_id"]}
+Job ID: {job.job_id}
 
 Job requirements:
 
-{job.get("requirements") or ""}
+{job.requirements or ""}
 """
         for job in jobs
     )

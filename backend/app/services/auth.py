@@ -13,12 +13,12 @@ def verify_google_token(authorization: str | None = Header(default=None)):
         "Google authentication started",
         extra={"service": "auth", "action": "verify_google_token"},
     )
-
     if not authorization:
         logger.warning(
             "Authentication header missing",
             extra={"service": "auth", "action": "verify_google_token"},
         )
+        print("AUTHORIZATION:", authorization)
         raise AuthenticationException(ErrorMessage.AUTHENTICATION_REQUIRED)
 
     if not authorization.startswith("Bearer "):

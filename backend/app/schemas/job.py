@@ -19,6 +19,11 @@ class JobResponse(BaseModel):
     posted: str | None
 
 
+class JobsResponse(BaseModel):
+    items: list[JobResponse]
+    total: int
+
+
 class JobAnalysisRequest(BaseModel):
     job_id: int
     requirements: str

@@ -19,13 +19,22 @@ def get_jobs(db: Session, limit: int = 20, offset: int = 0):
     if cached_jobs is not None:
         logger.info(
             "Jobs cache hit",
-            extra={"limit": limit, "offset": offset},
+            extra={
+                "limit": limit,
+                "offset": offset,
+            },
         )
-        return cached_jobs
+
+        total = job_repository.count_all(db)
+
+        return cached_jobs, total
 
     logger.info(
         "Jobs cache miss",
-        extra={"limit": limit, "offset": offset},
+        extra={
+            "limit": limit,
+            "offset": offset,
+        },
     )
 
     jobs = job_repository.get_all(
@@ -34,13 +43,21 @@ def get_jobs(db: Session, limit: int = 20, offset: int = 0):
         offset=offset,
     )
 
+    total = job_repository.count_all(db)
+
     logger.info(
         "Jobs fetched from database",
-        extra={"count": len(jobs)},
+        extra={
+            "count": len(jobs),
+            "total": total,
+        },
     )
 
     jobs_data = [
-        JobResponse.model_validate(job, from_attributes=True).model_dump()
+        JobResponse.model_validate(
+            job,
+            from_attributes=True,
+        ).model_dump()
         for job in jobs
     ]
 
@@ -52,10 +69,14 @@ def get_jobs(db: Session, limit: int = 20, offset: int = 0):
 
     logger.info(
         "Jobs cached",
-        extra={"count": len(jobs_data), "limit": limit, "offset": offset},
+        extra={
+            "count": len(jobs_data),
+            "limit": limit,
+            "offset": offset,
+        },
     )
 
-    return jobs_data
+    return jobs_data, total
 
 
 def get_by_id(db: Session, job_id: int):

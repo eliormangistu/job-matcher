@@ -114,15 +114,15 @@ def count_all(db: Session):
         },
     )
 
-    count = db.scalar(select(func.count()).select_from(Job))
+    total = db.scalar(select(func.count()).select_from(Job)) or 0
 
     logger.info(
-        "Jobs count completed",
+        "Jobs counted",
         extra={
             "service": "job_repository",
             "action": "count_all",
-            "count": count,
+            "total": total,
         },
     )
 
-    return count
+    return total

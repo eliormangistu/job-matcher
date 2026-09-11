@@ -3,8 +3,10 @@ class ErrorMessage:
     INVALID_REQUEST = "Invalid request data"
     TOO_MANY_REQUESTS = "Too many requests"
     INTERNAL_SERVER_ERROR = "An unexpected error occurred"
+    AI_SERVICE_UNAVAILABLE = "AI service is temporarily unavailable"
     AUTHENTICATION_REQUIRED = "Authentication required"
     INVALID_TOKEN = "Invalid token"
+
 
 class SuccessMessage:
     JOBS_RETRIEVED = "Jobs retrieved successfully"

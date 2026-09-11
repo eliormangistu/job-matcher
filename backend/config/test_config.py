@@ -31,7 +31,12 @@ JOBS_CACHE_TTL = 900
 
 # AI
 
-GEMINI_MODEL = "gemini-3.6-flash"
+GEMINI_MODELS = [
+    "gemini-3.6-flash",
+    "gemini-3.5-flash",
+    "gemini-2.5-flash",
+    "gemini-2.5-flash-lite",
+]
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 # OAUTH
@@ -58,3 +63,6 @@ EXPERIENCE_WEIGHT = 20
 ROLE_WEIGHT = 15
 LANGUAGE_WEIGHT = 10
 EDUCATION_WEIGHT = 5
+
+# CORS
+CORS_ORIGINS = os.getenv("CORS_ORIGINS", "").split(",")

@@ -16,9 +16,19 @@ from app.core.exception_handlers import (
     gemini_exception_handler,
 )
 from app.middleware.rate_limit import RateLimitMiddleware
+from fastapi.middleware.cors import CORSMiddleware
+from app.core.config import CORS_ORIGINS
 
 app = FastAPI(title="Job Matcher")
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=CORS_ORIGINS,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+print("CORS_ORIGINS:", CORS_ORIGINS)
 app.add_exception_handler(RequestValidationError, validation_exception_handler)
 
 app.add_exception_handler(JobNotFoundException, job_not_found_handler)
