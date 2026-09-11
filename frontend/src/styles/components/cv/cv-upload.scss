@@ -1,0 +1,35 @@
+.cv-upload {
+  width: 100%;
+  max-width: 800px;
+
+  margin: 0 auto;
+  padding: 2rem;
+
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  input[type="file"] {
+    display: block;
+
+    width: 100%;
+    padding: 1rem;
+
+    border: var(--border-thick);
+    border-radius: var(--radius-large);
+
+    background: var(--color-cream);
+    color: var(--color-text);
+  }
+}
+
+.cv-upload-result {
+  margin-top: 2rem;
+  padding: 1.5rem;
+
+  border: var(--border-thick);
+  border-radius: var(--radius-large);
+
+  background: var(--color-mustard);
+  box-shadow: var(--shadow-retro);
+}

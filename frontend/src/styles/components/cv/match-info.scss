@@ -1,0 +1,31 @@
+.match-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  
+    margin-bottom: -0.5rem;
+    padding: 0.65rem 1rem;
+  
+    border: var(--border-thick);
+    border-bottom: none;
+    border-radius: var(--radius-large) var(--radius-large) 0 0;
+  
+    background: var(--color-olive);
+    color: var(--color-cream);
+  
+    font-family: var(--font-display);
+    font-weight: 900;
+  }
+  
+  .match-score {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .match-skills {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    opacity: 0.9;
+  }
