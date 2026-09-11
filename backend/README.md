@@ -319,6 +319,84 @@ Ranked Job Matches
 Frontend
 ```
 
+## Automation
+
+The backend includes an automated daily job synchronization process.
+
+### Daily Job Sync
+
+A Windows Task Scheduler task runs the job synchronization process automatically every day at **07:00**.
+
+The automated workflow:
+
+```text
+Airtable
+   ↓
+Job Ingestion
+   ↓
+Data Processing
+   ↓
+PostgreSQL
+```
+
+The sync process:
+
+* Fetches job data from Airtable
+* Applies the configured ingestion filters
+* Imports jobs into PostgreSQL
+* Creates new jobs
+* Updates existing jobs
+* Removes jobs that are no longer available, when applicable
+* Writes execution logs to:
+
+```text
+backend/logs/sync_jobs.log
+```
+
+### Task Scheduler
+
+Task name:
+
+```text
+Job Matcher - Daily Job Sync
+```
+
+Schedule:
+
+```text
+Daily at 07:00
+```
+
+The task is configured to run the backend job synchronization script automatically without manual intervention.
+
+### Monitoring
+
+The latest synchronization status can be checked using the log file:
+
+```powershell
+Get-Content "backend\logs\sync_jobs.log" -Tail 15
+```
+
+A successful run ends with:
+
+```text
+Job sync completed successfully.
+```
+
+The Windows Task Scheduler status can also be checked with:
+
+```powershell
+Get-ScheduledTask |
+    Where-Object {$_.TaskName -eq "Job Matcher - Daily Job Sync"} |
+    Get-ScheduledTaskInfo
+```
+
+A successful execution returns:
+
+```text
+LastTaskResult : 0
+```
+
 ## Testing
 
 Run the test suite with:

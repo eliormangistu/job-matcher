@@ -1,5 +1,3 @@
-from datetime import datetime
-
 from app.core.config import (
     ALLOWED_JOB_FIELDS,
     MAX_JOB_EXPERIENCE,

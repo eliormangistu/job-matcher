@@ -1,7 +1,6 @@
 import json
 from pathlib import Path
 from datetime import datetime, timedelta, timezone
-
 from app.ingestion.sources.airtable import AirtableSource
 from app.core.config import JOB_LOOKBACK_DAYS
 from app.core.logger import logger
@@ -50,7 +49,7 @@ def ingest_jobs():
     language_map = choice_maps.get("Language requirement", {})
     scope_map = choice_maps.get("Scope", {})
 
-    three_months_ago = datetime.now(timezone.utc) - timedelta(days=JOB_LOOKBACK_DAYS)
+    lookback_date = datetime.now(timezone.utc) - timedelta(days=JOB_LOOKBACK_DAYS)
 
     jobs = []
 
@@ -74,7 +73,7 @@ def ingest_jobs():
             skipped_invalid_date += 1
             continue
 
-        if posted_date < three_months_ago:
+        if posted_date < lookback_date:
             skipped_old += 1
             continue
 
