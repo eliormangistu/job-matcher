@@ -1,36 +1,160 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Job Matcher — Frontend
+
+AI-powered job matching application built with **Next.js, React, and TypeScript**.
+
+The frontend allows users to browse job opportunities, authenticate with Google, upload a CV, and receive job matches based on their profile.
+
+## Tech Stack
+
+* Next.js 16
+* React 19
+* TypeScript
+* Sass
+* pnpm
+* Google OAuth
+* REST API
+* ESLint
+
+## Features
+
+* Job listing and pagination
+* Job details view
+* Google authentication
+* CV upload
+* CV validation
+* AI-powered job matching
+* Match results
+* Loading states
+* Error handling and dedicated error page
+* Responsive retro-inspired UI
+
+## Project Structure
+
+```text
+frontend/
+├── src/
+│   ├── api/              # API client and endpoint functions
+│   ├── app/              # Next.js routes and application layout
+│   ├── components/       # Reusable React components
+│   ├── config/           # Environment-specific configuration
+│   ├── env/              # Environment variables
+│   ├── lib/              # Shared utilities and error handling
+│   ├── mocks/            # Mock data
+│   ├── routes/           # Application routes
+│   ├── styles/           # Global and component styles
+│   ├── types/            # TypeScript types
+│   └── validations/      # Client-side validation
+├── public/
+├── package.json
+├── next.config.ts
+└── tsconfig.json
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+Make sure the following are installed:
+
+* Node.js
+* pnpm
+
+### Install dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a `.env.local` file in the frontend root:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+NEXT_PUBLIC_JOB_MATCHER_BACKEND_API_URL=http://127.0.0.1:8000
+```
 
-## Learn More
+### Run the development server
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The application will be available at:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```text
+http://localhost:3000
+```
 
-## Deploy on Vercel
+## Available Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+pnpm dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Start the development server.
+
+```bash
+pnpm build
+```
+
+Create a production build.
+
+```bash
+pnpm start
+```
+
+Start the production server.
+
+```bash
+pnpm lint
+```
+
+Run ESLint.
+
+## Backend
+
+The frontend communicates with the Job Matcher FastAPI backend.
+
+By default, the development environment expects the backend at:
+
+```text
+http://127.0.0.1:8000
+```
+
+Make sure the backend is running before using features such as:
+
+* Job loading
+* CV upload
+* AI matching
+
+## Application Routes
+
+| Route      | Description            |
+| ---------- | ---------------------- |
+| `/`        | Home page              |
+| `/jobs`    | Browse available jobs  |
+| `/cv`      | CV upload and matching |
+| `/error`   | Shared error page      |
+
+## Development
+
+The project uses a component-based architecture with shared:
+
+* API functions
+* TypeScript types
+* Configuration
+* Validation
+* Error handling
+* Styling
+
+Application routes are centralized in:
+
+```text
+src/routes/routes.ts
+```
+
+This helps avoid hard-coded route strings throughout the application.
+
+## License
+
+This project is currently developed as a personal portfolio project.
