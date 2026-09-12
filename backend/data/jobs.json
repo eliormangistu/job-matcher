@@ -1,5 +1,481 @@
 [
   {
+    "airtable_id": "recZnsNq0zk1refcj",
+    "job_id": 74057,
+    "created_time": "2026-09-12T08:08:44.000Z",
+    "discovered": "2026-09-12T08:08:44.000Z",
+    "field": "Data Science, ML & Algorithms",
+    "title": "Charm Security - Applied AI Researcher",
+    "company": "Charm Security",
+    "company_industry": [
+      "Venture Capital"
+    ],
+    "position_link": "https://team8.vc/career/charm-security/charm-security-applied-ai-researcher/?gh_src=Israel+VC+Forum+job+board",
+    "scope": "Full Time",
+    "location": [
+      "Tel Aviv"
+    ],
+    "min_experience": 4,
+    "job_description": "Charm Security is building the first agentic AI workforce for scams and human-centric fraud. Our AI agents work alongside fraud teams at Tier 1 banks in North America: investigating cases, guiding...",
+    "requirements": "Description Charm Security is building the first agentic AI workforce for scams and human-centric fraud. Our AI agents work alongside fraud teams at Tier 1 banks in North America: investigating cases, guiding frontline teams through high-risk interactions as they happen, and gathering intelligence beyond the organization's perimeter. We do it by understanding manipulation, intent, and human behavior, through our proprietary HVE™ (Human Vulnerabilities and Exploits) framework, which combines fraud expertise with behavioral psychology. That's how we take institutions from detection to action. We're looking for an Applied AI Researcher to build the agents and models behind that platform. This role suits a data scientist or AI researcher who wants their research to ship: someone energized by deploying AI at scale, working under real-time and adversarial constraints, and seeing the impact on people who would otherwise have lost their savings. What You'll Do Design, build, and evaluate the AI agents at the core of our platform, across fraud investigation, frontline guidance, and threat intelligence. Model how manipulation actually works: adapt and fine-tune LLMs to recognize intent, deception, and coercion in real conversations. Build scalable, real-time pipelines that turn behavioral signals, case data, and the alerts our customers already generate into decisions our agents can act on. Optimize AI models for latency, accuracy, and adaptability in high-volume fraud prevention use cases. Work AI-natively. Use coding agents and AI tooling to prototype, experiment, and ship faster. Stay at the forefront of LLMs, ML, and AI research, implementing the latest advancements in those fields. Requirements Requirements 4+ years of experience in Data Science, AI, or NLP, preferably in fraud detection, security, or fintech. MSc in Computer Science, Machine Learning, Engineering, Mathematics, or a related field. Strong experience with agentic techniques and ML tooling. Hands-on experi",
+    "language_requirement": [],
+    "education_requirements": "M.Sc",
+    "posted": "2026-09-11T00:00:00.000Z"
+  },
+  {
+    "airtable_id": "rec3I4ATYVwjSfQrz",
+    "job_id": 74054,
+    "created_time": "2026-09-12T08:08:42.000Z",
+    "discovered": "2026-09-12T08:08:42.000Z",
+    "field": "DevOps",
+    "title": "Infrastructure & DevOps Team Lead",
+    "company": "Razor Labs",
+    "company_industry": [
+      "Electric Vehicles",
+      "Consumer Tech",
+      "Automotive"
+    ],
+    "position_link": "https://www.razor-labs.com/?pagename=careers&comeet_cat=israel&comeet_pos=61.D6D&comeet_all=all&rd",
+    "scope": "Full Time",
+    "location": [
+      "Tel Aviv"
+    ],
+    "min_experience": 2,
+    "job_description": "We are looking for an experienced Infrastructure & DevOps Team Lead to take full ownership of Razor Labs' cloud and edge infrastructure domain. In this role, you will act as a key technical leader...",
+    "requirements": "Description We are looking for an experienced Infrastructure & DevOps Team Lead to take full ownership of Razor Labs' cloud and edge infrastructure domain. In this role, you will act as a key technical leader within the R&D department, bridging the gap between strong software development practices and large-scale platform engineering. You will be responsible for driving cloud architecture, security, operational excellence, and scalability across both cloud environments and globally distributed edge deployments. This is a strategic leadership role with end-to-end ownership of Razor Labs' infrastructure domain, ensuring our cloud and edge platforms remain scalable, secure, reliable, and cost-efficient as the company grows. Responsibilities Lead, mentor, and grow a team of 2–3 Infrastructure and DevOps engineers while remaining a 50% hands-on technical leader. Own and evolve Razor Labs' cloud infrastructure architecture and operational strategy. Ensure the scalability, reliability, security, and cost-efficiency of our cloud and edge platforms. Lead infrastructure automation, Infrastructure as Code (IaC), and CI/CD best practices across the organization. Drive cloud security, governance, observability, and incident management processes. Partner with engineering leadership on architecture, platform strategy, and technology decisions. Act as the primary infrastructure authority within the R&D organization and influence the company's technology roadmap. Requirements 5+ years of hands-on experience in DevOps, Cloud Infrastructure, SRE, Platform Engineering, or similar infrastructure-focused roles. 2+ years of leadership experience managing engineers, leading infrastructure and platform initiatives. Strong experience designing, operating, and scaling production cloud environments; experience with Google Cloud Platform (GCP) is a significant",
+    "language_requirement": [],
+    "education_requirements": null,
+    "posted": "2026-09-11T00:00:00.000Z"
+  },
+  {
+    "airtable_id": "recGuSDZTW2JRsiqE",
+    "job_id": 74051,
+    "created_time": "2026-09-12T08:08:41.000Z",
+    "discovered": "2026-09-12T08:08:41.000Z",
+    "field": "Software Engineering",
+    "title": "Senior Software Developer",
+    "company": "NVIDIA",
+    "company_industry": [
+      "Hardware",
+      "Automotive",
+      "Autonomous Vehicles",
+      "Software",
+      "Algorithms",
+      "NLP",
+      "AI",
+      "Metaverse",
+      "Cloud",
+      "Computer Vision",
+      "ML",
+      "Chip Design",
+      "Embedded",
+      "Physical Design",
+      "FPGA"
+    ],
+    "position_link": "https://www.linkedin.com/jobs/view/4464194034/",
+    "scope": "Full Time",
+    "location": [
+      "Ra'anana"
+    ],
+    "min_experience": 2,
+    "job_description": "We are looking for an enthusiastic software engineer to join our AI networking acceleration team, to work on a groundbreaking open-source library, using hardware offloads, GPU Kernels and RDMA...",
+    "requirements": "What We Need To See B.Sc. or equivalent experience in Computer Science or Software Engineering 5 years’ experience in modern C++ / C / Rust development 3 years’ experience in Linux environment and familiarity with development tools Deep knowledge of the TCP/IP network stack Understanding of computer architecture and operating systems concepts Ways To Stand Out From The Crowd Background in Linux internals and low-level software optimizations (benchmarking, bottleneck research, performance tuning) Experience in programming CUDA kernels is an",
+    "language_requirement": [],
+    "education_requirements": "B.Sc",
+    "posted": "2026-09-10T00:00:00.000Z"
+  },
+  {
+    "airtable_id": "recFDORTWhtBw20KU",
+    "job_id": 74044,
+    "created_time": "2026-09-12T08:08:37.000Z",
+    "discovered": "2026-09-12T08:08:37.000Z",
+    "field": "Embedded, Low Level & Firmware Engineering",
+    "title": "Embedded Software Engineer",
+    "company": "abra",
+    "company_industry": [
+      "Software",
+      "IT"
+    ],
+    "position_link": "https://www.linkedin.com/jobs/view/4461717522/",
+    "scope": "Full Time",
+    "location": [],
+    "min_experience": 2,
+    "job_description": "abra R&D is seeking an Embedded Software Engineer We're looking for an Embedded Software Engineer to join a multidisciplinary engineering team developing advanced real-time systems for airborne...",
+    "requirements": "abra R&D is seeking an Embedded Software Engineer We're looking for an Embedded Software Engineer to join a multidisciplinary engineering team developing advanced real-time systems for airborne platforms. The role combines C++ development, complex integrations, algorithmic components, and broad system-level thinking throughout the entire product lifecycle. Key Responsibilities: Develop high-level Embedded software in C++ within real-time environments. Take part in the development of complex multidisciplinary systems, from concept and design through integration, testing, and delivery. Work closely with firmware, hardware, and algorithm teams to build complete end-to-end solutions. Integrate software with existing infrastructure, drivers, and low-level components. Participate in debugging, troubleshooting, and solving challenging system-level issues. Gain deep understanding of the overall system architecture and influence technical decisions along the way. Work in an environment that requires curiosity, ownership, and continuous learning. Requiremenets: B.Sc. in Computer Science, Software Engineering, or a related field, or equivalent hands-on experience. At least 2 years of software development experience in C++. Strong understanding of Object-Oriented Programming and software design principles. Experience working in Linux or Windows environments Experience in Embedded Software development – an",
+    "language_requirement": [],
+    "education_requirements": "B.Sc",
+    "posted": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "airtable_id": "recgIfwlzrVQxx93G",
+    "job_id": 74033,
+    "created_time": "2026-09-12T08:08:32.000Z",
+    "discovered": "2026-09-12T08:08:32.000Z",
+    "field": "Software Engineering",
+    "title": "C#/.NET Backend Developer 239568",
+    "company": "Experis",
+    "company_industry": [
+      "Recruiting"
+    ],
+    "position_link": "https://www.linkedin.com/jobs/view/4462292287/",
+    "scope": "Full Time",
+    "location": [
+      "Yehud"
+    ],
+    "min_experience": 5,
+    "job_description": "Senior Backend Developer (.NET / C#) 📍 Yehud, Israel A leading defense technology company is looking for a Senior Backend Developer (.NET / C#) to join a cutting-edge team. This is an opportunity to...",
+    "requirements": "Requirements: B.Sc. in Computer Science, M.Sc., or graduate of a leading technological military unit (8200 and similar) – Must 5+ years of experience developing with C#/.NET – Must Proven experience with .NET Core – Must Experience working with Microservices architecture – Must Experience working with Kubernetes – Must Experience working in Scrum/Agile methodology – Must Experience defining and implementing CI/CD processes-",
+    "language_requirement": [],
+    "education_requirements": "B.Sc",
+    "posted": "2026-09-08T00:00:00.000Z"
+  },
+  {
+    "airtable_id": "recqF0foiB5VZkU2P",
+    "job_id": 74028,
+    "created_time": "2026-09-12T08:08:29.000Z",
+    "discovered": "2026-09-12T08:08:29.000Z",
+    "field": "Software Engineering",
+    "title": "Senior Software Engineer, Detection Platform",
+    "company": "SentinelOne",
+    "company_industry": [
+      "Computer",
+      "Cybersecurity",
+      "Artificial Intelligence"
+    ],
+    "position_link": "https://www.sentinelone.com/jobs/?gh_jid=7989880003",
+    "scope": "Full Time",
+    "location": [
+      "Israel"
+    ],
+    "min_experience": null,
+    "job_description": "Our Purpose At SentinelOne, we are driven by a clear purpose: to give the advantage to those who secure our future. As AI reshapes how organizations build, operate, and innovate, the responsibility...",
+    "requirements": "You Bring?",
+    "language_requirement": [],
+    "education_requirements": null,
+    "posted": "2026-09-11T00:00:00.000Z"
+  },
+  {
+    "airtable_id": "rec8IyrG9sjDbDNPd",
+    "job_id": 74025,
+    "created_time": "2026-09-12T08:08:28.000Z",
+    "discovered": "2026-09-12T08:08:28.000Z",
+    "field": "Software Engineering",
+    "title": "Software Team Leader",
+    "company": "CommIT",
+    "company_industry": [
+      "Software Development"
+    ],
+    "position_link": "https://www.linkedin.com/jobs/view/4461083879/",
+    "scope": "Full Time",
+    "location": [
+      "Petach Tikva"
+    ],
+    "min_experience": 1,
+    "job_description": "The company builds software products for clients across embedded, IoT, SaaS, AI/ML, e-commerce, mobile and web. We are looking for a Software Team Leader to own the technical direction of a product...",
+    "requirements": "Requirements: Must-Have Requirements: 7+ years as a software engineer, including senior-level work. 5+ years as a tech lead / team lead: code review, mentoring, and owning a team's delivery. Expert-level JavaScript and TypeScript. Expert-level React — hooks, component architecture, and state/data layers (TanStack Query, Redux, Zustand). Expert-level Node.js on the server side. Proven ownership of full stack architecture end to end — designing systems, not just implementing tickets. 1+ year hands-on with AI-assisted development tools (Claude Code, Cursor, GitHub Copilot) as part of daily work. Modern build tooling: Vite. Engineering standards in practice: automated testing, CI/CD, code quality gates. Fluent with Git, JIRA, and Jenkins. Professional-level English,",
+    "language_requirement": [],
+    "education_requirements": null,
+    "posted": "2026-08-31T00:00:00.000Z"
+  },
+  {
+    "airtable_id": "recYEVS23lwHjExqO",
+    "job_id": 74022,
+    "created_time": "2026-09-12T08:08:26.000Z",
+    "discovered": "2026-09-12T08:08:26.000Z",
+    "field": "DevOps",
+    "title": "DevOps / SRE Engineer",
+    "company": "Miggo",
+    "company_industry": [
+      "Cybersecurity",
+      "AI"
+    ],
+    "position_link": "https://miggo.bamboohr.com/careers/53",
+    "scope": "Full Time",
+    "location": [
+      "Tel Aviv"
+    ],
+    "min_experience": 4,
+    "job_description": "About Miggo Miggo is building the next generation of application security. We operate a high-scale, data-intensive platform and are looking for a strong DevOps Engineer with SRE capabilities to join...",
+    "requirements": "What We're Looking For Strong hands-on experience as a DevOps and/or SRE engineer. Deep experience with Kubernetes and AWS in production. Solid experience with Temporal, Kafka, PostgreSQL, and ClickHouse. Experience with Terraform (IaC) and GitOps tooling such as ArgoCD. Familiarity with processes and practices for companies operating at scale. A responsible, ownership-driven mindset with strong collaboration and communication skills. Eagerness to learn, grow, and contribute to a shared team effort. Our Stack AWS · Kubernetes · ArgoCD · Terraform · ClickHouse · PostgreSQL · Kafka · Temporal · GitHub Why Miggo Big impact: your work directly shapes how we scale and operate. Build something meaningful: help lay the foundation for a strong, growing platform. Strong team: work alongside talented engineers who care about quality and ownership. Growth: room to expand your skills and take on increasing responsibility.",
+    "language_requirement": [],
+    "education_requirements": null,
+    "posted": "2026-09-11T00:00:00.000Z"
+  },
+  {
+    "airtable_id": "recS3tleyRY89WWm6",
+    "job_id": 74014,
+    "created_time": "2026-09-12T08:08:22.000Z",
+    "discovered": "2026-09-12T08:08:22.000Z",
+    "field": "Embedded, Low Level & Firmware Engineering",
+    "title": "Senior RT Embedded Developer",
+    "company": "abra",
+    "company_industry": [
+      "Software",
+      "IT"
+    ],
+    "position_link": "https://www.linkedin.com/jobs/view/4445705000/",
+    "scope": "Full Time",
+    "location": [
+      "Center District"
+    ],
+    "min_experience": 3,
+    "job_description": "abra professional services is seeking a Senior RT Embedded Developer. We are looking for a skilled Senior RT Embedded Developer to design and implement software solutions for embedded systems, with...",
+    "requirements": "Requirements: Professional requirements: At least 3 years of experience in C/C++ development – mandatory. Bachelor’s degree in Software Engineering, Electrical Engineering, or Communication Engineering – mandatory. Experience developing in Real-Time Embedded environments, including VxWorks and Linux – mandatory. Experience with OOD and familiarity with OO Design Patterns – mandatory. Experience working with C, C++, VxWorks, Linux, TCP/UDP, and OOD – mandatory. Willingness to travel for integration activities in Israel and abroad – mandatory. Familiarity with TCP/UDP protocols –",
+    "language_requirement": [],
+    "education_requirements": null,
+    "posted": "2026-07-28T00:00:00.000Z"
+  },
+  {
+    "airtable_id": "recK5V9Nm0ODk703M",
+    "job_id": 74011,
+    "created_time": "2026-09-12T08:08:20.000Z",
+    "discovered": "2026-09-12T08:08:20.000Z",
+    "field": "Embedded, Low Level & Firmware Engineering",
+    "title": "Embedded Engineer - IOE",
+    "company": "SolarEdge",
+    "company_industry": [
+      "Hardware",
+      "Software",
+      "Chip Design",
+      "Embedded",
+      "FPGA",
+      "Seminconductors"
+    ],
+    "position_link": "https://www.linkedin.com/jobs/view/4465672176/",
+    "scope": "Full Time",
+    "location": [
+      "Center District"
+    ],
+    "min_experience": 2,
+    "job_description": "Embedded Engineer - IOE: Power the Future with us! At SolarEdge (NASDAQ: SEDG), we're a global leader in smart energy technology, with over 3,000 employees, offices in 34 countries, and millions of...",
+    "requirements": "Requirements: BSc in Software Engineering, Computer Science or equivalent Over 2 years of experience as an Embedded Engineer Foundational knowledge in both C and C++ Experience in user space application development in Linux –",
+    "language_requirement": [],
+    "education_requirements": "B.Sc",
+    "posted": "2026-09-10T00:00:00.000Z"
+  },
+  {
+    "airtable_id": "recc7NfZTFBTJQs79",
+    "job_id": 74008,
+    "created_time": "2026-09-12T08:08:18.000Z",
+    "discovered": "2026-09-12T08:08:18.000Z",
+    "field": "DevOps",
+    "title": "Project Quality Manager",
+    "company": "Rafael",
+    "company_industry": [
+      "Hardware"
+    ],
+    "position_link": "https://www.linkedin.com/jobs/view/4465649383/",
+    "scope": "Full Time",
+    "location": [],
+    "min_experience": 5,
+    "job_description": "חברת רפאל מגייסת מנהל איכות בפרויקט לשלוחה שלה בצפון :קצת על התפקיד מנהלי האיכותנושאים באחריות המטה הכוללת לכל פעילויות האיכות בפרויקט לאורך כלל שלבי התכנון והביצוע - בפיתוח, בייצור ובשימוש אצל...",
+    "requirements": "חברת רפאל מגייסת מנהל איכות בפרויקט לשלוחה שלה בצפון :קצת על התפקיד מנהלי האיכותנושאים באחריות המטה הכוללת לכל פעילויות האיכות בפרויקט לאורך כלל שלבי התכנון והביצוע - בפיתוח, בייצור ובשימוש אצל הלקוח. זאת בהנחייה מקצועית של מנהל.ת האיכות במנהלה. הפעילות ביחידות השונות מבוצעת בשיתוף פעולה מקצועי עם מנהלי.ות ומהנדסי.ות איכות יחידתיים – פיתוח וייצור. ניהול תהליכי איכות בפרויקטים תיאום תהליכים ותוצרי איכות מול גורמי פיתוח, ייצור ושרשרת האספקה ניהול תהליכים ותוצרי איכות ובקרה מול קבלני משנה למיקור חוץ מערכתי BTS בארץ ובחו\"ל הנחייה מקצועית, בנייה ומיסוד תשתיות איכות בפרויקטים וביחידה עסקית ייזום וביצוע פעילויות איכות רוחביות ביחידה העסקית ובמנהלה על פי תכנית איכות שנתית / רב-שנתית מה אנחנו מחפשים? תואר ראשון הנדסי ניסיון של לפחות 5 שנים בתפקידי מנהל.ת איכות / מהנדס.ת איכות בפיתוח/ייצור שליטה מלאה בשפה האנגלית (דיבור, כתיבה וקריאה) ניסיון בניהול ממשקי עבודה מול לקוחות וקבלני משנה, בארץ ובחו\"ל – יתרון משמעותי ניסיון בתחומי האיכות בתעשיות ביטחוניות – יתרון תואר שני באיכות / הנדסת מערכת / CQE / CQM – יתרו",
+    "language_requirement": [
+      "Hebrew"
+    ],
+    "education_requirements": null,
+    "posted": "2026-09-10T00:00:00.000Z"
+  },
+  {
+    "airtable_id": "recllDxdhaulL2lyW",
+    "job_id": 74006,
+    "created_time": "2026-09-12T08:08:17.000Z",
+    "discovered": "2026-09-12T08:08:17.000Z",
+    "field": "DevOps",
+    "title": "DevOps and Automation Engineer – ICPE",
+    "company": "NVIDIA",
+    "company_industry": [
+      "Hardware",
+      "Automotive",
+      "Autonomous Vehicles",
+      "Software",
+      "Algorithms",
+      "NLP",
+      "AI",
+      "Metaverse",
+      "Cloud",
+      "Computer Vision",
+      "ML",
+      "Chip Design",
+      "Embedded",
+      "Physical Design",
+      "FPGA"
+    ],
+    "position_link": "https://nvidia.wd5.myworkdayjobs.com/en-GB/NVIDIAExternalCareerSite/job/Israel-Yokneam/DevOps-and-Automation-Engineer---ICPE_JR2025436-1?locationHierarchy1=2fcb99c455831013ea52bbe14cf9326c",
+    "scope": "Full Time",
+    "location": [
+      "Yokne'am"
+    ],
+    "min_experience": null,
+    "job_description": null,
+    "requirements": null,
+    "language_requirement": [],
+    "education_requirements": null,
+    "posted": "2026-09-12T00:00:00.000Z"
+  },
+  {
+    "airtable_id": "recAM4ksy5O04Odq1",
+    "job_id": 74002,
+    "created_time": "2026-09-12T08:08:15.000Z",
+    "discovered": "2026-09-12T08:08:15.000Z",
+    "field": "Data Science, ML & Algorithms",
+    "title": "Sr. SRE AI Engineer",
+    "company": "Navan",
+    "company_industry": [
+      "Software Development",
+      "Business Information",
+      "Customer Experience",
+      "Software"
+    ],
+    "position_link": "https://www.linkedin.com/jobs/view/4437742346/",
+    "scope": "Full Time",
+    "location": [
+      "Tel Aviv"
+    ],
+    "min_experience": 3,
+    "job_description": "At Navan, \"It's all about the user. All of them.\" We're passionate about providing a seamless one-stop experience for business travelers, no matter how they travel, where they stay, or where they're...",
+    "requirements": "What We're Looking For 5+ years of experience as a Senior SRE, Infrastructure Software Engineer, Production Engineer, or DevOps Engineer. 3+ years of experience operating production, 24x7 customer-facing systems. Hands-on experience delivering production infrastructure, platform tooling, and automation used by engineering teams. Strong software engineering skills in Python, Go, Java, or a similar language, with a bias toward production-quality code, tests, monitoring, and documentation. Experience with cloud infrastructure, container orchestration, Linux systems, networking, CI/CD, and infrastructure as code such as Terraform or CloudFormation. Experience building, tuning, and automating observability systems such as Grafana, Prometheus, New Relic, Datadog, Splunk, or similar tools. Familiarity with SLOs, incident response, on-call practices, root cause analysis, and blameless postmortems. Practical experience or strong interest in AI solutions, AI providers, agents, AI APIs, provider integrations, or AI-assisted internal tools. Ability to troubleshoot AI tools and provider/API issues, including rate limits, quota, auth, permission errors, latency, SDK or API contract changes, content quality issues, and service degradations. Excellent communication skills and the ability to work with stakeholders and domain experts across the company. Navan uses AI-assisted Automated Employment Decision Tool (Metaview) to assist with evaluating resumes against job qualifications for this role. All final decisions are made by human recruiters and hiring managers. Human oversight: Metaview does not automatically reject candidates or make final hiring decisions. Our recruiters and hiring managers review all outputs and make the final hiring decision regarding every application. Your rights: If you prefer to have your application reviewed without AI assistance, you may request a human evaluation by entering your email here. Your decision to do so will not affect how your candidacy",
+    "language_requirement": [],
+    "education_requirements": null,
+    "posted": "2026-09-09T00:00:00.000Z"
+  },
+  {
+    "airtable_id": "recRg1G99fIcqbx8v",
+    "job_id": 74001,
+    "created_time": "2026-09-12T08:08:15.000Z",
+    "discovered": "2026-09-12T08:08:15.000Z",
+    "field": "Data Science, ML & Algorithms",
+    "title": "data Scientist",
+    "company": "abra",
+    "company_industry": [
+      "Software",
+      "IT"
+    ],
+    "position_link": "https://www.linkedin.com/jobs/view/4463812704/",
+    "scope": "Full Time",
+    "location": [
+      "Center District"
+    ],
+    "min_experience": 5,
+    "job_description": "abra professional services is seeking a Data Scientist. We are looking for a skilled Data Scientist to join a model development team and lead the development of strategic, enterprise-wide AI and...",
+    "requirements": "Requirements: mandatory requirements: Minimum 5 years of hands-on experience in end-to-end model development. Mandatory hands-on experience with machine learning models for classification and regression. At least 5 years of experience processing and analyzing large-scale tabular datasets. Proven hands-on experience in Python development. Strong experience in data analysis and data preparation for models. Strong experience in the data domain. Strong analytical and problem-solving skills, with the ability to translate business requirements into robust technical and analytical solutions. Bachelor’s degree in Mathematics, Statistics, Computer Science, Data Science, or a related quantitative field.",
+    "language_requirement": [],
+    "education_requirements": null,
+    "posted": "2026-08-15T00:00:00.000Z"
+  },
+  {
+    "airtable_id": "rec8fS1LchWYwPPTO",
+    "job_id": 74000,
+    "created_time": "2026-09-12T08:08:14.000Z",
+    "discovered": "2026-09-12T08:08:14.000Z",
+    "field": "Software Engineering",
+    "title": "Popai Health- Full Stack Developer",
+    "company": "Popai Health",
+    "company_industry": [
+      "Artificial Intelligence"
+    ],
+    "position_link": "https://team8.vc/career/popai-health/popai-health-full-stack-developer/?pms_record_id=recgAxciAtLWRD3VE&pms_email=gkbabybhavana%40gmail.com&pms_log_id=fc272d4e-5e8a-4a9c-8e6a-fcc47aa7f695",
+    "scope": "Full Time",
+    "location": [
+      "Tel Aviv"
+    ],
+    "min_experience": 5,
+    "job_description": "About Popai Popai is on a mission to transform the millions of conversations that happen between care teams and patients every day. We’re building the AI platform that turns every patient interaction...",
+    "requirements": "What We're Looking For Experience: 5+ years of full-stack development experience with strong backend depth in Node.js and TypeScript. Core Tech: Deep knowledge of PostgreSQL, Redis, Express.js, React, and TypeScript. System Design: Solid understanding of event-driven architectures, real-time communication (WebSockets), and distributed systems concepts (idempotency, fault tolerance). DevOps & Cloud: Hands-on experience with Docker, CI/CD pipelines, and cloud platforms (GCP",
+    "language_requirement": [],
+    "education_requirements": null,
+    "posted": "2026-09-11T00:00:00.000Z"
+  },
+  {
+    "airtable_id": "recaVahPT7o8XWZjA",
+    "job_id": 73997,
+    "created_time": "2026-09-12T08:08:12.000Z",
+    "discovered": "2026-09-12T08:08:12.000Z",
+    "field": "Embedded, Low Level & Firmware Engineering",
+    "title": "AI Embedded Software Engineer",
+    "company": "abra",
+    "company_industry": [
+      "Software",
+      "IT"
+    ],
+    "position_link": "https://www.linkedin.com/jobs/view/4465300511/",
+    "scope": "Full Time",
+    "location": [
+      "Ra'anana"
+    ],
+    "min_experience": 3,
+    "job_description": "abra's R&D Embedded division is seeking an Embedded Software Engineer (Python/Linux) to join our team in Ra'anana/Jerusalem! We are seeking an experienced Embedded Software Engineer to develop...",
+    "requirements": "The",
+    "language_requirement": [],
+    "education_requirements": "B.Sc",
+    "posted": "2026-09-09T00:00:00.000Z"
+  },
+  {
+    "airtable_id": "recb317RHOdjRr3Oz",
+    "job_id": 73990,
+    "created_time": "2026-09-12T08:08:08.000Z",
+    "discovered": "2026-09-12T08:08:08.000Z",
+    "field": "Software Engineering",
+    "title": "Senior Manager, Developer Relations",
+    "company": "NVIDIA",
+    "company_industry": [
+      "Hardware",
+      "Automotive",
+      "Autonomous Vehicles",
+      "Software",
+      "Algorithms",
+      "NLP",
+      "AI",
+      "Metaverse",
+      "Cloud",
+      "Computer Vision",
+      "ML",
+      "Chip Design",
+      "Embedded",
+      "Physical Design",
+      "FPGA"
+    ],
+    "position_link": "https://www.linkedin.com/jobs/view/4464194035/",
+    "scope": "Full Time",
+    "location": [
+      "Beer Sheva"
+    ],
+    "min_experience": 4,
+    "job_description": "NVIDIA is rapidly growing into new verticals, and we are seeking a visionary Developer Relations Senior Manager to broaden our impact. In this regional leadership role, you will champion Israel’s...",
+    "requirements": "What We Need To See BS/MS in AI, Data Science, or a computer science-related field or equivalent experience. 10+ years of overall industry experience in software engineering, developer relations, technical partnerships, or related roles, including 4+ years of hands-on experience in AI and managing a technical team. Demonstrated experience managing technical collaborations, concentrating on AI. Strong interpersonal abilities with the capacity to simplify complex technical ideas for a range of technical and non-technical audiences, from engineers to executives. Proven ability to structure and implement complex technical engagements. You negotiate requirements, prioritize issues, and collaborate with internal or external customers across sales, legal, product, or marketing teams as needed. Ways To Stand Out From The Crowd Established Leadership: Background in directing technical teams and handling developer relations or community engineering initiatives. Deep AI/ML Domain Expertise: Strong technical competence in GenAI, machine learning frameworks, data science applications, or embedded systems. Ecosystem Influencer: Deeply connected to the Israeli tech and startup ecosystem. Matrix Navigator: Ability to function effectively and independently in a complex, fast-paced global matrix organization. Outstanding Communicator: Ability to simplify complex GPU architecture and SDK capabilities into compelling value propositions for developers and executive collaborators alike. , , JR2019681",
+    "language_requirement": [],
+    "education_requirements": null,
+    "posted": "2026-09-10T00:00:00.000Z"
+  },
+  {
+    "airtable_id": "recNRa7ZlfXPl6rdo",
+    "job_id": 73968,
+    "created_time": "2026-09-12T08:07:56.000Z",
+    "discovered": "2026-09-12T08:07:56.000Z",
+    "field": "Software Engineering",
+    "title": "Engineering Team Lead- Data & AI Platform",
+    "company": "EverC",
+    "company_industry": [
+      "Artificial Intelligence",
+      "IT",
+      "Machine Learning",
+      "Cybersecurity",
+      "Risk Management",
+      "Fintech"
+    ],
+    "position_link": "https://www.linkedin.com/jobs/view/4449489633/",
+    "scope": "Full Time",
+    "location": [
+      "Tel Aviv"
+    ],
+    "min_experience": 3,
+    "job_description": "About G2 Risk Solutions G2 Risk Solutions is a global leader in risk intelligence and compliance solutions for the payments, financial services, and digital commerce industries. Using AI, machine...",
+    "requirements": "Requirements: 7+ years of software engineering experience. 3+ years leading engineering teams. Experience managing multidisciplinary technical teams. Strong background designing scalable distributed backend systems. Experience with cloud-native architectures (AWS",
+    "language_requirement": [],
+    "education_requirements": null,
+    "posted": "2026-08-05T00:00:00.000Z"
+  },
+  {
     "airtable_id": "recKHrg9S2YPvcOLn",
     "job_id": 73960,
     "created_time": "2026-09-11T08:16:07.000Z",
@@ -176,11 +652,11 @@
     "position_link": "https://www.comeet.com/jobs/fetcherr/68.006/algorithm-team-lead---optimization/4A.27B",
     "scope": "Full Time",
     "location": [
-      "Netanya"
+      "Tel Aviv"
     ],
     "min_experience": 3,
     "job_description": "Fetcherr builds responsible AI that transforms market complexity into measurable profit growth. At the core of the company is the Market Model - a proprietary AI-powered model delivering accurate,...",
-    "requirements": "Description Fetcherr builds responsible AI that transforms market complexity into measurable profit growth. At the core of the company is the Market Model - a proprietary AI-powered model delivering accurate, granular demand predictions with 96% forecast accuracy and real-time decision intelligence for commercial teams. Built on a glass-box architecture, it uses market data - not personal data - with full transparency into logic and outcomes. First deployed in global aviation, the technology is industry-agnostic and scales across volatile markets. Fetcherr delivers a consistent average profit uplift of 7%, with corporate partners including Delta, Virgin Atlantic, WestJet, Viva, and Azul. We are seeking an experienced Algorithm Team Lead - Optimization to lead our data science and data engineering efforts and oversee a team of skilled data engineers. This role combines hands-on technical leadership and team management, with responsibilities that include building and scaling data infrastructure to power real-time pricing, large-scale data pipelines, and machine learning products. The Price Optimization (PO) team is where insights become decisions. We work with large-scale customer data and market predictions — like demand forecasts — to drive revenue management decisions that actually move the needle. At our core, we build and maintain the decision-making engine. That means designing the data pipelines that bring customer data in, and running it through an optimization engine that simulates the market — weighing competition, pricing constraints, inventory availability, predictive models, and each client's unique business policies — to generate the best possible price recommendations. As the final step before recommendations reach the client, quality, reliability, and attention to detail aren't just",
+    "requirements": "Proven experience as a Data Scientist. Proven experience designing and maintaining large-scale data platforms (hundreds of TBs) 3+ years of proven experience leading and managing a team of data engineers (people management is required) 4+ years of experience in data science, including a strong Python programming background, advanced SQL skills, and data modeling experience Expertise with data orchestration tools (Airflow, Prefect, or Dagster) Cloud platform experience — GCP preferred (AWS/Azure acceptable) Familiarity with Docker Strong communication, mentorship, and collaboration skills BSc/MSc in Mathematics/ physics/ statistics/ Computer Science. Fluent English (spoken and written) Nice to have: Experience with Google Cloud Platform tools (BigQuery, Dataflow, Pub/Sub) Background working with ML pipelines or data science teams Understanding of data contracts, lineage, and versioning tools Knowledge of data structures and algorithms Experience optimizing pipelines and databases for performance and cost CI/CD pipelines (GitHub/GitLab) Hands-on experience with distributed data frameworks (Apache Beam, Spark, or similar) Exposure to airline, pricing, or GDS systems",
     "language_requirement": [],
     "education_requirements": null,
     "posted": "2026-09-10T00:00:00.000Z"
@@ -459,66 +935,6 @@
     "posted": "2026-09-09T00:00:00.000Z"
   },
   {
-    "airtable_id": "rec7pPIgCZEH5iX5u",
-    "job_id": 73857,
-    "created_time": "2026-09-11T08:15:10.000Z",
-    "discovered": "2026-09-11T08:15:10.000Z",
-    "field": "DevOps",
-    "title": "ML Ops Engineer",
-    "company": "Nift",
-    "company_industry": [
-      "Technology"
-    ],
-    "position_link": "https://www.linkedin.com/jobs/view/4465691583/",
-    "scope": "Full Time",
-    "location": [
-      "Tel Aviv"
-    ],
-    "min_experience": 5,
-    "job_description": "Nift is disrupting performance marketing, delivering millions of new customers to brands every month. We’re looking for a hands-on ML Ops Engineer to partner with our data scientists to turn their...",
-    "requirements": "Nift is disrupting performance marketing, delivering millions of new customers to brands every month. We’re looking for a hands-on ML Ops Engineer to partner with our data scientists to turn their models into production-ready systems. In this role, you’ll report to the Data Science Manager and work closely with our Data Scientists and Product developers. You’ll architect storage and compute, harden training/inference pipelines, and make our ML code, data workflows, and services reliable, reproducible, observable, and cost-efficient. You’ll also set best practices and help scale our platform as Nift grows. Our Mission Nift’s mission is to reshape how people discover and try new brands by introducing them to new products and services through thoughtful \"thank-you\" gifts. Our customer-first approach ensures businesses acquire new customers efficiently while making customers feel valued and rewarded. We are a data-driven, cash-flow-positive company that has experienced 731% growth over the last three years. Now, we’re scaling to become one of the largest sources for new customer acquisition worldwide. Backed by Spark Capital & Foundry who also invested in Slack, Snap, SeatGeek, Fitbit, Warby Parker, Wayfair and Twitter, we are poised for exponential growth and ready to demonstrate impact on a global scale. Read more about our growth here. What You Will Do ML platform: Productionize training and inference (batch/real-time), establish CI/CD for models, data/versioning practices, and model governance Feature & model lifecycle: Centralize feature generation (e.g., feature store patterns), manage model registry/metadata, and streamline deployment workflows Observability & quality: Implement monitoring for data quality, drift, model performance/latency, and pipeline health with clear alerting and dashboards Engineering excellence: Refactor research code into reusable components, enforce repo structure, testing, logging, and reproducibility Cross-functional collaboration",
-    "language_requirement": [],
-    "education_requirements": null,
-    "posted": "2026-09-10T00:00:00.000Z"
-  },
-  {
-    "airtable_id": "recnWQIJXQPCXgedA",
-    "job_id": 73854,
-    "created_time": "2026-09-11T08:15:08.000Z",
-    "discovered": "2026-09-11T08:15:08.000Z",
-    "field": "DevOps",
-    "title": "Senior HPC and AI Operation Engineer",
-    "company": "NVIDIA",
-    "company_industry": [
-      "Hardware",
-      "Automotive",
-      "Autonomous Vehicles",
-      "Software",
-      "Algorithms",
-      "NLP",
-      "AI",
-      "Metaverse",
-      "Cloud",
-      "Computer Vision",
-      "ML",
-      "Chip Design",
-      "Embedded",
-      "Physical Design",
-      "FPGA"
-    ],
-    "position_link": "https://www.linkedin.com/jobs/view/4464186172/",
-    "scope": "Full Time",
-    "location": [
-      "Yokne'am"
-    ],
-    "min_experience": 5,
-    "job_description": "NVIDIA is looking for a Senior HPC & AI Operation Engineer to join the Networking clusters solutions HPC/AI Infrastructure team. We are building supercomputers and AI clusters based on groundbreaking...",
-    "requirements": "What We Need To See Bachelor's Degree in Computer Science, Engineering, or a related field; or equivalent experience 5+ years of experience Knowledge of HPC and AI solution technologies from CPU’s and GPU’s to high speed interconnects and supporting software Experience with job scheduling workloads and orchestration tools such as Slurm, K8s Excellent knowledge of Windows and Linux (Redhat/CentOS and Ubuntu) networking (sockets, firewalls, iptables, wireshark, etc.) and internals, ACLs and OS level security protection and common protocols e.g. TCP, DHCP, DNS, etc. Experience with multiple storage solutions such as Lustre, GPFS, zfs and xfs. Familiarity with newer and emerging storage technologies. Python programming and bash scripting experience, automation and configuration management tools such as Jenkins, Ansible, Gitops Knowledge of Networking Protocols like InfiniBand, Ethernet Experience with virtual systems (for example VMware, Hyper-V, KVM) Familiarity with cloud computing platforms (e.g. AWS, Azure, Google Cloud) Ways To Stand Out From The Crowd Knowledge of CPU and/or GPU architecture Knowledge of Kubernetes, container related microservice technologies Experience with GPU-focused hardware/software (DGX, Cuda) Background with RDMA (InfiniBand or RoCE) fabrics NVIDIA has been redefining computer graphics, PC gaming, and accelerated computing for more than 25 years. We have a unique legacy of innovation that’s fueled by great technology—and amazing people. Today, we’re tapping into the unlimited potential of AI to define the next era of computing. An era in which our GPU acts as the brains of computers, robots, and self-driving cars that can understand the world. Doing what’s never been done before takes vision, innovation, and the world’s best talent. Our teams are composed of driven, innovative professionals dedicated to pushing the boundaries of technology. We offer highly competitive salaries, an extensive benefits package, and a work environment that",
-    "language_requirement": [],
-    "education_requirements": "Bachelor",
-    "posted": "2026-09-10T00:00:00.000Z"
-  },
-  {
     "airtable_id": "recqF8oFCDwl8lAvs",
     "job_id": 73850,
     "created_time": "2026-09-11T08:15:06.000Z",
@@ -662,7 +1078,7 @@
     "discovered": "2026-09-11T08:14:55.000Z",
     "field": "Data Science, ML & Algorithms",
     "title": "Machine Learning Engineer",
-    "company": "Axon",
+    "company": "Axon Pulse",
     "company_industry": [
       "AI"
     ],
@@ -964,7 +1380,7 @@
     "discovered": "2026-09-11T08:14:21.000Z",
     "field": "Data Science, ML & Algorithms",
     "title": "Algorithm Engineer",
-    "company": "Axon",
+    "company": "Axon Pulse",
     "company_industry": [
       "AI"
     ],
@@ -1096,7 +1512,7 @@
     "discovered": "2026-09-11T08:14:15.000Z",
     "field": "Data Science, ML & Algorithms",
     "title": "Algorithm Engineer",
-    "company": "Axon",
+    "company": "Axon Pulse",
     "company_industry": [
       "AI"
     ],
@@ -2257,7 +2673,7 @@
     ],
     "min_experience": 5,
     "job_description": "Job Details: Job Description: Power management architect for Intel Architecture group, take part in the definition of the state-of-the-art CPU end to end power handling. Defines active and idle power...",
-    "requirements": "Qualifications: Bachelor's degree in Electrical Engineering, Computer Engineering or related field 6+ years of related work experience Experience in SW writing and definition (C/C++,python, C#) OR experience in aspects of Chip design and a development (electrical components, logical flows, CPU architecture). Deep understanding in system architecture and state of the art CPU design for PC or mobile devices Ability to deal with ambiguity, strong analytics and problem solving skills to achieve high quality results; Strong interpersonal skills (with proven track record of cross group collaboration) Self-motivated, customer oriented, resourceful and enthusiastic, showing an intense customer mind-set. Strong debugging experience and excellent problem solving skills. Job Type: Experienced Hire Shift: Shift 1 (Israel) Primary Location: Israel, Haifa Additional Locations: Posting Statement: All qualified applicants will receive consideration for employment without regard to race, color, religion, religious creed, sex, national origin, ancestry, age, physical or mental disability, medical condition, genetic information, military and veteran status, marital status, pregnancy, gender, gender expression, gender identity, sexual orientation, or any other characteristic protected by local law, regulation, or ordinance. Position of Trust N/A Work Model for this Role This role will be eligible for our hybrid work model which allows employees to split their time between working on-site at their assigned Intel site and off-site. * Job posting details (such as work model, location or time type) are subject to change. * Intel’s official careers website. Find your next job and take on projects that shape tomorrow’s technology. Benefits Internships Life at Intel Locations Recruitment Process",
+    "requirements": "Qualifications: Bachelor's degree in Electrical Engineering, Computer Engineering or related field 6+ years of related work experience Experience in SW writing and definition (C/C++,python, C#) OR experience in aspects of Chip design and a development (electrical components, logical flows, CPU architecture). Deep understanding in system architecture and state of the art CPU design for PC or mobile devices Ability to deal with ambiguity, strong analytics and problem solving skills to achieve high quality results; Strong interpersonal skills (with proven track record of cross group collaboration) Self-motivated, customer oriented, resourceful and enthusiastic, showing an intense customer mind-set. Strong debugging experience and excellent problem solving skills. Job Type: Experienced Hire Shift: Shift 1 (Israel) Primary Location: Israel, Haifa Additional Locations: Posting Statement: All qualified applicants will receive consideration for employment without regard to race, color, religion, religious creed, sex, national origin, ancestry, age, physical or mental disability, medical condition, genetic information, military and veteran status, marital status, pregnancy, gender, gender expression, gender identity, sexual orientation, or any other characteristic protected by local law, regulation, or ordinance. Position of Trust N/A Work Model for this Role This role will be eligible for our hybrid work model which allows employees to split their time between working on-site at their assigned Intel site and off-site. * Job posting details (such as work model, location or time type) are subject to change. *",
     "language_requirement": [],
     "education_requirements": null,
     "posted": "2026-09-09T00:00:00.000Z"
@@ -3204,7 +3620,7 @@
     "created_time": "2026-09-09T08:07:50.000Z",
     "discovered": "2026-09-09T08:07:50.000Z",
     "field": "Software Engineering",
-    "title": "Experienced Backend Developer- .NET C#",
+    "title": "Experienced Backend Developer- .NET C# (582)",
     "company": "Utron",
     "company_industry": [
       "Hardware",
@@ -5246,7 +5662,7 @@
     "job_id": 72882,
     "created_time": "2026-09-07T08:08:47.000Z",
     "discovered": "2026-09-07T08:08:47.000Z",
-    "field": "Software Engineering",
+    "field": "Data Science, ML & Algorithms",
     "title": "ראש.ת תחום אלגוריתמי עיבוד אותות",
     "company": "Rafael",
     "company_industry": [
@@ -8807,7 +9223,7 @@
     "discovered": "2026-09-02T08:07:50.000Z",
     "field": "Embedded, Low Level & Firmware Engineering",
     "title": "Motion Control - Real Time Embedded Engineer",
-    "company": "Servotronix",
+    "company": "Servotronix Motion Control",
     "company_industry": [
       "Automation"
     ],
@@ -10785,7 +11201,7 @@
     "discovered": "2026-08-30T19:16:50.000Z",
     "field": "Software Engineering",
     "title": "Backend Engineer",
-    "company": "human",
+    "company": "HUMAN",
     "company_industry": [],
     "position_link": "https://jobs.ashbyhq.com/HUMAN/5f8b6cfc-8120-45f0-8f23-fc7df77b5790",
     "scope": "Full Time",
@@ -12660,7 +13076,7 @@
     "discovered": "2026-08-29T08:07:24.000Z",
     "field": "Software Engineering",
     "title": "Senior Full Stack Developer",
-    "company": "N-Alpha",
+    "company": "Alpha | Similarweb Partner",
     "company_industry": [
       "Artificial Intelligence"
     ],
@@ -15499,7 +15915,7 @@
       "Tel Aviv"
     ],
     "min_experience": 5,
-    "job_description": "Silverfort is on a mission to bring identity security everywhere – to every human, machine, and AI agent, both on-premises and in the cloud. Our unique technology secures identities and access at...",
+    "job_description": "Silverfort is on a mission to bring identity security everywhere – to every human, machine, and AI agent, both on-premises and in the cloud. Our unique technology secures identities & access at...",
     "requirements": "5+ years of experience as a DevOps Engineer, working in Linux production environments. Hands-on experience with CI/CD systems (GitHub Actions, Jenkins, or similar) and containerization technologies (Docker, Kubernetes). Experience with configuration management tools such as Ansible, and IaC tools such as Terraform. Hands-on experience with one of the major public cloud platforms (e.g., Azure, AWS, or GCP). Experience with network architecture, high availability, and load balancing. Coding proficiency in Bash and Python or equivalent.",
     "language_requirement": [],
     "education_requirements": null,
@@ -16312,31 +16728,6 @@
     "posted": "2026-08-06T00:00:00.000Z"
   },
   {
-    "airtable_id": "rec98GD9BrImL0jdq",
-    "job_id": 70035,
-    "created_time": "2026-08-28T08:08:34.000Z",
-    "discovered": "2026-08-28T08:08:34.000Z",
-    "field": "Software Engineering",
-    "title": "מנתח/ת מערכות AI",
-    "company": "Yael Group",
-    "company_industry": [
-      "IT Services"
-    ],
-    "position_link": "https://www.drushim.co.il/job/38187115/f9bc6142/",
-    "scope": "Full Time",
-    "location": [
-      "Tel Aviv"
-    ],
-    "min_experience": 2,
-    "job_description": "קבוצת יעל מגייסת מנתח/ת מערכות AI LABS לארגון גדול בתל אביב תיאור התפקיד: אנו מחפשים מנתח/ת מערכות מנוסה להצטרפות לצוות חדשני העוסק בפיתוח והטמעה של פתרונות מבוססי בינה מלאכותית (AI). התפקיד כולל...",
-    "requirements": "קבוצת יעל מגייסת מנתח/ת מערכות AI LABS לארגון גדול בתל אביב תיאור התפקיד: אנו מחפשים מנתח/ת מערכות מנוסה להצטרפות לצוות חדשני העוסק בפיתוח והטמעה של פתרונות מבוססי בינה מלאכותית (AI). התפקיד כולל הובלת תהליכי אפיון מקצה לקצה עבור מערכות מורכבות, תוך עבודה צמודה עם צוותי פיתוח, דאטה וגורמים עסקיים. תחומי אחריות: ניתוח צרכים עסקיים ותרגומם למסמכי אפיון פונקציונליים וטכניים אפיון מערכות מבוססות AI עבודה מול בעלי עניין: משתמשים עסקיים, צוותי פיתוח ליווי תהליכי פיתוח, בדיקות והטמעה הגדרת ממשקים (API) בין מערכות שונות",
-    "language_requirement": [
-      "Hebrew"
-    ],
-    "education_requirements": null,
-    "posted": "2026-08-23T00:00:00.000Z"
-  },
-  {
     "airtable_id": "recteym9VMWzNRu2r",
     "job_id": 70037,
     "created_time": "2026-08-28T08:08:34.000Z",
@@ -17131,7 +17522,7 @@
       "Petach Tikva"
     ],
     "min_experience": 3,
-    "job_description": "As a Product Maker (Forward Deployed Engineer) at mPrest, you will serve as the core engine driving ideas into reality. In this role, you bridge the gap between market needs, complex...",
+    "job_description": "About the Role As a Product Maker (Forward Deployed Engineer) at mPrest, you will serve as the core engine driving ideas into reality. In this role, you bridge the gap between market needs, complex...",
     "requirements": "Description About the Role As a Product Maker (Forward Deployed Engineer) at mPrest, you will serve as the core engine driving ideas into reality. In this role, you bridge the gap between market needs, complex technical architectures, and R&D execution. You will analyze customer requirements, simplify multi-layered system integrations, and leverage modern tech tools and AI workflows to plan and validate high-impact solutions for mission-critical systems. Responsibilities The Mission Turn high-level concepts and operational challenges into concrete, scalable product solutions—fast. You will embed with client environments and collaborate closely with R&D teams to design technical solutions that solve real-world enterprise problems where it matters most. Requirements Product Strategy & Market Execution Idea-to-Reality Execution: Proven ability to take abstract ideas, customer needs, and market gaps and drive them end-to-end into viable, implemented solutions. Market Analysis & Requirements Gathering: Deep experience in analyzing market dynamics, uncovering client pain points, and defining comprehensive product requirements. Solution Planning & Tech Alignment: Skill in structuring product solutions that align client needs with current technological capabilities, architectural constraints, and company roadmap goals. Complex System Architecture & Integrations Architecture Abstraction: Exceptional talent for grasping, simplifying, and abstracting highly complex system architectures and intricate multi-system integrations into clear, actionable product blueprints. Systemic Domain Vision: Strong experience with enterprise-grade software, Command and Control (C2) systems, or large-scale operational platforms. Problem Solver at Core: Ability to identify operational friction points in live environments and define precise, high-impact technical solutions. Technical Acumen & R&D Alignment Speaking \"Engineering\": Deep understanding of system architecture, API/integration",
     "language_requirement": [],
     "education_requirements": null,
@@ -19306,7 +19697,7 @@
       "Ramat Gan"
     ],
     "min_experience": 5,
-    "job_description": "OX Security secures the AI-driven SDLC from prompt to production. We eliminate critical, real-time risks from AI code generation through cloud runtime by doing what conventional...",
+    "job_description": "About the Position OX Security secures the AI-driven SDLC from prompt to production. We eliminate critical, real-time risks from AI code generation through cloud runtime by doing what conventional...",
     "requirements": "Description About the Position OX Security secures the AI-driven SDLC from prompt to production. We eliminate critical, real-time risks from AI code generation through cloud runtime by doing what conventional tools can’t: unifying development and cloud context to stop vulnerabilities right at the source. At OX, we’re building the future of cybersecurity for the AI era. If you’re looking to work on disruptive technology with an amazing team, you belong here. We’re growing fast and looking for a Head of Revenue Operations to join our Go-to-Market team and play a key role in building the operational backbone that enables our revenue organization to scale. Reporting directly to the CRO, this is a high-impact, cross-functional role where you’ll partner closely with Sales, Marketing, Customer Success, Finance, and Leadership to align processes, data, tools, and goals across the customer lifecycle and help drive predictable, scalable growth. If you’re hands-on, highly organized, data-driven, and proactive, and excited about building and improving processes in a fast-paced cybersecurity environment, we’d love to meet you. Responsibilities About the Position Own Revenue Operations end-to-end, connecting Sales, Marketing, Customer Success, and Finance to create a coordinated and scalable revenue engine. Build and maintain sales reports, dashboards, and performance metrics, translating data into actionable insights for the CRO and leadership team. Drive GTM alignment across Sales and Marketing, ensuring campaigns, funnel data, lead flow, pipeline, and sales motions are connected and measurable. Own Salesforce operations and data integrity, including pipeline accuracy, customer records, data hygiene, reporting, and process enforcement. Manage day-to-day sales operations, including quotes, orders, approvals, and internal processes to ensure deals move efficiently from opportunity to close. Drive operational discipline across the sales organization, ensuring consistent follow-up",
     "language_requirement": [],
     "education_requirements": null,
@@ -20292,7 +20683,7 @@
     "discovered": "2026-08-25T08:08:15.000Z",
     "field": "Data Science, ML & Algorithms",
     "title": "Deep Learning Researcher",
-    "company": "Axon",
+    "company": "Axon Pulse",
     "company_industry": [
       "AI"
     ],
@@ -21066,6 +21457,31 @@
     "posted": "2026-08-23T00:00:00.000Z"
   },
   {
+    "airtable_id": "rec3SNhUxOWXHTFGw",
+    "job_id": 68933,
+    "created_time": "2026-08-24T08:07:01.000Z",
+    "discovered": "2026-08-24T08:07:01.000Z",
+    "field": "Software Engineering",
+    "title": "ר\"צ פיתוח ואפליקציות",
+    "company": "Yael Group",
+    "company_industry": [
+      "IT Services"
+    ],
+    "position_link": "https://www.drushim.co.il/job/38186887/0fadd5c8/",
+    "scope": "Full Time",
+    "location": [
+      "Tel Aviv"
+    ],
+    "min_experience": 5,
+    "job_description": "קבוצת יעל מגייסת ראש/ת צוות פיתוח ואפליקציות לארגון ממשלתי גדול ראשון לציון/בת ים תיאור תפקיד -הובלת תחומי הפיתוח, התכנון והתחזוקה של התוכנה היישומית והטמעת מערכות המידע בארגון. -הובלת פיתוח מערכת...",
+    "requirements": "קבוצת יעל מגייסת ראש/ת צוות פיתוח ואפליקציות לארגון ממשלתי גדול ראשון לציון/בת ים תיאור תפקיד -הובלת תחומי הפיתוח, התכנון והתחזוקה של התוכנה היישומית והטמעת מערכות המידע בארגון. -הובלת פיתוח מערכת מרכזית לניהול תהליכי הרגולציה בכבאות והצלה לישראל (בתחומי רישוי עסקים ובנייה). -ניהול, הנחיה והובלה מקצועית ואישית של מספר צוותי פיתוח המורכבים מבעלי תפקידים שונים. -הובלת פרויקטים טכנולוגיים מקצה לקצה – משלב האפיון והגדרת הדרישות ועד למסירה מלאה ללקוח ולסביבת הייצור. -ניהול תכולות, לוחות זמנים, תעדוף סדרי עדיפויות וניהול תלויות מורכבות בין צוותים. -קבלת החלטות טכנולוגיות בפיתוח המערכת והצגתן מול הנהלת הארגון וגורמים עסקיים. -ניהול וסנכרון מספר משימות ופרויקטים במקביל תוך הקפדה על סדר וארגון ברמה גבוהה.",
+    "language_requirement": [
+      "Hebrew"
+    ],
+    "education_requirements": null,
+    "posted": "2026-08-23T00:00:00.000Z"
+  },
+  {
     "airtable_id": "recJijkQgP5Gqz4Zx",
     "job_id": 68926,
     "created_time": "2026-08-24T08:06:56.000Z",
@@ -21233,6 +21649,31 @@
     "job_description": "About Us: Zenity is the leader in AI Agent Security and the first company to bring an agent-centric security platform to market. As enterprises accelerate AI agent adoption, we are establishing the...",
     "requirements": "Responsibilities: Lead and manage the platform/DevOps engineering team, including hiring, mentorship, performance reviews, and goal-setting. Own the design and architecture of core infrastructure and platform services supporting all products. Ensure scalability, reliability, and high performance of production systems. Drive Infrastructure as Code and GitOps practices across cloud environments. Design and operate large-scale cloud services (AWS/Azure/GCP), including cost and security ownership. Implement and continuously improve DevOps practices, CI/CD pipelines, and observability (monitoring, logging, alerting). Make technical decisions on large-scale data technologies such as Kafka, Spark, and OpenSearch. Work within Agile methodologies and collaborate closely with product, R&D, and other engineering teams. Own cross-product platform capabilities, ensuring consistency and engineering standards across teams. Champion a culture of automation, engineering efficiency, and continuous improvement suited to a high-growth startup. Manage the team's priorities, roadmap, and technical budget in coordination with engineering leadership. Requirements: 2+ years of experience managing engineering teams. 10+ years of professional experience in the software industry. Strong hands-on experience with modern programming languages such as Python, TypeScript, or Go. Strong understanding of software engineering principles, including SOLID, infrastructure architecture, Infrastructure as Code, and GitOps. Experience designing and operating large-scale cloud services on AWS, Azure, or GCP. Strong proficiency in DevOps practices, observability, and operating production cloud-based systems. Hands-on experience working in Agile environments and building CI/CD pipelines. Experience in high-growth startup environments, with a strong mindset around scalability, automation, and engineering efficiency. Familiarity with large-scale data technologies such as Kafka, Spark, and OpenSearch.",
     "language_requirement": [],
+    "education_requirements": null,
+    "posted": "2026-08-23T00:00:00.000Z"
+  },
+  {
+    "airtable_id": "rec08bqcHHAVMfiQj",
+    "job_id": 68900,
+    "created_time": "2026-08-24T08:06:41.000Z",
+    "discovered": "2026-08-24T08:06:41.000Z",
+    "field": "Software Engineering",
+    "title": "מפתח/ת Full Stack / Low-Code (Outsystems)",
+    "company": "Yael Group",
+    "company_industry": [
+      "IT Services"
+    ],
+    "position_link": "https://www.drushim.co.il/job/38187020/ad2c08ac/",
+    "scope": "Full Time",
+    "location": [
+      "Jerusalem"
+    ],
+    "min_experience": 2,
+    "job_description": "קבוצת יעל מגייסת מפתח/ת Full Stack / Low-Code (Outsystems) לארגון ממשלתי גדול בירושלים תיאור התפקיד: - השתלבות בצוות פיתוח ייעודי העובד בשגרות Agile/Daily. - עבודה על פרויקט ליבה: העברת מערכות Legacy...",
+    "requirements": "קבוצת יעל מגייסת מפתח/ת Full Stack / Low-Code (Outsystems) לארגון ממשלתי גדול בירושלים תיאור התפקיד: - השתלבות בצוות פיתוח ייעודי העובד בשגרות Agile/Daily. - עבודה על פרויקט ליבה: העברת מערכות Legacy ישנות לסביבת ענן מודרנית וחכמה. - העבודה השוטפת תתבצע על פלטפורמת Outsystems (Low-code) עבור צד ה-Front-End, כולל בניית לוגיקה, תהליכים ויכולות מתקדמות באמצעות מסכים חכמים. - מודל עבודה היברידי",
+    "language_requirement": [
+      "Hebrew"
+    ],
     "education_requirements": null,
     "posted": "2026-08-23T00:00:00.000Z"
   },
@@ -21485,7 +21926,7 @@
     "discovered": "2026-08-23T10:15:21.000Z",
     "field": "Software Engineering",
     "title": "US CPA – Financial Intelligence Architect (Service SMB Focus)",
-    "company": "Team8",
+    "company": "Team8 Fintech",
     "company_industry": [],
     "position_link": "https://team8.vc/career/team8-fintech/team8-stealth-fintech-startup-founding-accounting-delivery-lead-us-smb/",
     "scope": "Full Time",
@@ -26681,7 +27122,7 @@
       "Petach Tikva"
     ],
     "min_experience": 2,
-    "job_description": "We are looking for a talented, hands-on Software Development Team Leader to lead a small, focused team of software developers in a web development environment and take a key role...",
+    "job_description": "About the Position We are looking for a talented, hands-on Software Development Team Leader to lead a small, focused team of software developers in a web development environment and take a key role...",
     "requirements": "The",
     "language_requirement": [],
     "education_requirements": null,
@@ -28708,7 +29149,7 @@
       "Israel"
     ],
     "min_experience": 3,
-    "job_description": "Join Optibus' GenAI team to build and extend the AI assistant embedded across our product suite. The platform is a production LLM agent system that's integrated into multiple host...",
+    "job_description": "About the role Join Optibus' GenAI team to build and extend the AI assistant embedded across our product suite. The platform is a production LLM agent system that's integrated into multiple host...",
     "requirements": "7+ years of professional software engineering experience. Strong TypeScript — the primary language across our backend, frontend, and agent code. Proficiency in modern UI frameworks like React, Angular, or Vue, combined with a strong understanding of JavaScript. A minimum of 3 years of production experience in backend development using Node.js. Production experience with LLM-based applications, including prompt engineering, agent/tool-calling design, and RAG. Hands-on experience with an agent framework (e.g., LangGraph, LangChain). Vector databases and semantic search with embedding-based retrieval. Cloud experience on AWS — compute, storage, IAM, and managed LLM services (e.g., Bedrock or equivalent). Solid web fundamentals — REST APIs, WebSockets, auth (token/OIDC), and modern React. Docker and standard CI/CD practices. Strongly preferred Python for data and ingestion pipelines. MCP (Model Context Protocol) — building servers, clients, or tooling. LLM observability and evaluation platforms (e.g., LangSmith). Module Federation or other micro-frontend integration patterns. Experience designing APIs or SDKs consumed by multiple client teams across different tech stacks. Infrastructure as code (AWS CDK and/or Pulumi). B2B SaaS background with multi-tenant context. Interest in the public-transit domain. About Optibus: Optibus is a unified software platform revolutionizing public transportation planning, scheduling, and operations in over 8,000 cities worldwide. Using AI, ML, and optimization algorithms, it empowers agencies to design more efficient, equitable, and sustainable transit networks, enhancing passenger access, reducing emissions, and improving driver conditions. With offices globally and a team of 350+ employees, Optibus fosters a collaborative culture centered on innovation, determination, and impact. As the first unicorn in public transportation technology, Optibus is driving the modernization of mass transit to make it the preferred choice for cities and passengers alike. Why Join Optibus? Be part of a company revolutionizing public transportation with cutting-edge technology. Collaborate with global teams passionate about sustainability and innovation. Enjoy a dynamic and inclusive workplace culture that values growth and creativity. We offer a hybrid work environment, with employees expected to be in the office 3 days a week. The remaining days can be worked remotely to support work-life balance and flexibility. Optibus is proud to be an equal opportunity employer. We hire talented individuals, regardless of gender, race, ethnicity, ancestry, age, disability, sexual orientation, gender identity or expression, cultural background, religious beliefs, or any other characteristic protected by federal, state, or local laws. It is our responsibility at Optibus to provide an inclusive and accessible interview experience for all. We will provide reasonable accommodations for all candidates in need of individualised support during the hiring process.",
     "language_requirement": [],
     "education_requirements": null,
@@ -31991,7 +32432,7 @@
     ],
     "min_experience": 5,
     "job_description": "At Digital Turbine, we make mobile advertising experiences more meaningful and rewarding for users, app publishers, and advertisers — intelligently connecting people in more ways, across more...",
-    "requirements": "about your passion and skills, and find the best match for you. Join our talent community by applying here, and let’s stay connected for active and future roles. The Role Digital Turbine runs on small, autonomous pods that own an outcome and a roadmap end to end. We hire engineers, not language specialists: we care that you can reason about systems, pick the right tool for the problem, and ship reliable software across the stack. As a Senior Full Stack Engineer, you'll build the product surfaces that bring our marketplace together — campaign management and creation, unified dashboards and reporting, audience and asset tooling, and the APIs that connect demand to supply. You'll work across front-end, back-end, and data, contributing to the unified product architecture at the heart of our FY27 roadmap. The underlying platform requires heavy back-end engineering, low-latency optimization, and algorithmic problem-solving to manage massive throughput and real-time marketplace dynamics. About the Senior Full Stack Engineer Role Design and build full-stack features — from responsive web front-ends to back-end services and APIs — that power campaign management, reporting, and marketplace optimization Choose the right language and tools for each problem (we run a polyglot stack), and keep the front end lightweight by pushing complex computational logic, data modeling, and heavy algorithmic weight into robust, scalable back-end services Build and consume well-designed APIs that integrate DT products into a unified architecture rather than isolated silos Own your services in production: testing, observability, performance, and on-call, treating quality as a whole-team responsibility Collaborate directly with product leads and stakeholders, contributing to scoping, estimation, and technical decisions within your pod Mentor teammates and raise engineering standards through code review, automation, and pragmatic architecture About You as the Senior Full Stack 8+ years building an",
+    "requirements": "about your passion and skills, and find the best match for you. Join our talent community by applying here, and let’s stay connected for active and future roles. The Role Digital Turbine runs on small, autonomous pods that own an outcome and a roadmap end to end. We hire engineers, not language specialists: we care that you can reason about systems, pick the right tool for the problem, and ship reliable software across the stack. As a Senior Full Stack Engineer, you'll build the product surfaces that bring our marketplace together — campaign management and creation, unified dashboards and reporting, audience and asset tooling, and the APIs that connect demand to supply. You'll work across front-end, back-end, and data, contributing to the unified product architecture at the heart of our FY27 roadmap. The underlying platform requires heavy back-end engineering, low-latency optimization, and algorithmic problem-solving to manage massive throughput and real-time marketplace dynamics. About the Senior Full Stack Engineer Role Design and build full-stack features — from responsive web front-ends to back-end services and APIs — that power campaign management, reporting, and marketplace optimization Choose the right language and tools for each problem (we run a polyglot stack), and keep the front end lightweight by pushing complex computational logic, data modeling, and heavy algorithmic weight into robust, scalable back-end services Build and consume well-designed APIs that integrate DT products into a unified architecture rather than isolated silos Own your services in production: testing, observability, performance, and on-call, treating quality as a whole-team responsibility Collaborate directly with product leads and stakeholders, contributing to scoping, estimation, and technical decisions within your pod Mentor teammates and raise engineering standards through code review, automation, and pragmatic architecture About You as the Senior Full Stack 8+ year",
     "language_requirement": [],
     "education_requirements": null,
     "posted": "2026-08-13T00:00:00.000Z"
@@ -32353,7 +32794,7 @@
     ],
     "min_experience": 2,
     "job_description": "At Digital Turbine, we make mobile advertising experiences more meaningful and rewarding for users, app publishers, and advertisers — intelligently connecting people in more ways, across more...",
-    "requirements": "about your passion and skills, and find the best match for you. Join our talent community by applying here, and let’s stay connected for active and future roles. The Role The Tech Platform organization maintains and evolves the foundational platform and shared services that every other DT workstream depends on. As we assemble siloed products into a single marketplace, getting the platform right — reliable, observable, standardized, and cost-efficient — is the critical variable for execution at marketplace scale. As a Senior Infrastructure Engineer, you'll design and operate the large-scale distributed systems, data infrastructure, and deployment platforms that serve tens of billions of daily events. You'll help drive our OneDT standardization — including the migration to GitOps/ArgoCD and unified CI/CD — and build the platform capabilities (including ML and data infrastructure) that the rest of engineering builds on. About the Senior Infrastructure Engineer Role Design, build, and operate large-scale distributed systems and data platforms for reliability, scalability, and cost-efficiency Drive the OneDT platform standardization: GitOps/ArgoCD adoption, unified CI/CD pipelines, and a clear developer-ownership model across business lines Build and operate Kubernetes-based infrastructure, including Spark-on-K8s and data/ML platform tooling (e.g., Databricks ecosystems) Implement MLOps and data-pipeline capabilities — training, deployment, and serving infrastructure — in partnership with ML and Data teams Champion observability, automation, and cost-optimization initiatives that improve reliability while reducing spend Participate in on-call rotations, lead incident response and blameless postmortems, and prevent recurrence through automation and platform improvements About You as the Senior Infrastructure Engineer 8+ years in infrastructure, platform, or back-end engineering, with a track record of building robust distributed systems Deep experience with a",
+    "requirements": "about your passion and skills, and find the best match for you. Join our talent community by applying here, and let’s stay connected for active and future roles. The Role The Tech Platform organization maintains and evolves the foundational platform and shared services that every other DT workstream depends on. As we assemble siloed products into a single marketplace, getting the platform right — reliable, observable, standardized, and cost-efficient — is the critical variable for execution at marketplace scale. As a Senior Infrastructure Engineer, you'll design and operate the large-scale distributed systems, data infrastructure, and deployment platforms that serve tens of billions of daily events. You'll help drive our OneDT standardization — including the migration to GitOps/ArgoCD and unified CI/CD — and build the platform capabilities (including ML and data infrastructure) that the rest of engineering builds on. About the Senior Infrastructure Engineer Role Design, build, and operate large-scale distributed systems and data platforms for reliability, scalability, and cost-efficiency Drive the OneDT platform standardization: GitOps/ArgoCD adoption, unified CI/CD pipelines, and a clear developer-ownership model across business lines Build and operate Kubernetes-based infrastructure, including Spark-on-K8s and data/ML platform tooling (e.g., Databricks ecosystems) Implement MLOps and data-pipeline capabilities — training, deployment, and serving infrastructure — in partnership with ML and Data teams Champion observability, automation, and cost-optimization initiatives that improve reliability while reducing spend Participate in on-call rotations, lead incident response and blameless postmortems, and prevent recurrence through automation and platform improvements About You as the Senior Infrastructure Engineer 8+ years in infrastructure, platform, or back-end engineering, with a track record of building robust distributed systems Deep experience with a major cloud",
     "language_requirement": [],
     "education_requirements": null,
     "posted": "2026-08-13T00:00:00.000Z"
@@ -33847,7 +34288,7 @@
       "Petach Tikva"
     ],
     "min_experience": null,
-    "job_description": "Storenext is seeking a Senior Product Manager & AI Builder to lead the development of innovative AI-powered fintech solutions. This role combines strategic product leadership, deep...",
+    "job_description": "About the Role Storenext is seeking a Senior Product Manager & AI Builder to lead the development of innovative AI-powered fintech solutions. This role combines strategic product leadership, deep...",
     "requirements": "The",
     "language_requirement": [],
     "education_requirements": null,
@@ -38041,7 +38482,7 @@
     "discovered": "2026-08-06T08:08:26.000Z",
     "field": "Software Engineering",
     "title": "Engineering Team Lead- Data & AI Platform",
-    "company": "EverC",
+    "company": "EverCompliant",
     "company_industry": [
       "Artificial Intelligence",
       "IT",
@@ -38439,29 +38880,6 @@
     ],
     "education_requirements": null,
     "posted": "2026-08-02T00:00:00.000Z"
-  },
-  {
-    "airtable_id": "recwhdM71QoHb48W3",
-    "job_id": 64112,
-    "created_time": "2026-08-06T08:06:53.000Z",
-    "discovered": "2026-08-06T08:06:53.000Z",
-    "field": "Software Engineering",
-    "title": "Sr. Software Developer — Quantum Logic Stack",
-    "company": "Quantum Art",
-    "company_industry": [
-      "Quantum Computing"
-    ],
-    "position_link": "https://www.quantum-art.tech/positions/position-43_b67?gh_src=Vertex+Ventures+Israel+job+board#job-community_6a2cf2a7eeaa913d095cf026",
-    "scope": "Full Time",
-    "location": [
-      "Ness Ziona"
-    ],
-    "min_experience": 2,
-    "job_description": "Theory and Algorithms Group role.",
-    "requirements": "Strong Python development skills, including experience building maintainable packages, APIs, data-models and code-testing. Experience in translating software prototypes into robust software components. Ability to work across research and engineering boundaries in a multidisciplinary environment.",
-    "language_requirement": [],
-    "education_requirements": null,
-    "posted": "2026-06-14T00:00:00.000Z"
   },
   {
     "airtable_id": "recUTogP102cU7Zwo",
@@ -40615,11 +41033,11 @@
     "position_link": "https://gloat.com/careers-at-gloat/co/israel/44.F6B/senior-ai-engineer-agentic-systems/all/",
     "scope": "Full Time",
     "location": [
-      "Israel"
+      "Tel Aviv"
     ],
     "min_experience": 5,
     "job_description": "Gloat is the AI-native system of action for workforce orchestration. Our agentic HR platform lets enterprises build intelligent workforce agents that understand their people, respect their policies,...",
-    "requirements": "5+ years building production software Proven experience building and shipping LLM agents to production — not just demos or prototypes. Hands-on with at least one agent orchestration framework (e.g. LangGraph, LangChain, AutoGen, CrewAI, Semantic Kernel, or similar). Strong Python and solid software engineering fundamentals. Prompt engineering paired with systematic, measurable evaluation of LLM outputs. Experience with tool use / function calling and integrating LLMs with external systems. Track record deploying, monitoring, and maintaining AI in production (cloud, CI/CD, observability). Nice to Have 2+ years hands-on with LLMs / generative AI. Practical experience with RAG, embeddings, and vector databases (e.g. pgvector, Pinecone, or similar) Experience with MCP, agent memory, and planning/reasoning patterns. Background in HR tech, people data, or skills ontologies. Knowledge graph / graph ML experience (knowledge graphs, GNNs). Responsible AI: bias evaluation, guardrails, and AI governance. Experience working across multiple model providers (e.g. Anthropic, Google, IBM watsonx) rather than a single vendor.",
+    "requirements": "Description Gloat is the AI-native system of action for workforce orchestration. Our agentic HR platform lets enterprises build intelligent workforce agents that understand their people, respect their policies, and work where teams already are — Microsoft Teams, Slack, Google Chat, and Copilot, with no new portal or change management. The platform is powered by Loomra, our semantic layer that connects people, jobs, and skills through a knowledge graph, deep HCM integration (Workday, SuccessFactors, Oracle HCM), a governance engine, and semantic retrieval — with a full audit trail behind every agent decision. Trusted by 100+ enterprises across 112 countries, empowering 5M+ employees. This role sits at the center of that effort. We're looking for a Senior AI Engineer to design, build, and ship production-grade LLM agents that reason over workforce and skills data on top of Loomra's semantic layer. You won't just prototype — you'll own agent workflows end to end, from design through evaluation, deployment into the tools employees use daily (Teams, Slack, Copilot), and iteration in front of enterprise customers. You'll work alongside product, data, and platform engineers to turn powerful capabilities into reliable, safe, and fast product experiences. If you've built agents that actually made it to production — and you care as much about evaluation, guardrails, and reliability as you do about capability — we want to talk to you. Skills Responsibilities Design and build multi-agent systems and orchestration - intent routing, planning, tool use, and coordination across specialized agents. Implement retrieval and RAG pipelines over structured and unstructured workforce data, grounded in our knowledge graph connecting people, jobs, and skills. Integrate LLMs with tool/function calling and protocols such as MCP to give agents controlled access to HCM systems, business logic, and workflows. Build evaluation harnesses, guardrails, and safety/bias checks, and work within the",
     "language_requirement": [],
     "education_requirements": null,
     "posted": "2026-08-02T00:00:00.000Z"
@@ -45900,7 +46318,7 @@
       "Petach Tikva"
     ],
     "min_experience": 1,
-    "job_description": "Commit builds software products for clients across embedded, IoT, SaaS, AI/ML, e-commerce, mobile, and web. We’re looking for a Full Stack Team Lead to own the technical direction of a...",
+    "job_description": "About the role Commit builds software products for clients across embedded, IoT, SaaS, AI/ML, e-commerce, mobile, and web. We’re looking for a Full Stack Team Lead to own the technical direction of a...",
     "requirements": "Must-have qualifications • 7+ years as a software engineer, including senior-level work. • 5+ years as a tech lead / team lead. • 1+ years experience in AI Tools Claude Code, Copilot, Cursor. • Expert-level knowledge of JavaScript, TypeScript, React, and Node.js. • Expert-level command of the full stack ecosystem: build tooling (e.g. Vite) and frameworks/libraries (e.g. TanStack, Redux, Zustand). • Strong hands-on experience with AI-first development (Claude Code, Cursor). • Fluent with modern dev tooling: Git, JIRA, Jenkins. • Professional-level English. • Excellent interpersonal and communication skills.",
     "language_requirement": [],
     "education_requirements": null,
@@ -48755,31 +49173,6 @@
     "posted": "2026-07-16T00:00:00.000Z"
   },
   {
-    "airtable_id": "recpndWmleiKiBtSK",
-    "job_id": 61868,
-    "created_time": "2026-07-29T08:06:05.000Z",
-    "discovered": "2026-07-29T08:06:05.000Z",
-    "field": "DevOps",
-    "title": "SRE Technical Lead, DevOps Group",
-    "company": "BigPanda",
-    "company_industry": [
-      "Enterprise Software",
-      "Cloud",
-      "IT"
-    ],
-    "position_link": "https://jobs.gem.com/bigpanda/am9icG9zdDp09GxcD1RgTO5qrLWFUAHw",
-    "scope": "Full Time",
-    "location": [
-      "Israel"
-    ],
-    "min_experience": 5,
-    "job_description": "Location requirements: This role requires working out of the Tel Aviv office three days per week. About the Role: As a SRE Technical Lead at BigPanda, you will play a critical role in ensuring the...",
-    "requirements": "requirements: This role requires working out of the Tel Aviv office three days per week. About the Role: As a SRE Technical Lead at BigPanda, you will play a critical role in ensuring the reliability, scalability, and performance of the platform that powers our customers’ operations. You’ll operate at the intersection of software engineering and production operations, taking full ownership of the systems you build and run. This is a hands-on individual contributor role - not a managerial position. You'll be deep in the technical work, driving impact through engineering excellence rather than people management. This role is not just about responding to incidents - it’s about fundamentally improving how our platform behaves under real-world conditions. You will drive reliability initiatives end-to-end: defining measurable service goals, shaping engineering priorities through error budgets, and implementing solutions that prevent issues before they occur. You’ll work closely with teams across the organization, embedding reliability and observability into every layer of the stack. At the same time, you’ll leverage automation, modern infrastructure practices, and emerging AI capabilities to continuously evolve how we operate and scale. What you will do: Develop deep product knowledge across our platform - understanding its internals, failure modes, and operational behavior well enough to own incident resolution end-to-end. Define and track SLAs/SLOs/SLIs across critical platform services, and use error budgets to drive engineering decisions. Own production reliability - including on-call rotations, incident response, and post-mortems - with a focus on minimizing MTTR and preventing recurrence through systemic fixes, not just firefighting. Work hand-in-hand with engineering teams across the stack - infrastructure, application, and business layers - to embed reliability requirements everywhere. What skills and experience you’ll bring to BigPanda: 5+ years of experience",
-    "language_requirement": [],
-    "education_requirements": null,
-    "posted": "2026-06-14T00:00:00.000Z"
-  },
-  {
     "airtable_id": "rec5e4tfATcQweYvM",
     "job_id": 61870,
     "created_time": "2026-07-29T08:06:05.000Z",
@@ -49045,7 +49438,7 @@
       "Tel Aviv"
     ],
     "min_experience": null,
-    "job_description": "At Second Nature AI, we're building a cutting-edge, AI-powered conversation platform that lives in the browser, real-time audio, WebSockets, and everything that comes with it. We're...",
+    "job_description": "About the Role At Second Nature AI, we're building a cutting-edge, AI-powered conversation platform that lives in the browser, real-time audio, WebSockets, and everything that comes with it. We're...",
     "requirements": "Description About the Role At Second Nature AI, we're building a cutting-edge, AI-powered conversation platform that lives in the browser, real-time audio, WebSockets, and everything that comes with it. We're looking for a Senior Applied Researcher and Team Lead to help shape how our conversational agents are designed, evaluated, and shipped reliably at production scale. Key Responsibilities Partner directly with the Applied Research Team Lead to define and evolve team process, technical standards, and the quality bar for agent behavior. Take real user experience and data through the full arc, from concept to a reliable agent design to a shipped, production-grade product. Own or share ownership of the standing function of assessing AI tools, models, and providers for reliability and fit. Raise the technical bar across a team spanning research-leaning grad students to engineers newer to AI, and turn personal expertise into shared tooling and standards the whole team can use. Operate pragmatically inside current infrastructure constraints while flagging where structural fixes are needed. Requirements Strong applied research background (NLP/ML) with real production experience, shipped systems, not only research output. Fluency in the modern stack: context engineering, agent design and orchestration, and evaluation of LLM-based systems. An execution and operations mindset, biased to ship, comfortable defining good enough versus chasing optimal. A track record of building standards or tooling that lifts a whole team, or clear readiness to grow into that. Comfortable owning ambiguous problems end to end with minimal oversight.",
     "language_requirement": [],
     "education_requirements": null,
@@ -53957,7 +54350,7 @@
       "Petach Tikva"
     ],
     "min_experience": 4,
-    "job_description": "We are looking for an experienced Software Engineer (4+ years) to join the team as an AI Integration Engineer, supporting one of our enterprise clients as part of their AI-Native...",
+    "job_description": "About the Role: We are looking for an experienced Software Engineer (4+ years) to join the team as an AI Integration Engineer, supporting one of our enterprise clients as part of their AI-Native...",
     "requirements": "What You’ll Need: 4+ years software development experience Experience with C# / .NET Core and JavaScript (with React and/or Angular) Hands-on experience with modern AI dev tools (Claude Code (must) / Cursor / others) Excellent soft skills (MUST): mentoring, influence, patience, and empathy Experience working in large, multi-team R&D environments",
     "language_requirement": [],
     "education_requirements": null,
@@ -55711,29 +56104,6 @@
     "posted": "2026-06-30T00:00:00.000Z"
   },
   {
-    "airtable_id": "recULiYT6RIAYlyhX",
-    "job_id": 60391,
-    "created_time": "2026-07-27T06:01:48.000Z",
-    "discovered": "2026-07-27T06:01:48.000Z",
-    "field": "Data Engineering",
-    "title": "Data Engineer",
-    "company": "Pipl",
-    "company_industry": [
-      "Technology"
-    ],
-    "position_link": "https://www.linkedin.com/jobs/view/4428631567/",
-    "scope": "Full Time",
-    "location": [
-      "Petach Tikva"
-    ],
-    "min_experience": 3,
-    "job_description": "Pipl is an AI company that helps global enterprises make better fraud decisions. We're built on more than 20 years of identity data and Elephant, the industry's only large risk model trained on...",
-    "requirements": "Requirements: 3+ years of experience as a Data Engineer (or in a similar role). Passionate about AI and actively uses AI tools to accelerate day-to-day work, from writing and debugging code to data exploration, documentation, and problem-solving. Strong programming skills in Python. Hands-on experience with Cloud environment. Experience working with dbt for data transformations and modeling (an",
-    "language_requirement": [],
-    "education_requirements": null,
-    "posted": "2026-06-14T00:00:00.000Z"
-  },
-  {
     "airtable_id": "recKEZfuwCmltUlJg",
     "job_id": 60386,
     "created_time": "2026-07-27T06:01:47.000Z",
@@ -55995,29 +56365,6 @@
     "language_requirement": [],
     "education_requirements": null,
     "posted": "2026-06-22T00:00:00.000Z"
-  },
-  {
-    "airtable_id": "recixsf0hf5qUBBnt",
-    "job_id": 60343,
-    "created_time": "2026-07-27T06:01:34.000Z",
-    "discovered": "2026-07-27T06:01:34.000Z",
-    "field": "DevOps",
-    "title": "Senior Devops Engineer",
-    "company": "Finubit",
-    "company_industry": [
-      "Technology"
-    ],
-    "position_link": "https://www.comeet.com/jobs/finubit/A9.002/devops-engineer/A1.459",
-    "scope": "Full Time",
-    "location": [
-      "Tel Aviv"
-    ],
-    "min_experience": 2,
-    "job_description": "Finubit is a fast-moving startup creating the bank’s next-generation cloud platform — a modern, Kubernetes-native and AI-driven foundation that powers engineering for over a thousand developers....",
-    "requirements": "Description Finubit is a fast-moving startup creating the bank’s next-generation cloud platform — a modern, Kubernetes-native and AI-driven foundation that powers engineering for over a thousand developers. We’re rethinking how banks build, deploy, and operate systems at scale — combining GitOps, ChatOps, and AI automation to enable self-service, reliability, and observability across every environment. At Finubit, you’ll join a small, expert team building the backbone of a modern engineering organization — from platform automation to AI-based infrastructure orchestration. About the Role We’re building a Kubernetes-native, AI-powered engineering platform that enables developers to ship, monitor, and manage software at scale through a unified ChatOps + GitOps experience. As a DevOps Engineer, you’ll design and automate infrastructure and delivery workflows that power this platform end-to-end. Responsibilities What You’ll Do: Build and evolve CI/CD pipelines using ArgoCD, Temporal and GO. Develop infrastructure as code with Terraform and Terragrunt. Manage and optimize multi-cluster Kubernetes environments. Automate resource provisioning via ACK and Kubernetes controllers. Implement observability using Prometheus, Grafana, Loki, Tempo. Contribute to ChatOps workflows powered by Temporal. Collaborate with developers, SREs, and platform engineers to continuously improve delivery speed and reliability. Requirements What We’re Looking For: Experience with Kubernetes and GitOps tooling. Familiar with CI/CD, containers, and IaC. Scripting or coding skills in Python or Go. Passion for automation, observability, and reliability. Curiosity and initiative — we value learning and problem-solving more than years of experience. Why You’ll Love Working Here: Help build one of the most advanced AI-driven DevOps platforms in fintech. Work in a fast-paced environment where innovation and learning come first. Your ideas directly shape how hundreds of teams deploy and operate software.",
-    "language_requirement": [],
-    "education_requirements": null,
-    "posted": "2026-06-14T00:00:00.000Z"
   },
   {
     "airtable_id": "recUXmbFiqvMVujut",
@@ -56347,7 +56694,7 @@
       "Petach Tikva"
     ],
     "min_experience": 5,
-    "job_description": "We are looking for a Senior Full Stack Developer to join a CommIT team delivering mission-critical systems for a leading financial institution. You will own features end-to-end across...",
+    "job_description": "About the Role We are looking for a Senior Full Stack Developer to join a CommIT team delivering mission-critical systems for a leading financial institution. You will own features end-to-end across...",
     "requirements": "Must-Have Qualifications • 5+ years of professional full-stack development experience. • Front-end: strong React, including modern patterns, state management, and component architecture. • BFF / JavaScript: hands-on experience building Backend-for-Frontend layers with Next.js (Node / JavaScript / TypeScript). • Middleware: solid .NET / C# development, building services and integrations. • Layered architecture: proven experience designing and developing across a Client → BFF → Middleware → Core structure, with a clear grasp of each tier's responsibilities and boundaries. • Regulated SDLC: experience working within a bank's (or comparable regulated enterprise's) software development lifecycle — formal change management, security and compliance gates, and release governance. • Testing: strong testing discipline with hands-on unit and integration testing using NUnit (.NET) and Jest (JS/TS). • Fundamentals: REST APIs, relational databases (e.g. SQL Server / Oracle / PostgreSQL), Git, and CI/CD pipelines. • Messaging / event-driven: hands-on experience with messaging and event-streaming tools such as RabbitMQ and Kafka, and asynchronous integration patterns between services. • State machines: deep knowledge of state machine design and implementation for modeling complex, multi-step workflows and transaction lifecycles. • Security mindset: writes with security and data sensitivity front of mind, appropriate to a banking context. • Communication: strong verbal and written English; effective in a collaborative, client-facing delivery environment.",
     "language_requirement": [],
     "education_requirements": null,
@@ -58107,7 +58454,7 @@
       "Tel Aviv"
     ],
     "min_experience": 5,
-    "job_description": "The Samsung Advanced Flash Solution Lab (AFSL) is part of Samsung Semiconductor Memory Business, the world’s largest manufacturer of memory and storage devices for mobile phones,...",
+    "job_description": "About the position The Samsung Advanced Flash Solution Lab (AFSL) is part of Samsung Semiconductor Memory Business, the world’s largest manufacturer of memory and storage devices for mobile phones,...",
     "requirements": "skills and experience with PyTorch Strong analytical and problem-solving skills Excellent communication skills",
     "language_requirement": [],
     "education_requirements": "M.Sc",
@@ -61988,29 +62335,6 @@
     "posted": "2026-07-06T00:00:00.000Z"
   },
   {
-    "airtable_id": "recwPIz5NqVn5qe4c",
-    "job_id": 58619,
-    "created_time": "2026-07-26T20:50:28.000Z",
-    "discovered": "2026-07-26T20:50:28.000Z",
-    "field": "Software Engineering",
-    "title": "Senior Backend Developer",
-    "company": "Ivix",
-    "company_industry": [
-      "Technology"
-    ],
-    "position_link": "https://www.comeet.com/jobs/ivix/09.002/senior-backend-developer/D5.C31",
-    "scope": "Full Time",
-    "location": [
-      "Tel Aviv"
-    ],
-    "min_experience": 3,
-    "job_description": "About the company IVIX is the first AI-powered solution designed specifically to address a $20 trillion problem: illuminating the global shadow economy. IVIX leverages Open-Source Intelligence...",
-    "requirements": "Description About the company IVIX is the first AI-powered solution designed specifically to address a $20 trillion problem: illuminating the global shadow economy. IVIX leverages Open-Source Intelligence (OSINT) and highly advanced, cutting-edge technologies to reveal illicit business activity around the world, empowering governments in their mission to fight financial crime and close the tax gap. IVIX employs a variety of AI tools (deep neural networks, large language models, and predictive modeling) as well as advanced data analytics to rapidly pinpoint large-scale illicit business activity, so government authorities can combat financial crime in the digital age. Led by security, tech, tax and financial crime experts, and advised by a diverse team of former IRS commissioners, IVIX works with dozens of state and federal governments globally. About the postion We're looking for a brilliant, hardworking, and super-motivated developer to join our R&D team. This is an excellent opportunity to directly impact feature decisions and our product's future. By joining us, you will be a part of a dynamic and creative team and work in a friendly start-up environment. End-to-end development of features and systems used daily by key stakeholders, both internally and externally. Evolve our engineering and architecture to support the ever-growing scale of users, features, and data. Work closely with Product & Design, while having full ownership of features from, planning and technical design to post-deployment Deliver testable, maintainable, and high-quality code Our Stack - python,React.JS, , Node.js,, MongoDB, Neo4j, Kafka, Elastic Search,, AWS, K8S Implement solutions to complex problems in large amounts of data and scale. Equal Opportunity Employer Requirements 5+years of professional software development experience BSc. in CS, engineering, or equivalent 3+ years of programming experience in Python Experience with elastic search/ MongoDB /Kafka- an",
-    "language_requirement": [],
-    "education_requirements": "B.Sc",
-    "posted": "2026-06-14T00:00:00.000Z"
-  },
-  {
     "airtable_id": "recVyd2RhKkqQ9SUr",
     "job_id": 58618,
     "created_time": "2026-07-26T20:50:27.000Z",
@@ -64333,29 +64657,6 @@
     "posted": "2026-07-07T00:00:00.000Z"
   },
   {
-    "airtable_id": "reciHdUckHC5Xp96b",
-    "job_id": 57589,
-    "created_time": "2026-07-26T14:25:09.000Z",
-    "discovered": "2026-07-26T14:25:09.000Z",
-    "field": "Software Engineering",
-    "title": "Senior Software Engineer- ML Network Stack, ML Network Stack - Annapurna Labs",
-    "company": "Amazon",
-    "company_industry": [
-      "Artificial Intelligence"
-    ],
-    "position_link": "https://amazon.jobs/en/jobs/10448422/senior-software-engineer-ml-network-stack-ml-network-stack-annapurna-labs",
-    "scope": "Full Time",
-    "location": [
-      "Tel Aviv"
-    ],
-    "min_experience": 3,
-    "job_description": "We are seeking an experienced engineer to join our team that owns the network stack for EC2 distributed AI/ML systems. The team develops support for a variety of frameworks and communication...",
-    "requirements": "- 5+ years of non-internship professional software development experience - 5+ years of leading design or architecture (design patterns, reliability and scaling) of new and existing systems experience - 5+ years of full software development life cycle, including coding standards, code reviews, source control management, build processes, testing, and operations experience - 3+ years as a mentor, tech lead or leading engineering teams - 3+years experience in SW/HW Co-Design - Bachelor's degree in computer science or equivalent - Experience creating automated dashboards and visualization (such as Grafana) Our inclusive culture empowers Amazonians to deliver the best results for our customers. If you have a disability and need a workplace accommodation or adjustment during the application and hiring process, including support for the interview or onboarding process, please visit https://amazon.jobs/content/en/how-we-hire/accommodations for more information. If the country/region you’re applying in isn’t listed, please contact your Recruiting Partner.",
-    "language_requirement": [],
-    "education_requirements": "Bachelor",
-    "posted": "2026-06-14T00:00:00.000Z"
-  },
-  {
     "airtable_id": "recVVuCAgHm8Uzi8U",
     "job_id": 57591,
     "created_time": "2026-07-26T14:25:09.000Z",
@@ -65415,31 +65716,6 @@
     "posted": "2026-07-21T00:00:00.000Z"
   },
   {
-    "airtable_id": "receCEKfxmbvYB3sZ",
-    "job_id": 57177,
-    "created_time": "2026-07-26T14:23:28.000Z",
-    "discovered": "2026-07-26T14:23:28.000Z",
-    "field": "DevOps",
-    "title": "SRE Technical Lead, DevOps Group",
-    "company": "BigPanda",
-    "company_industry": [
-      "Enterprise Software",
-      "Cloud",
-      "IT"
-    ],
-    "position_link": "https://www.linkedin.com/jobs/view/4427444455/",
-    "scope": "Full Time",
-    "location": [
-      "Tel Aviv"
-    ],
-    "min_experience": null,
-    "job_description": "Location requirements: This role requires working out of the Tel Aviv office three days per week. About The Role As a SRE Technical Lead at BigPanda, you will play a critical role in ensuring the...",
-    "requirements": "requirements: This role requires working out of the Tel Aviv office three days per week. About The Role As a SRE Technical Lead at BigPanda, you will play a critical role in ensuring the reliability, scalability, and performance of the platform that powers our customers’ operations. You’ll operate at the intersection of software engineering and production operations, taking full ownership of the systems you build and run. This is a hands-on individual contributor role - not a managerial position. You'll be deep in the technical work, driving impact through engineering excellence rather than people management. This role is not just about responding to incidents - it’s about fundamentally improving how our platform behaves under real-world conditions. You will drive reliability initiatives end-to-end: defining measurable service goals, shaping engineering priorities through error budgets, and implementing solutions that prevent issues before they occur. You’ll work closely with teams across the organization, embedding reliability and observability into every layer of the stack. At the same time, you’ll leverage automation, modern infrastructure practices, and emerging AI capabilities to continuously evolve how we operate and scale. What You Will Do Develop deep product knowledge across our platform - understanding its internals, failure modes, and operational behavior well enough to own incident resolution end-to-end. Define and track SLAs/SLOs/SLIs across critical platform services, and use error budgets to drive engineering decisions. Own production reliability - including on-call rotations, incident response, and post-mortems - with a focus on minimizing MTTR and preventing recurrence through systemic fixes, not just firefighting. Work hand-in-hand with engineering teams across the stack - infrastructure, application, and business layers - to embed reliability requirements everywhere. What Skills And Experience You’ll Bring To BigPanda 5+ years of experience",
-    "language_requirement": [],
-    "education_requirements": null,
-    "posted": "2026-06-14T00:00:00.000Z"
-  },
-  {
     "airtable_id": "recWa55cxtBnnhHk0",
     "job_id": 57174,
     "created_time": "2026-07-26T14:23:27.000Z",
@@ -66094,32 +66370,6 @@
     "posted": "2026-07-26T00:00:00.000Z"
   },
   {
-    "airtable_id": "rec0fB51c2v7APzTp",
-    "job_id": 56895,
-    "created_time": "2026-07-26T14:22:23.000Z",
-    "discovered": "2026-07-26T14:22:23.000Z",
-    "field": "Software Engineering",
-    "title": "Senior AI-Native Backend Developer",
-    "company": "Payoneer",
-    "company_industry": [
-      "B2B",
-      "Finance",
-      "Fintech",
-      "Payments"
-    ],
-    "position_link": "https://www.payoneer.com/careers/position/7925941/?gh_jid=7925941",
-    "scope": "Full Time",
-    "location": [
-      "Tel Aviv"
-    ],
-    "min_experience": 5,
-    "job_description": "About Payoneer Founded in 2005, Payoneer is the global financial platform that removes friction from doing business across borders, with a mission to connect the world’s underserved businesses to a...",
-    "requirements": "Who you are 5+ years of software engineering experience, building and operating production systems Hands-on experience with AI/ML systems in production not just prototyping, but shipping, monitoring, and iterating Genuine fluency with AI-powered development tools you use them daily to move faster Experience designing agentic architectures: orchestration, multi-step workflows, RAG pipelines, fallback and error handling Strong evaluation instincts you define metrics, build test sets, and validate before shipping Comfortable across the full stack you move between prompt engineering, backend services, data pipelines, and infrastructure as needed High degree of independence you lead work from problem definition to production without waiting for detailed specs Excellent communication you flag risks early, give direct feedback, and collaborate openly Fintech or regulated-environment experience is an",
-    "language_requirement": [],
-    "education_requirements": null,
-    "posted": "2026-06-14T00:00:00.000Z"
-  },
-  {
     "airtable_id": "rechPD9ryNmG19abg",
     "job_id": 56892,
     "created_time": "2026-07-26T14:22:22.000Z",
@@ -66164,32 +66414,6 @@
     "language_requirement": [],
     "education_requirements": "Ph.D",
     "posted": "2026-07-19T00:00:00.000Z"
-  },
-  {
-    "airtable_id": "recW6eU36Lo3m1oJ6",
-    "job_id": 56884,
-    "created_time": "2026-07-26T14:22:21.000Z",
-    "discovered": "2026-07-26T14:22:21.000Z",
-    "field": "Software Engineering",
-    "title": "Senior AI-Native Engineer",
-    "company": "Payoneer",
-    "company_industry": [
-      "B2B",
-      "Finance",
-      "Fintech",
-      "Payments"
-    ],
-    "position_link": "https://www.payoneer.com/careers/position/7925943/?gh_jid=7925943",
-    "scope": "Full Time",
-    "location": [
-      "Tel Aviv"
-    ],
-    "min_experience": 5,
-    "job_description": "About Payoneer Founded in 2005, Payoneer is the global financial platform that removes friction from doing business across borders, with a mission to connect the world’s underserved businesses to a...",
-    "requirements": "Who you are 5+ years of software engineering experience, building and operating production systems Hands-on experience with AI/ML systems in production not just prototyping, but shipping, monitoring, and iterating Genuine fluency with AI-powered development tools you use them daily to move faster Experience designing agentic architectures: orchestration, multi-step workflows, RAG pipelines, fallback and error handling Strong evaluation instincts you define metrics, build test sets, and validate before shipping Comfortable across the full stack you move between prompt engineering, backend services, data pipelines, and infrastructure as needed High degree of independence you lead work from problem definition to production without waiting for detailed specs Excellent communication you flag risks early, give direct feedback, and collaborate openly Fintech or regulated-environment experience is an",
-    "language_requirement": [],
-    "education_requirements": null,
-    "posted": "2026-06-14T00:00:00.000Z"
   },
   {
     "airtable_id": "recWDzW27dtl4yBFf",
@@ -69672,56 +69896,6 @@
     "posted": "2026-06-22T00:00:00.000Z"
   },
   {
-    "airtable_id": "recd2iEMaVQk5EbdU",
-    "job_id": 55962,
-    "created_time": "2026-07-20T08:10:18.000Z",
-    "discovered": "2026-07-20T08:10:18.000Z",
-    "field": "Software Engineering",
-    "title": "Senior Software Engineer II, Payments",
-    "company": "Forter",
-    "company_industry": [
-      "Fraud",
-      "Cybersecurity",
-      "Fintech"
-    ],
-    "position_link": "https://job-boards.greenhouse.io/forter/jobs/8591137002",
-    "scope": "Full Time",
-    "location": [
-      "Tel Aviv"
-    ],
-    "min_experience": 1,
-    "job_description": "We’re on a mission to build the first holistic smart payment solution-one that maximizes authorization rates for our merchants by intelligently determining and executing the optimal strategy for...",
-    "requirements": "What you'll need: 6+ years building and maintaining complex software systems 6+ years backend experience, with a strong focus on production-grade systems 1+ years JavaScript experience Hands-on experience with critical production systems - high availability, reliability, and scalability Familiarity with browser, networking, and security concepts Product, production, and growth mindsets Passion for solving technical challenges that directly impact users and operations Strong communication, collaboration, and problem-solving skills Can-do attitude with ownership mentality Professional-level spoken and written English It'd be cool if you also have: Extensive experience with Node.JS Experience leading cross-team initiatives Frontend / React / Mobile experience Significant experience with databases/datastores (MySQL, Redis, ElasticSearch) Experience from previous payments companies / projects Experience building Enterprise-grade SaaS products About Us: Commerce is evolving faster than the systems built to support it. Agentic AI is redrawing how people buy. Customer expectations have a new ceiling. And bad actors are evolving alongside every advancement. Forter was built to meet this moment — and stay ahead of it. We are a human-first, AI-built company. Our technology analyzes patterns across a network of over 2 billion shoppers, delivering identity intelligence across the entire commerce journey — from sign-up to checkout to returns — that protects revenue and unlocks great customer experiences simultaneously. With Forter, businesses know who to trust, whether it’s humans or the agents shopping for them. The result: zero friction for the customers who matter. No revenue left behind. The world's most trusted brands — Nordstrom, Instacart, Priceline, Adobe, ASOS, and eBay among them — rely on Forter to get this right. Since 2013, we've raised $525M from investors including Tiger Global, Bessemer, Sequoia Capital, and Salesf",
-    "language_requirement": [],
-    "education_requirements": null,
-    "posted": "2026-06-14T00:00:00.000Z"
-  },
-  {
-    "airtable_id": "rec39dGAV80WBfMGI",
-    "job_id": 55937,
-    "created_time": "2026-07-20T08:10:09.000Z",
-    "discovered": "2026-07-20T08:10:09.000Z",
-    "field": "DevOps",
-    "title": "Senior Staff DevOps Engineer (Secure Cloud Access)",
-    "company": "Palo Alto Networks",
-    "company_industry": [
-      "Computer",
-      "Network Security",
-      "Cybersecurity"
-    ],
-    "position_link": "https://paloaltonetworks.wd5.myworkdayjobs.com/en-GB/panwexternalcareers/job/Office---Israel---CyberArk-Beer-Sheva/Sr-Staff-DevOps-Engineer--Secure-Cloud-Access-_JR-018168?locations=45eb6188f3f71001f08639efd22e0000",
-    "scope": "Full Time",
-    "location": [
-      "Beer Sheva"
-    ],
-    "min_experience": 2,
-    "job_description": "Our Mission At Palo Alto Networks®, we’re united by a shared mission—to protect our digital way of life. We thrive at the intersection of innovation and impact, solving real-world problems with...",
-    "requirements": "Our Mission At Palo Alto Networks®, we’re united by a shared mission—to protect our digital way of life. We thrive at the intersection of innovation and impact, solving real-world problems with cutting-edge technology and bold thinking. Here, everyone has a voice, and every idea counts. If you’re ready to do the most meaningful work of your career alongside people who are just as passionate as you are, you’re in the right place. Who We Are In order to be the cybersecurity partner of choice, we must trailblaze the path and shape the future of our industry. This is something our employees work at each day and is defined by our values: Disruption, Collaboration, Execution, Integrity, and Inclusion. We weave AI into the fabric of everything we do and use it to augment the impact every individual can have. If you are passionate about solving real-world problems and ideating beside the best and the brightest, we invite you to join us! We believe collaboration thrives in person. That’s why most of our teams work from the office full time, with flexibility when it’s needed. This model supports real-time problem-solving, stronger relationships, and the kind of precision that drives great outcomes. Job Summary Your Career: As part of your role, you will design, implement, and deploy products and infrastructures that will directly increase our stability and quality while reducing our time to market. You will have end-to-end ownership from individual development environments and SCM/Build/CI servers to our production system on AWS. Your Impact: Design and manage Continuous Integration/Deployment Services, including build, packaging, and deployment. Design, document, implement, and maintain scripts to enhance current and future build and release processes. Incorporate new development projects into existing build structures. Continually evaluate tools and technologies to improve the overall release process. Qualifications Your Experience ​4+ years of experience as a",
-    "language_requirement": [],
-    "education_requirements": null,
-    "posted": "2026-06-14T00:00:00.000Z"
-  },
-  {
     "airtable_id": "recSv3wiRrYLCgo4g",
     "job_id": 55925,
     "created_time": "2026-07-20T08:10:04.000Z",
@@ -71696,31 +71870,6 @@
     "posted": "2026-07-09T00:00:00.000Z"
   },
   {
-    "airtable_id": "recEmbuT0kqC3wgnV",
-    "job_id": 55251,
-    "created_time": "2026-07-16T12:17:50.000Z",
-    "discovered": "2026-07-16T12:17:50.000Z",
-    "field": "Data Science, ML & Algorithms",
-    "title": "Quant Algorithms Developer",
-    "company": "Solidus",
-    "company_industry": [
-      "Algorithms",
-      "Machine Learning",
-      "Fintech"
-    ],
-    "position_link": "https://www.solidus-tech.com/careers-2/co/tel-aviv/BA.847/quant-algorithms-developer/all/",
-    "scope": "Full Time",
-    "location": [
-      "Tel Aviv"
-    ],
-    "min_experience": 2,
-    "job_description": "Solidus is a multinational, dynamic, and profitable algo-trading startup. We develop ultra-low latency trading strategies that are deployed in numerous markets worldwide. We strive to employ the best...",
-    "requirements": "Requirements: · At least 2 years experience in quantitative finance – a Must · B.Sc in Computer Science, Physics, Math, Engineering, or a related field with a 85+ GPA. · Advanced degree (preferably Ph.D.) - an",
-    "language_requirement": [],
-    "education_requirements": "B.Sc in Computer Science, Physics, Math, Engineering, or a related field with a 85+ GPA.",
-    "posted": "2026-06-14T00:00:00.000Z"
-  },
-  {
     "airtable_id": "recuohsYtafxjY3UY",
     "job_id": 55212,
     "created_time": "2026-07-16T08:10:44.000Z",
@@ -72509,8 +72658,8 @@
       "Tel Aviv"
     ],
     "min_experience": 3,
-    "job_description": "Remedio is a cybersecurity company that leads the Device Posture Management space for enterprise organizations. We detect and remediate misconfigurations, vulnerabilities, and hardening issues in...",
-    "requirements": "7+ years developing automated testing in Python, including 3+ years owning the design of test frameworks- fixtures, runners, shared libraries, and the patterns other engineers build on. Deep Pytest expertise: you've built plugins, custom hooks, and conftest architectures, and can make and defend design decisions 4+ years architecting and operating test infrastructure on a major cloud provider (AWS, GCP, or Azure): provisioning environments, managing cost/scale, and building the systems others run their tests against. 4+ years with CI/CD tooling (Jenkins, GitHub Actions, or similar), including designing pipelines and the surrounding release/quality gates - not just maintaining them. Expert debugging across the full stack - backend/APIs, UI, and system-level - with a track record of root-causing systemic issues (not just individual failures) and eliminating flakiness at the suite level. Administrator-level proficiency on both Windows and Linux: services, permissions, networking, and environment configuration, including scripting and automating that setup. Proven experience designing and maintaining cross-platform test coverage (Windows, Linux, macOS), including strategies for handling OS-specific behavior at scale. Experience standardizing test reporting and results aggregation across teams (ReportPortal, Allure, or equivalent). Track record of raising engineering standards: mentoring engineers, driving adoption of testing practices across teams, and influencing how quality is built into the development process. Nice to Have 3+ years in performance/load automation: defining strategy, building scenarios, and interpreting results to influence system design (Locust, k6, JMeter, or similar). Experience leading test-infrastructure initiatives end to end, or acting as a technical lead on an automation effort.",
+    "job_description": "Remedio is transforming how organizations reduce cyber risk. While most security tools focus on finding problems, Remedio focuses on fixing them. Our Autonomous Remediation Platform helps enterprises...",
+    "requirements": "Description Remedio is transforming how organizations reduce cyber risk. While most security tools focus on finding problems, Remedio focuses on fixing them. Our Autonomous Remediation Platform helps enterprises continuously and safely reduce exposure by remediating vulnerabilities and misconfigurations, closing patching gaps, hardening systems, enforcing compliance, governing applications, and controlling AI risk. By combining deep dependency awareness, pre-execution validation, automated remediation, and instant rollback, Remedio enables organizations to eliminate risk across endpoints, servers, applications, and AI systems - without disrupting business operations. Founded in 2019, Remedio spent its first years as a bootstrapped, profitable company, building a strong enterprise customer base before raising a $65M Series A led by Bessemer Venture Partners. Today, more than 300 enterprise organizations trust Remedio to protect over 3M devices worldwide, including Amazon, Colgate-Palmolive, Kraft Heinz, Coca-Cola, and many more. As we continue expanding our platform and growing our global business, we’re looking for exceptional people who want to take ownership, solve meaningful challenges, and help shape the next chapter of Remedio’s journey. We're looking for a Senior Infra & Test Automation Engineer to join us! What does the Automation team do? Our Automation team builds and maintains the core infrastructure that powers Remedio's testing and development workflows. This includes designing and managing multi-platform VM environments across Windows, Linux, and macOS, orchestrating infrastructure across AWS, Azure, and GCP, and developing tools to interact with and extract data from our sensors deployed across diverse endpoint environments. The team also owns CI/CD processes in collaboration with our DevOps team, ensuring smooth and reliable delivery pipelines from development through to production. As a cross-companyave a wid team, we he impact - we build the infra",
     "language_requirement": [],
     "education_requirements": null,
     "posted": "2026-07-14T00:00:00.000Z"
@@ -73174,29 +73323,6 @@
     "language_requirement": [],
     "education_requirements": null,
     "posted": "2026-07-05T00:00:00.000Z"
-  },
-  {
-    "airtable_id": "recCJVo5qJ796CnlL",
-    "job_id": 54414,
-    "created_time": "2026-07-13T08:12:53.000Z",
-    "discovered": "2026-07-13T08:12:53.000Z",
-    "field": "Data Science, ML & Algorithms",
-    "title": "Algorithm Development M.Sc./Ph.D. Student",
-    "company": "Elbit Systems",
-    "company_industry": [
-      "Hardware"
-    ],
-    "position_link": "https://elbitsystemscareer.com/jobs/?jobId=20658",
-    "scope": "Internship",
-    "location": [
-      "Haifa"
-    ],
-    "min_experience": 1,
-    "job_description": "During times of the war, over 17,000 employees of Elbit Systems worldwide choose every day to take part in ensuring the security of the nation – a job with purpose and meaning. Algorithm Developers –...",
-    "requirements": "During times of the war, over 17,000 employees of Elbit Systems worldwide choose every day to take part in ensuring the security of the nation – a job with purpose and meaning. Algorithm Developers – this is your opportunity to be part of our collective success, to develop groundbreaking technology while achieving personal growth and self-fulfillment as part of the AI Algorithms group located in Yokneam. At Elbit’s Land Division, we are developing the next generation of autonomous combat platforms, precision-guided weapon systems, and many other exciting projects. In the AI Algorithms group, we develop algorithms supporting full autonomy for land and aerial systems. This is an applied research position, requiring a strong academic background, mathematical maturity, and advanced programming skills. We are looking for a graduate student with a significant algorithmic background. Requirements Bachelor's degree from a recognized university Graduate student in a relevant field Programming skills: Python C++ -",
-    "language_requirement": [],
-    "education_requirements": null,
-    "posted": "2026-06-14T00:00:00.000Z"
   },
   {
     "airtable_id": "recJhjDwvqoSKntuQ",
@@ -75335,7 +75461,7 @@
     "position_link": "https://www.comeet.com/jobs/legitsecurity.com/37.004/engineering-tech-lead/6B.D6B",
     "scope": "Full Time",
     "location": [
-      "Israel"
+      "Tel Aviv"
     ],
     "min_experience": 2,
     "job_description": "About Legit Security We're a well-funded cybersecurity company backed by top-tier VCs, solving one of the hardest problems in modern software security: how AI-first organizations can ship fast...",
@@ -77395,31 +77521,6 @@
     "posted": "2026-07-21T00:00:00.000Z"
   },
   {
-    "airtable_id": "recJdllME2JZipjHx",
-    "job_id": 51115,
-    "created_time": "2026-06-26T08:15:23.000Z",
-    "discovered": "2026-06-26T08:15:23.000Z",
-    "field": "Software Engineering",
-    "title": "R&D Software Engineer - Core Processor",
-    "company": "Quantum Machines",
-    "company_industry": [
-      "Hardware",
-      "Software",
-      "Quantum Computing"
-    ],
-    "position_link": "https://www.comeet.com/jobs/quantummachines/D6.000/solutions-software-engineer/15.D59",
-    "scope": "Full Time",
-    "location": [
-      "Tel Aviv"
-    ],
-    "min_experience": 5,
-    "job_description": "Quantum Machines is a global leader in hybrid control systems for quantum computing, a field on the verge of exponential growth. Our innovative hardware and software offer a groundbreaking approach...",
-    "requirements": "Requirements: · 5+ years of experience working with Python/C++ - Must. · Experience using Docker or similar tools – Must. · Experience with gRPC –",
-    "language_requirement": [],
-    "education_requirements": null,
-    "posted": "2026-06-14T00:00:00.000Z"
-  },
-  {
     "airtable_id": "recvqzYdvqy8hFfEK",
     "job_id": 51095,
     "created_time": "2026-06-26T08:15:19.000Z",
@@ -79079,29 +79180,6 @@
     "posted": "2026-06-16T00:00:00.000Z"
   },
   {
-    "airtable_id": "recZgFaBmbOrBOFgD",
-    "job_id": 49961,
-    "created_time": "2026-06-21T14:35:06.000Z",
-    "discovered": "2026-06-21T14:35:06.000Z",
-    "field": "Software Engineering",
-    "title": "Software Engineer – Networking Group",
-    "company": "Cato Networks",
-    "company_industry": [
-      "Technology"
-    ],
-    "position_link": "https://www.catonetworks.com/careers/careers-post/4895403101?gh_jid=4895403101",
-    "scope": "Full Time",
-    "location": [
-      "Tel Aviv"
-    ],
-    "min_experience": 4,
-    "job_description": "Welcome to the future of cloud networking and security! Cato Networks is the first company to converge enterprise networking and security into one centralized and global service that is delivered by...",
-    "requirements": "Requirements: 4+ years of hands-on experience in backend development. Strong expertise in Java, and Spring Boot, (Go -",
-    "language_requirement": [],
-    "education_requirements": "B.Sc",
-    "posted": "2026-06-14T00:00:00.000Z"
-  },
-  {
     "airtable_id": "recebXx5jl7G0tiX0",
     "job_id": 49885,
     "created_time": "2026-06-21T14:34:51.000Z",
@@ -79123,33 +79201,6 @@
     "language_requirement": [],
     "education_requirements": null,
     "posted": "2026-06-18T00:00:00.000Z"
-  },
-  {
-    "airtable_id": "recJxq8VUBfqjEGp8",
-    "job_id": 49862,
-    "created_time": "2026-06-21T14:34:45.000Z",
-    "discovered": "2026-06-21T14:34:45.000Z",
-    "field": "Software Engineering",
-    "title": "Senior Security Research- Microsoft Security",
-    "company": "Microsoft",
-    "company_industry": [
-      "Software",
-      "Hardware",
-      "Cybersecurity",
-      "Big Data",
-      "Social Media"
-    ],
-    "position_link": "https://apply.careers.microsoft.com/careers/job/1970393556874376",
-    "scope": "Full Time",
-    "location": [
-      "Israel"
-    ],
-    "min_experience": 2,
-    "job_description": "Overview Microsoft Security aspires to make the world a safer place for all. We empower every user, customer, and developer with a security cloud that protects them with end-to-end, simplified...",
-    "requirements": "You have at least 6+ years of cyber security experience, including 2+ years working hands-on with identity-based attacks (research, hunting, or detection engineering) on top of the modern attacker kill-chain and MITRE ATT&CK. You have pssion for defensive work - hunting, investigation, detection authoring, and protection enforcement design — with a track record of owning research end-to-end, from threat hypothesis to shipped detection and customer impact. You have Windows internals knowledge, along with working knowledge of the main identity protocols (e.g., Kerberos, NTLM, LDAP, OAuth 2.0, SAML). You demonstrated fluency leveraging Generative AI tools (e.g., GitHub Copilot, Security Copilot, ChatGPT/Claude) to multiply daily research output — including prompt design, model-output validation, and integrating AI assistance into investigation, coding, and detection authoring.",
-    "language_requirement": [],
-    "education_requirements": "B.Sc",
-    "posted": "2026-06-14T00:00:00.000Z"
   },
   {
     "airtable_id": "recGAtYXL6CDzSApl",
@@ -79901,7 +79952,7 @@
     "position_link": "https://www.comeet.com/jobs/ironscales/1A.007/sw-development-team-lead--inspection--detection/99.668",
     "scope": "Full Time",
     "location": [
-      "Tel Aviv"
+      "Ramat Gan"
     ],
     "min_experience": 3,
     "job_description": "IRONSCALES is redefining email security with an AI-powered platform built to stop phishing and advanced email cyber threats at scale. Our cloud-native solution detects, analyzes, and remediates...",
@@ -79932,33 +79983,6 @@
     "language_requirement": [],
     "education_requirements": "Ph.D",
     "posted": "2026-07-19T00:00:00.000Z"
-  },
-  {
-    "airtable_id": "recRvSXacUIilRrtp",
-    "job_id": 48643,
-    "created_time": "2026-06-07T08:06:34.000Z",
-    "discovered": "2026-06-07T08:06:34.000Z",
-    "field": "Data Engineering",
-    "title": "Senior Data Engineer",
-    "company": "Arpeely",
-    "company_industry": [
-      "Digital Marketing",
-      "AI",
-      "Machine Learning",
-      "Fraud",
-      "AdTech"
-    ],
-    "position_link": "https://www.comeet.com/jobs/arpeely/57.001/senior-data-engineer/F3.B65",
-    "scope": "Full Time",
-    "location": [
-      "Tel Aviv"
-    ],
-    "min_experience": 3,
-    "job_description": "About Us Arpeely is a Data-Science startup, leveraging data analysis, ML, engineering, multi-disciplinary thinking to gain a market edge and exploit hidden opportunities in real-time advertising....",
-    "requirements": "Description About Us Arpeely is a Data-Science startup, leveraging data analysis, ML, engineering, multi-disciplinary thinking to gain a market edge and exploit hidden opportunities in real-time advertising. Processing over 350k requests per second and serving over 20B sub-second predictions daily, we build and operate Machine Learning algorithms running on the world’s largest Real-time-bidding (RTB) Ad-Exchanges. Arpeely is a Google AdX vendor and serves clients spanning from startups to Fortune-50 companies. What You’ll Do As our Senior Data Engineer you will handle Big Data in real time, and become the owner and gatekeeper of all data and data flows within the company. You will bring data ingenuity and technological excellence while gaining a deep business understanding. This is an amazing opportunity to join a multi-disciplinary A-team while working in a fast-paced, modern-cloud, data-oriented environment. Implement robust, reliable, and scalable data pipelines and data architecture. Own and develop Arpeely's DWH (petabytes of data!). Own the entire data development process, including business knowledge, methodology, quality assurance, and monitoring. Collaborate with cross-functional teams to define, design, and ship new features. Continuously discover, evaluate, and implement new technologies to maximize development efficiency. Develop tailor-made solutions as part of our data pipelines. Lead complex Big Data projects and build data platforms from scratch. Work on high-scale, real-time, real-world, business-critical data stores and data endpoints. Implement data profiling to identify anomalies and maintain data integrity. Work in a results-driven, high-paced, rewarding environment. Requirements 3+ years experience as a Data Engineer. Good working knowledge of Google Cloud Platform (GCP). Experience using AI-assisted tools or automation to improve data development, monitoring, or debugging workflows. Strong experience in SQL and Python. Experience with hig",
-    "language_requirement": [],
-    "education_requirements": null,
-    "posted": "2026-06-14T00:00:00.000Z"
   },
   {
     "airtable_id": "rec7ZoI21PTcvm1kW",
@@ -80208,7 +80232,7 @@
     "location": [
       "Tel Aviv"
     ],
-    "min_experience": 5,
+    "min_experience": 2,
     "job_description": "Every nation has data. Few can protect it. Fewer still can act on it. Dream is the sovereign AI and national cyber-defense company for governments. We help nations secure their most critical systems,...",
     "requirements": "Every nation has data. Few can protect it. Fewer still can act on it. Dream is the sovereign AI and national cyber-defense company for governments. We help nations secure their most critical systems, connect fragmented information at a national scale, and turn their most sensitive data into decisions, all fully sovereign. This is more than a job. It's a Dream job, where you'll work at a global scale alongside some of the best AI researchers, cyber operators, and government experts in the world. We defend nations against the most advanced threats in the world with a national security suite that offers AI-native resilience against APTs with visibility, insights and mediation across Posture, CTI, and Detection & Response, all fully sovereign. The Dream Job: We are on the lookout for a driven and experienced hands-on Engineering Team Leader to lead a group of engineers building Dream's Sensor. This team owns the entire endpoint agent, which is the backbone of Dream’s collection capabilities from Windows and Linux endpoints. As a hands-on leader, you’ll guide a talented team of engineers in designing and evolving the agent that enables our fully AI-driven platform to identify and respond to real-time advanced persistent threats. The Dream-Maker Responsibilities: Lead a team responsible for the endpoint product on Windows and Linux systems. Mentor engineers, grow the team, and foster a culture of technical excellence and innovation. Design and code production-grade C++ to create robust and high-performance software applications. Collaborate with backend, frontend, research and other teams within the company to deliver state-of-the-art solutions for challenging problems. Define and drive the technical roadmap, ensuring scalability, developer productivity, and rapid iteration. Participate in code reviews with an emphasis on design and code quality, ensuring the team adheres to best practices and guidelines. The Dream Skill Set: 5+ years of experience in endpo",
     "language_requirement": [],
@@ -80770,29 +80794,6 @@
     "posted": "2026-07-14T00:00:00.000Z"
   },
   {
-    "airtable_id": "recohWK3pvIysJNgw",
-    "job_id": 45276,
-    "created_time": "2026-05-08T08:06:14.000Z",
-    "discovered": "2026-05-08T08:06:14.000Z",
-    "field": "DevOps",
-    "title": "AI Applications Team Leader",
-    "company": "Cognyte",
-    "company_industry": [
-      "Technology"
-    ],
-    "position_link": "https://www.cognyte.com/careers/7B.A69/ai-applications-team-leader/",
-    "scope": "Full Time",
-    "location": [
-      "Herzliya"
-    ],
-    "min_experience": 5,
-    "job_description": "Today’s world is crime-riddled. Criminals are everywhere, invisible, virtual and sophisticated. Traditional ways to prevent and investigate crime and terror are no longer enough… Technology is...",
-    "requirements": "Description Today’s world is crime-riddled. Criminals are everywhere, invisible, virtual and sophisticated. Traditional ways to prevent and investigate crime and terror are no longer enough… Technology is changing incredibly fast. The criminals know it, and they are taking advantage. We know it too. For 30 years, the incredible minds at Cognyte around the world have worked closely together and put their expertise to work, to keep up with constantly evolving technological and criminal trends, and help make the world a safer place with leading investigative analytics software solutions. We are defined by our dedication to doing good and this translates to business success, meaningful work, friendships, a can-do attitude, and deep curiosity. As a Cognyter you will: Direct a team and own the strategic roadmap for our AI applications. Mentor and coach your team, driving every individual toward professional and technical excellence. Build platforms that consolidate complex data to help analysts make critical, real-world decisions. Partner with AI Data Science and Product teams to deliver sophisticated investigative tools. Ensure high-quality standards for software that directly impact global safety and investigative outcomes. Lead new projects from scratch while managing and improving our existing, large-scale systems. Join a team that fears no technology and constantly tests the boundaries of investigative power. Requirements For this mission, you’ll need: At least 5 years' experience leading high-performance teams. At least 8 years’ hands-on development experience in Java. Hands-on experience building microservices in cloud (preferably GCP/AWS/Azure) environments using cloud native technologies (such as: Kubernetes, Docker). Experience in designing and implementing large-scale distributed systems using technologies such as Apache Kafka, RabbitMQ, or similar. Experience with both relational (preferably PostgreSQL/MySQL) and NoSQL databases (such as: MongoDB). Expe",
-    "language_requirement": [],
-    "education_requirements": null,
-    "posted": "2026-06-14T00:00:00.000Z"
-  },
-  {
     "airtable_id": "recnnwUA2OdeqtEKy",
     "job_id": 45200,
     "created_time": "2026-05-08T08:05:52.000Z",
@@ -81243,6 +81244,36 @@
     "language_requirement": [],
     "education_requirements": null,
     "posted": "2026-07-29T00:00:00.000Z"
+  },
+  {
+    "airtable_id": "recYO2BC3qDYyIymz",
+    "job_id": 42938,
+    "created_time": "2026-04-21T13:42:29.000Z",
+    "discovered": "2026-04-21T13:42:29.000Z",
+    "field": "Embedded, Low Level & Firmware Engineering",
+    "title": "WiFi FW Engineer",
+    "company": "Apple",
+    "company_industry": [
+      "Hardware",
+      "Software",
+      "Chip Design",
+      "DSP",
+      "Embedded",
+      "Physical Design",
+      "Seminconductors",
+      "FPGA"
+    ],
+    "position_link": "https://jobs.apple.com/en-il/details/200597775-0865/wifi-fw-engineer?team=HRDWR",
+    "scope": "Full Time",
+    "location": [
+      "Herzliya"
+    ],
+    "min_experience": null,
+    "job_description": "At Apple, new way of thinking and insights can turn in to extraordinary products very quickly. The success we are striving will be result of highly skilled team working in an environment that...",
+    "requirements": "B.Sc. with 3 plus years of industry experience Hands-on experience and working knowledge of wireless systems and protocols such as LTE/NR/WiFi/Bluetooth Excellent problem-solving skills to address technical issues during design, development and maintenance phases Strong embedded SW fundamentals, including knowledge of design and development-flows, real-time constraints, concurrency, multi-processor systems, caching and virtual memory Deep understanding of data structures, object-oriented design, and system architecture in an embedded environment Strong software engineering skills including design, development (using C, C++), scripting (Python), and debugging Familiarity with low-level hardware interfaces, register and interrupt programming, bare-metal software development, clock and power management Experience with configuration (GIT, Perforce) and release management, continuous integration, unit and regression testing Strong understanding of design strategies for maintainability, scalability, and code reuse Excellent communication skills, both written and oral Highly organized, motivated and passionate about driving results",
+    "language_requirement": [],
+    "education_requirements": "B.Sc. with 6 plus years of industry experience",
+    "posted": "2026-09-10T00:00:00.000Z"
   },
   {
     "airtable_id": "recjhWFPjUVH1Sgk8",
