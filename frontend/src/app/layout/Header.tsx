@@ -21,11 +21,9 @@ export default function Header() {
         {header.logo}
       </Link>
 
-      <nav className="main-nav">
+      <nav className="main-nav" aria-label="Main navigation">
         <Link href="/">{header.home}</Link>
-
         <Link href="/jobs">{header.jobs}</Link>
-
         <Link href="/cv">{header.cvMatcher}</Link>
       </nav>
     </header>

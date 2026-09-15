@@ -16,8 +16,10 @@ export default function JobCard({ job, onClick }: JobCardProps) {
   const jobsContent = content.jobspage;
 
   return (
-    <article className="job-card">
-      <h3 className="job-card-title">{job.title}</h3>
+    <article className="job-card" aria-labelledby={`job-card-title-${job.id}`}>
+      <h3 id={`job-card-title-${job.id}`} className="job-card-title">
+        {job.title}
+      </h3>
 
       <p className="job-card-company">{job.company}</p>
 

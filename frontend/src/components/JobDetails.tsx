@@ -4,6 +4,10 @@ import { useContent } from "@/hooks/content";
 
 import { JobDetailsProps } from "@/types/job";
 
+import { useEffect, useRef } from "react";
+
+import { handleDialogKeyDown } from "@/utils/accessibility";
+
 import "@/styles/components/job/job-details.scss";
 
 export default function JobDetails({ job, onClose }: JobDetailsProps) {
@@ -15,10 +19,45 @@ export default function JobDetails({ job, onClose }: JobDetailsProps) {
 
   const jobsContent = content.jobspage;
 
+  const dialogRef = useRef<HTMLElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const previousActiveElement = document.activeElement as HTMLElement | null;
+
+    closeButtonRef.current?.focus();
+
+    function handleKeyDown(event: KeyboardEvent) {
+      const dialog = dialogRef.current;
+
+      if (!dialog) {
+        return;
+      }
+
+      handleDialogKeyDown(event, dialog, onClose);
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+
+      previousActiveElement?.focus();
+    };
+  }, [onClose]);
+
   return (
-    <div className="job-details-overlay">
-      <article className="job-details">
+    <div className="job-details-overlay" role="presentation">
+      <article
+        ref={dialogRef}
+        className="job-details"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="job-details-title"
+        tabIndex={-1}
+      >
         <button
+          ref={closeButtonRef}
           type="button"
           className="job-details-close"
           onClick={onClose}
@@ -27,7 +66,7 @@ export default function JobDetails({ job, onClose }: JobDetailsProps) {
           ×
         </button>
 
-        <h1>{job.title}</h1>
+        <h1 id="job-details-title">{job.title}</h1>
 
         <h2>{job.company}</h2>
 
@@ -92,7 +131,6 @@ export default function JobDetails({ job, onClose }: JobDetailsProps) {
         {job.required_skills?.length > 0 && (
           <section>
             <h3>{jobsContent.skillsTitle}</h3>
-
             <p>{job.required_skills.join(" · ")}</p>
           </section>
         )}

@@ -20,7 +20,7 @@ export default function Footer() {
       <p>
         {footer.copyright}
 
-        <Image src="/icon.svg" alt="" width={24} height={24} />
+        <Image src="/icon.svg" alt="icon" width={24} height={24} />
       </p>
     </footer>
   );

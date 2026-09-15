@@ -18,12 +18,18 @@ import Loader from "./Loader";
 
 import { useContent } from "@/hooks/content";
 
+import { routes } from "@/routes/routes";
+
+import { useRouter } from "next/navigation";
+
 export default function CVAuth() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [result, setResult] = useState<CVUploadData | null>(null);
   const [isUploading, setIsUploading] = useState(false);
 
   const { content, loading } = useContent();
+
+  const router = useRouter();
 
   useEffect(() => {
     localStorage.removeItem("google_id_token");
@@ -59,19 +65,21 @@ export default function CVAuth() {
 
   return (
     <GoogleOAuthProvider clientId={CONFIG.cv.clientId}>
-      <main className="cv-auth">
-        <section className="cv-auth-card">
-          <h1>{cvContent.title}</h1>
+      <section className="cv-auth" aria-labelledby="cv-auth-title">
+        <div className="cv-auth-card">
+          <h1 id="cv-auth-title">{cvContent.title}</h1>
 
           <p className="cv-auth-subtitle">{cvContent.subtitle}</p>
 
-          <div className="cv-auth-login">
+          <div className="cv-auth-login" aria-label="Google authentication">
+            ```tsx
             <GoogleLogin
               onSuccess={(credentialResponse) => {
                 const token = credentialResponse.credential;
 
                 if (!token) {
                   console.error("Google token is missing");
+                  router.push(routes.error);
                   return;
                 }
 
@@ -80,11 +88,12 @@ export default function CVAuth() {
               }}
               onError={() => {
                 console.error("Google Login Failed");
+                router.push(routes.error);
               }}
             />
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
     </GoogleOAuthProvider>
   );
 }

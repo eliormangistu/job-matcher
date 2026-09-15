@@ -70,16 +70,16 @@ export default function JobList() {
   const loader = content.loaderpage;
 
   return (
-    <section className="jobs-section">
+    <section className="jobs-section" aria-labelledby="jobs-title">
       <div className="jobs-header">
-        <h1>{jobsContent.title}</h1>
+        <h1 id="jobs-title">{jobsContent.title}</h1>
         <p>{jobsContent.subtitle}</p>
       </div>
 
       <div className="jobs-container">
         <h2 className="jobs-container-title">{jobsContent.containerTitle}</h2>
 
-        <div className="jobs-list">
+        <div className="jobs-list" aria-busy={isLoading} aria-live="polite">
           {isLoading && (
             <div className="jobs-list-loader">
               <Loader text={loader.loadingTextJobs} />
@@ -96,7 +96,7 @@ export default function JobList() {
             ))}
         </div>
 
-        <div className="jobs-pagination">
+        <nav className="jobs-pagination" aria-label="Jobs pagination">
           <button
             type="button"
             disabled={currentPage === 1 || isLoading}
@@ -105,7 +105,7 @@ export default function JobList() {
             {jobsContent.previousButton}
           </button>
 
-          <span>
+          <span aria-live="polite">
             {jobsContent.pageLabel} {currentPage} {jobsContent.ofLabel}{" "}
             {totalPages}
           </span>
@@ -117,7 +117,7 @@ export default function JobList() {
           >
             {jobsContent.nextButton}
           </button>
-        </div>
+        </nav>
       </div>
 
       {selectedJob && (

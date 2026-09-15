@@ -9,9 +9,9 @@ export default function ErrorState({
   onRetry,
 }: ErrorStateProps) {
   return (
-    <main className="error-page">
-      <section className="error-page-card">
-        <h1>{title}</h1>
+    <section className="error-page" aria-labelledby="error-title">
+      <div className="error-page-card">
+        <h1 id="error-title">{title}</h1>
 
         <p>{message}</p>
 
@@ -20,7 +20,7 @@ export default function ErrorState({
             {retryLabel}
           </button>
         )}
-      </section>
-    </main>
+      </div>
+    </section>
   );
 }

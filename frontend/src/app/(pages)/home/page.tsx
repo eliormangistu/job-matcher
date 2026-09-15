@@ -19,17 +19,26 @@ export default function HomePage() {
 
   return (
     <main className="home-page">
-      <h1>{home.title}</h1>
+      <header>
+        <h1>{home.title}</h1>
+        <h2>{home.subtitle}</h2>
+      </header>
 
-      <h2>{home.subtitle}</h2>
+      <section aria-labelledby="home-description">
+        <p>{home.description}</p>
+      </section>
 
-      <p>{home.description}</p>
+      <section aria-labelledby="home-opportunities">
+        <p>{home.opportunitiesText}</p>
+      </section>
 
-      <p>{home.opportunitiesText}</p>
+      <section aria-labelledby="home-skills">
+        <p>{home.skillsText}</p>
+      </section>
 
-      <p>{home.skillsText}</p>
-
-      <p>{home.careerText}</p>
+      <section aria-labelledby="home-career">
+        <p>{home.careerText}</p>
+      </section>
     </main>
   );
 }

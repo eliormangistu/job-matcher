@@ -18,12 +18,12 @@ export default function MatchInfo({ match }: MatchInfoProps) {
   return (
     <div className="match-info">
       <div className="match-score">
-        <strong>{matchContent.matchLabel}</strong> {match.score}%
+        <strong>{matchContent.matchLabel}</strong>{" "}
+        <span aria-label={`${match.score}% match`}>{match.score}%</span>
       </div>
 
       <div className="match-skills">
-        <h4>{matchContent.matchedSkillsTitle}</h4>
-
+        <h3>{matchContent.matchedSkillsTitle}</h3>
         <p>
           {match.matched_skills.length > 0
             ? match.matched_skills.join(" · ")
@@ -32,8 +32,7 @@ export default function MatchInfo({ match }: MatchInfoProps) {
       </div>
 
       <div className="match-skills">
-        <h4>{matchContent.missingSkillsTitle}</h4>
-
+        <h3>{matchContent.missingSkillsTitle}</h3>
         <p>
           {match.missing_skills.length > 0
             ? match.missing_skills.join(" · ")

@@ -64,10 +64,17 @@ export default function CVUpload({
   const cv = content.cvpage;
 
   return (
-    <section className="cv-upload">
-      <h1>{cv.uploadTitle}</h1>
+    <section className="cv-upload" aria-labelledby="cv-upload-title">
+      <h2 id="cv-upload-title">{cv.uploadTitle}</h2>
 
-      <input type="file" accept=".pdf,.doc,.docx" onChange={handleUpload} />
+      <label htmlFor="cv-file">{cv.uploadTitle}</label>
+
+      <input
+        id="cv-file"
+        type="file"
+        accept=".pdf,.doc,.docx"
+        onChange={handleUpload}
+      />
     </section>
   );
 }

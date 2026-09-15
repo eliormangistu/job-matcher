@@ -30,10 +30,9 @@ export default function MatchResults({ matches }: MatchResultsProps) {
   );
 
   return (
-    <section className="jobs-section">
+    <section className="jobs-section" aria-labelledby="matching-jobs-title">
       <div className="jobs-header">
-        <h1>{matchContent.title}</h1>
-
+        <h1 id="matching-jobs-title">{matchContent.title}</h1>
         <p>{matchContent.subtitle}</p>
       </div>
 
