@@ -73,3 +73,12 @@ AIRTABLE_VIEW_URL = (
     "shrQBuWjXd0YgPqV6"
     "?backgroundColor=cyan&viewControls=on"
 )
+
+# CONTENT
+SPACE_ID = os.getenv("SPACE_ID")
+ENTRY_ID = os.getenv("ENTRY_ID")
+ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
+
+# CONTENT CACHE
+CONTENT_CACHE_TTL_SECONDS = int(os.getenv("CONTENT_CACHE_TTL_SECONDS", "3600"))
+CONTENTFUL_WEBHOOK_SECRET = os.getenv("CONTENTFUL_WEBHOOK_SECRET")

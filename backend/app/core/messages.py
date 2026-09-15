@@ -14,3 +14,4 @@ class SuccessMessage:
     JOB_RETRIEVED = "Job retrieved successfully"
     SUCCESS = "Success"
     CV_UPLOADED = "CV uploaded successfully"
+    CONTENT = "Content fetched successfully"

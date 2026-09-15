@@ -69,3 +69,7 @@ AIRTABLE_VIEW_URL = (
     "shrQBuWjXd0YgPqV6"
     "?backgroundColor=cyan&viewControls=on"
 )
+
+# CONTENT CACHE
+CONTENT_CACHE_TTL_SECONDS = int(os.getenv("CONTENT_CACHE_TTL_SECONDS", "3600"))
+CONTENTFUL_WEBHOOK_SECRET = os.getenv("CONTENTFUL_WEBHOOK_SECRET")
