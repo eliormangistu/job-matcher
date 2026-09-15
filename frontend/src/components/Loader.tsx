@@ -1,8 +1,5 @@
 import "@/styles/shared/loader.scss";
-
-interface LoaderProps {
-  text?: string;
-}
+import { LoaderProps } from "@/types/loader";
 
 export default function Loader({ text = "Loading..." }: LoaderProps) {
   return (

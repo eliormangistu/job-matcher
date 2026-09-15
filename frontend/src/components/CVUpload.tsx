@@ -1,13 +1,20 @@
 "use client";
 
 import { ChangeEvent } from "react";
+
 import { useRouter } from "next/navigation";
 
 import { uploadCV } from "@/api/cv";
+
 import { validateCV } from "@/validations/cv";
+
 import { CVUploadProps } from "@/types/cv";
+
 import { setErrorState } from "@/lib/api-error";
+
 import { routes } from "@/routes/routes";
+
+import { useContent } from "@/hooks/content";
 
 import "@/styles/components/cv/cv-upload.scss";
 
@@ -17,6 +24,8 @@ export default function CVUpload({
   onUploadError,
 }: CVUploadProps) {
   const router = useRouter();
+
+  const { content, loading } = useContent();
 
   const handleUpload = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -48,9 +57,15 @@ export default function CVUpload({
     }
   };
 
+  if (loading || !content) {
+    return null;
+  }
+
+  const cv = content.cvpage;
+
   return (
     <section className="cv-upload">
-      <h1>Upload CV</h1>
+      <h1>{cv.uploadTitle}</h1>
 
       <input type="file" accept=".pdf,.doc,.docx" onChange={handleUpload} />
     </section>

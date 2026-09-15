@@ -1,17 +1,35 @@
+"use client";
+
 import "@/styles/pages/home.scss";
 
+import { useContent } from "@/hooks/content";
+
 export default function HomePage() {
+  const { content, loading, error } = useContent();
+
+  if (loading) {
+    return null;
+  }
+
+  if (error || !content) {
+    return null;
+  }
+
+  const home = content.homepage;
+
   return (
     <main className="home-page">
-      <h1>JOB MATCHER</h1>
+      <h1>{home.title}</h1>
 
-      <h2>Find the right tech job to grow your career.</h2>
+      <h2>{home.subtitle}</h2>
 
-      <p>AI-powered job matching for early-career tech professionals.</p>
+      <p>{home.description}</p>
 
-      <p>Discover opportunities.</p>
-      <p>Match your skills.</p>
-      <p>Build your career.</p>
+      <p>{home.opportunitiesText}</p>
+
+      <p>{home.skillsText}</p>
+
+      <p>{home.careerText}</p>
     </main>
   );
 }

@@ -5,6 +5,7 @@ import "@/styles/components/error/error-state.scss";
 export default function ErrorState({
   title,
   message,
+  retryLabel = "Try again",
   onRetry,
 }: ErrorStateProps) {
   return (
@@ -16,7 +17,7 @@ export default function ErrorState({
 
         {onRetry && (
           <button type="button" onClick={onRetry}>
-            Try again
+            {retryLabel}
           </button>
         )}
       </section>

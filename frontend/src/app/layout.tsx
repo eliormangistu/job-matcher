@@ -2,12 +2,7 @@ import "@/styles/main.scss";
 
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Job Matcher | AI Jobs",
-  description: "Find your next AI opportunity.",
-};
+import Providers from "./providers";
 
 export default function RootLayout({
   children,
@@ -17,13 +12,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="app-layout">
-          <Header />
+        <Providers>
+          <div className="app-layout">
+            <Header />
 
-          <main className="app-content">{children}</main>
+            <main className="app-content">{children}</main>
 
-          <Footer />
-        </div>
+            <Footer />
+          </div>
+        </Providers>
       </body>
     </html>
   );

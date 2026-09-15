@@ -16,3 +16,7 @@ export interface MatchListProps {
   matches: MatchResult[];
   onJobClick: (job: MatchResult["job"]) => void;
 }
+
+export interface MatchInfoProps {
+  match: MatchResult;
+}

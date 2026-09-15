@@ -8,5 +8,6 @@ export interface BaseResponse<T> {
 export interface ErrorStateProps {
   title: string;
   message: string;
+  retryLabel?: string;
   onRetry?: () => void;
 }

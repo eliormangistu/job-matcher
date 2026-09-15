@@ -9,19 +9,32 @@ import CVMatcher from "./CVMatcher";
 import { CONFIG } from "@/config";
 
 import "../styles/components/cv/cv-auth.scss";
+
 import { CVUploadData } from "@/types/cv";
+
 import CVUpload from "./CVUpload";
+
 import Loader from "./Loader";
+
+import { useContent } from "@/hooks/content";
 
 export default function CVAuth() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [result, setResult] = useState<CVUploadData | null>(null);
   const [isUploading, setIsUploading] = useState(false);
 
+  const { content, loading } = useContent();
+
   useEffect(() => {
     localStorage.removeItem("google_id_token");
     setIsAuthenticated(false);
   }, []);
+
+  if (loading || !content) {
+    return <Loader text={content?.loaderpage.loadingText} />;
+  }
+
+  const cvContent = content.cvpage;
 
   if (isAuthenticated) {
     if (result) {
@@ -29,7 +42,7 @@ export default function CVAuth() {
     }
 
     if (isUploading) {
-      return <Loader />;
+      return <Loader text={content.loaderpage.loadingText} />;
     }
 
     return (
@@ -43,15 +56,14 @@ export default function CVAuth() {
       />
     );
   }
+
   return (
     <GoogleOAuthProvider clientId={CONFIG.cv.clientId}>
       <main className="cv-auth">
         <section className="cv-auth-card">
-          <h1>CV MATCHER</h1>
+          <h1>{cvContent.title}</h1>
 
-          <p className="cv-auth-subtitle">
-            Match your skills with your next opportunity.
-          </p>
+          <p className="cv-auth-subtitle">{cvContent.subtitle}</p>
 
           <div className="cv-auth-login">
             <GoogleLogin

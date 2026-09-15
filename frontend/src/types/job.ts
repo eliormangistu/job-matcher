@@ -31,6 +31,11 @@ export interface JobCardProps {
   };
 }
 
+// export interface JobDetailsProps {
+//   jobId: number;
+// }
+
 export interface JobDetailsProps {
-  jobId: number;
+  job: Job;
+  onClose: () => void;
 }

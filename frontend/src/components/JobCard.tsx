@@ -1,10 +1,20 @@
 "use client";
 
+import { useContent } from "@/hooks/content";
+
 import { JobCardProps } from "@/types/job";
 
 import "@/styles/components/job/job-card.scss";
 
 export default function JobCard({ job, onClick }: JobCardProps) {
+  const { content, loading } = useContent();
+
+  if (loading || !content) {
+    return null;
+  }
+
+  const jobsContent = content.jobspage;
+
   return (
     <article className="job-card">
       <h3 className="job-card-title">{job.title}</h3>
@@ -12,25 +22,31 @@ export default function JobCard({ job, onClick }: JobCardProps) {
       <p className="job-card-company">{job.company}</p>
 
       <div className="job-card-meta">
-        {job.location?.join(", ") || "Location not specified"}
+        {job.location?.join(", ") || jobsContent.locationNotSpecified}
+
         {" · "}
-        {job.remote ? "Remote" : "On-site"}
+
+        {job.remote ? jobsContent.remote : jobsContent.onSite}
+
         {job.field && (
           <>
             {" · "}
             {job.field}
           </>
         )}
+
         {job.posted && (
           <>
             {" · "}
+            {jobsContent.postedLabel}{" "}
             {new Date(job.posted).toLocaleDateString("en-GB")}
           </>
         )}
+
         {job.min_experience != null && (
           <>
             {" · "}
-            {job.min_experience}+ years
+            {job.min_experience}+ {jobsContent.yearsSuffix}
           </>
         )}
       </div>
@@ -40,7 +56,7 @@ export default function JobCard({ job, onClick }: JobCardProps) {
       )}
 
       <button type="button" className="job-card-button" onClick={onClick}>
-        View Job ↗
+        {jobsContent.viewJobButton}
       </button>
     </article>
   );

@@ -3,8 +3,6 @@ import { MatchListProps } from "@/types/match";
 import JobCard from "./JobCard";
 import MatchInfo from "./MatchInfo";
 
-// import "@/styles/match-list.css";
-
 export default function MatchList({ matches, onJobClick }: MatchListProps) {
   return (
     <div className="match-list">

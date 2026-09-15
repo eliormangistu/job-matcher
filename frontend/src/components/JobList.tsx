@@ -1,15 +1,21 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import { useRouter } from "next/navigation";
 
 import { getJobs } from "@/api/jobs";
 
 import { Job } from "@/types/job";
 
+import { useContent } from "@/hooks/content";
+
 import JobCard from "./JobCard";
+
 import JobDetails from "./JobDetails";
+
 import Loader from "./Loader";
+
 import { routes } from "@/routes/routes";
 
 import { setErrorState } from "@/lib/api-error";
@@ -27,6 +33,8 @@ export default function JobList() {
   const totalPages = Math.ceil(total / pageSize);
 
   const router = useRouter();
+
+  const { content, loading: isContentLoading } = useContent();
 
   useEffect(() => {
     const offset = (currentPage - 1) * pageSize;
@@ -54,56 +62,60 @@ export default function JobList() {
       });
   }, [currentPage, router]);
 
-  if (isLoading) {
-    return (
-      <section className="jobs-section">
-        <Loader text="Loading jobs..." />
-      </section>
-    );
+  if (isContentLoading || !content) {
+    return null;
   }
+
+  const jobsContent = content.jobspage;
+  const loader = content.loaderpage;
 
   return (
     <section className="jobs-section">
       <div className="jobs-header">
-        <h1>Tech Jobs</h1>
-        <p>
-          Explore opportunities designed for the early stages of your tech
-          career.
-        </p>
+        <h1>{jobsContent.title}</h1>
+        <p>{jobsContent.subtitle}</p>
       </div>
 
       <div className="jobs-container">
-        <h2 className="jobs-container-title">Available Jobs</h2>
+        <h2 className="jobs-container-title">{jobsContent.containerTitle}</h2>
 
         <div className="jobs-list">
-          {jobs.map((job) => (
-            <JobCard
-              key={job.id}
-              job={job}
-              onClick={() => setSelectedJob(job)}
-            />
-          ))}
+          {isLoading && (
+            <div className="jobs-list-loader">
+              <Loader text={loader.loadingTextJobs} />
+            </div>
+          )}
+
+          {!isLoading &&
+            jobs.map((job) => (
+              <JobCard
+                key={job.id}
+                job={job}
+                onClick={() => setSelectedJob(job)}
+              />
+            ))}
         </div>
 
         <div className="jobs-pagination">
           <button
             type="button"
-            disabled={currentPage === 1}
+            disabled={currentPage === 1 || isLoading}
             onClick={() => setCurrentPage((page) => page - 1)}
           >
-            ← Prev
+            {jobsContent.previousButton}
           </button>
 
           <span>
-            Page {currentPage} of {totalPages}
+            {jobsContent.pageLabel} {currentPage} {jobsContent.ofLabel}{" "}
+            {totalPages}
           </span>
 
           <button
             type="button"
-            disabled={currentPage === totalPages}
+            disabled={currentPage === totalPages || isLoading}
             onClick={() => setCurrentPage((page) => page + 1)}
           >
-            Next →
+            {jobsContent.nextButton}
           </button>
         </div>
       </div>
