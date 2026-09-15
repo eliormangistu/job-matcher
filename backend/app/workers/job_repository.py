@@ -1,7 +1,10 @@
 from sqlalchemy.orm import Session
 
 from app.models.job import Job
-from app.core.logger import logger
+from app.core.logger import ServiceLogger
+
+
+logger = ServiceLogger("job_repository_worker")
 
 
 def get_existing_jobs(
@@ -10,11 +13,8 @@ def get_existing_jobs(
 ) -> dict[str, Job]:
     logger.info(
         "Fetching existing jobs",
-        extra={
-            "service": "job_repository_worker",
-            "action": "get_existing_jobs",
-            "requested_count": len(airtable_ids),
-        },
+        action="get_existing_jobs",
+        requested_count=len(airtable_ids),
     )
 
     jobs = {
@@ -24,11 +24,8 @@ def get_existing_jobs(
 
     logger.info(
         "Existing jobs fetched",
-        extra={
-            "service": "job_repository_worker",
-            "action": "get_existing_jobs",
-            "found_count": len(jobs),
-        },
+        action="get_existing_jobs",
+        found_count=len(jobs),
     )
 
     return jobs
@@ -58,12 +55,9 @@ def create_job(db: Session, job_data: dict) -> Job:
 
     logger.info(
         "Job created in session",
-        extra={
-            "service": "job_repository_worker",
-            "action": "create_job",
-            "airtable_id": job_data["airtable_id"],
-            "job_id": job_data.get("job_id"),
-        },
+        action="create_job",
+        airtable_id=job_data["airtable_id"],
+        job_id=job_data.get("job_id"),
     )
 
     return job
@@ -99,13 +93,10 @@ def update_job(job: Job, job_data: dict) -> bool:
     if changed:
         logger.info(
             "Job updated",
-            extra={
-                "service": "job_repository_worker",
-                "action": "update_job",
-                "airtable_id": job.airtable_id,
-                "job_id": job.id,
-                "changed_fields": changed_fields,
-            },
+            action="update_job",
+            airtable_id=job.airtable_id,
+            job_id=job.id,
+            changed_fields=changed_fields,
         )
 
     return changed

@@ -2,10 +2,14 @@ from redis.exceptions import RedisError
 
 from app.cache.redis import redis_client
 from app.core.config import RATE_LIMIT, RATE_LIMIT_WINDOW_SECONDS
-from app.core.logger import logger
+from app.core.logger import ServiceLogger
+
+
+logger = ServiceLogger("rate_limit")
 
 
 def is_allowed(client_id: str) -> bool:
+
     key = f"rate_limit:{client_id}"
 
     try:
@@ -17,10 +21,7 @@ def is_allowed(client_id: str) -> bool:
     except RedisError:
         logger.warning(
             "Redis unavailable, skipping rate limit",
-            extra={
-                "service": "rate_limit",
-                "action": "is_allowed",
-            },
+            action="is_allowed",
         )
         return True
 
@@ -28,24 +29,18 @@ def is_allowed(client_id: str) -> bool:
 
     logger.info(
         "Rate limit checked",
-        extra={
-            "service": "rate_limit",
-            "action": "is_allowed",
-            "count": current_count,
-            "limit": RATE_LIMIT,
-            "allowed": allowed,
-        },
+        action="is_allowed",
+        count=current_count,
+        limit=RATE_LIMIT,
+        allowed=allowed,
     )
 
     if not allowed:
         logger.warning(
             "Rate limit exceeded",
-            extra={
-                "service": "rate_limit",
-                "action": "is_allowed",
-                "count": current_count,
-                "limit": RATE_LIMIT,
-            },
+            action="is_allowed",
+            count=current_count,
+            limit=RATE_LIMIT,
         )
 
     return allowed

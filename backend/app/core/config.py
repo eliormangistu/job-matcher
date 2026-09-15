@@ -1,5 +1,7 @@
+import importlib
 import os
 from pathlib import Path
+
 from dotenv import load_dotenv
 
 
@@ -10,17 +12,15 @@ load_dotenv(BASE_DIR / ".env")
 APP_ENV = os.getenv("APP_ENV", "dev")
 
 ENV_FILE = BASE_DIR / "env" / f".env.{APP_ENV}"
-
 load_dotenv(ENV_FILE, override=True)
 
-if APP_ENV == "dev":
-    from config.dev_config import *
 
-elif APP_ENV == "test":
-    from config.test_config import *
+try:
+    config = importlib.import_module(f"config.{APP_ENV}_config")
+except ModuleNotFoundError as exc:
+    raise RuntimeError(f"Unknown environment: {APP_ENV}") from exc
 
-elif APP_ENV == "prod":
-    from config.prod_config import *
 
-else:
-    raise RuntimeError(f"Unknown environment: {APP_ENV}")
+globals().update(
+    {name: getattr(config, name) for name in dir(config) if not name.startswith("_")}
+)

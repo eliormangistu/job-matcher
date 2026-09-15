@@ -3,17 +3,21 @@ from app.schemas import JobResponse
 from app.schemas.job import JobAnalysisRequest
 from app.schemas.match import JobMatch
 from app.schemas.cv import CvCandidateProfile
+
 from app.services.matching import rules
 from app.services.matching.scorer import score
 from app.services.ai.job_analyzer import analyze_jobs
-from app.core.logger import logger
+
+from app.core.logger import ServiceLogger
+
+
+logger = ServiceLogger("matcher")
 
 
 def match(
     candidate: CvCandidateProfile,
     job: Job,
 ) -> JobMatch:
-
     matched_skills, missing_skills = rules.skill_matches(
         candidate,
         job,
@@ -32,14 +36,11 @@ def match(
 
     logger.info(
         "Job match calculated",
-        extra={
-            "service": "matcher",
-            "action": "match",
-            "job_id": job.id,
-            "score": result.score,
-            "matched_skills_count": len(matched_skills),
-            "missing_skills_count": len(missing_skills),
-        },
+        action="match",
+        job_id=job.id,
+        score=result.score,
+        matched_skills_count=len(matched_skills),
+        missing_skills_count=len(missing_skills),
     )
 
     return result
@@ -50,15 +51,11 @@ def rank_jobs(
     jobs: list[Job],
     limit: int = 10,
 ) -> list[JobMatch]:
-
     logger.info(
         "Job matching started",
-        extra={
-            "service": "matcher",
-            "action": "rank_jobs",
-            "jobs_count": len(jobs),
-            "limit": limit,
-        },
+        action="rank_jobs",
+        jobs_count=len(jobs),
+        limit=limit,
     )
 
     eligible_jobs = []
@@ -80,22 +77,17 @@ def rank_jobs(
 
     logger.info(
         "Job eligibility filtering completed",
-        extra={
-            "service": "matcher",
-            "action": "filter_jobs",
-            "input_jobs_count": len(jobs),
-            "eligible_jobs_count": len(eligible_jobs),
-        },
+        action="filter_jobs",
+        input_jobs_count=len(jobs),
+        eligible_jobs_count=len(eligible_jobs),
     )
 
     if not eligible_jobs:
         logger.info(
             "No eligible jobs found",
-            extra={
-                "service": "matcher",
-                "action": "rank_jobs",
-            },
+            action="rank_jobs",
         )
+
         return []
 
     job_inputs = [
@@ -108,22 +100,16 @@ def rank_jobs(
 
     logger.info(
         "Job AI analysis started",
-        extra={
-            "service": "matcher",
-            "action": "analyze_jobs",
-            "eligible_jobs_count": len(eligible_jobs),
-        },
+        action="analyze_jobs",
+        eligible_jobs_count=len(eligible_jobs),
     )
 
     job_analyses = analyze_jobs(job_inputs)
 
     logger.info(
         "Job AI analysis completed",
-        extra={
-            "service": "matcher",
-            "action": "analyze_jobs",
-            "results_count": len(job_analyses.jobs),
-        },
+        action="analyze_jobs",
+        results_count=len(job_analyses.jobs),
     )
 
     analyses_by_job_id = {item.job_id: item for item in job_analyses.jobs}
@@ -136,11 +122,8 @@ def rank_jobs(
         if analysis is None:
             logger.warning(
                 "Job analysis missing",
-                extra={
-                    "service": "matcher",
-                    "action": "process_analysis",
-                    "job_id": job.id,
-                },
+                action="process_analysis",
+                job_id=job.id,
             )
             continue
 
@@ -161,14 +144,11 @@ def rank_jobs(
 
     logger.info(
         "Job matching completed",
-        extra={
-            "service": "matcher",
-            "action": "rank_jobs",
-            "eligible_jobs_count": len(eligible_jobs),
-            "matches_count": len(matches),
-            "relevant_matches_count": len(relevant_matches),
-            "returned_matches_count": len(ranked_matches),
-        },
+        action="rank_jobs",
+        eligible_jobs_count=len(eligible_jobs),
+        matches_count=len(matches),
+        relevant_matches_count=len(relevant_matches),
+        returned_matches_count=len(ranked_matches),
     )
 
     return ranked_matches

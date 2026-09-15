@@ -5,11 +5,13 @@ export default function HomePage() {
     <main className="home-page">
       <h1>JOB MATCHER</h1>
 
-      <h2>Find the job that fits you.</h2>
+      <h2>Find the right tech job to grow your career.</h2>
+
+      <p>AI-powered job matching for early-career tech professionals.</p>
 
       <p>Discover opportunities.</p>
       <p>Match your skills.</p>
-      <p>Find your next move.</p>
+      <p>Build your career.</p>
     </main>
   );
 }

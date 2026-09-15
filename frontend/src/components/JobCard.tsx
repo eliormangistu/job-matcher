@@ -35,10 +35,6 @@ export default function JobCard({ job, onClick }: JobCardProps) {
         )}
       </div>
 
-      {job.description && (
-        <p className="job-card-description">{job.description}</p>
-      )}
-
       {job.required_skills?.length > 0 && (
         <p className="job-card-skills">{job.required_skills.join(" · ")}</p>
       )}

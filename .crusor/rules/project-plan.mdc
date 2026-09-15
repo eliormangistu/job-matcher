@@ -1,0 +1,1316 @@
+# PROJECT: Job Matcher
+
+## GOAL
+
+Build a production-ready job matching platform that:
+
+1. Ingests job listings from Airtable.
+2. Normalizes and filters relevant jobs.
+3. Stores jobs in PostgreSQL.
+4. Exposes jobs through a FastAPI backend.
+5. Authenticates users through Google OAuth.
+6. Accepts CV uploads.
+7. Uses Gemini to analyze CVs and job requirements.
+8. Matches candidates with relevant jobs.
+9. Provides the backend API to a frontend application.
+
+---
+
+# 1. CORE ARCHITECTURE
+
+## Current Data Flow
+
+```text
+Airtable
+   ↓
+AirtableSource
+   ↓
+Normalization + Filtering
+   ↓
+jobs.json
+   ↓
+import_jobs.py
+   ↓
+PostgreSQL
+   ↓
+FastAPI API
+   ↓
+Frontend
+```
+
+## CV / Matching Flow
+
+```text
+Frontend
+   ↓
+Google OAuth
+   ↓
+POST /cv
+   ↓
+CV validation / upload
+   ↓
+CV service
+   ↓
+Gemini CV analysis
+   ↓
+Candidate profile
+   ↓
+Job matching
+   ↓
+Matching rules + scoring
+   ↓
+Gemini job analysis
+   ↓
+Ranked job matches
+```
+
+---
+
+# 2. IMPORTANT ARCHITECTURE DECISIONS
+
+These decisions are intentional and should not be changed without a specific reason.
+
+### 1. Airtable is the external job source
+
+We do NOT need LinkedIn/Indeed source adapters.
+
+Airtable already aggregates the jobs.
+
+### 2. Current ingestion flow
+
+The current flow intentionally uses:
+
+```text
+Airtable → jobs.json → PostgreSQL
+```
+
+`jobs.json` is regenerated on every ingestion run.
+
+Later, production optimization may change this to:
+
+```text
+Airtable → ingestion → PostgreSQL
+```
+
+with upsert based on `airtable_id`.
+
+### 3. PostgreSQL IDs
+
+`id` = internal PostgreSQL primary key.
+
+`airtable_id` = unique Airtable record ID.
+
+Example:
+
+```text
+recmSkIC0cab6IU49
+```
+
+`job_id` = business/source job ID from Airtable.
+
+Example:
+
+```text
+72559
+```
+
+### 4. Authentication
+
+Do not add a users table or local registration system.
+
+Authentication is handled through Google ID tokens.
+
+Authentication is required in both development and production.
+
+### 5. Jobs creation
+
+Do not add:
+
+```text
+POST /jobs
+```
+
+Jobs are created through ingestion.
+
+### 6. Business logic
+
+Services contain business logic.
+
+Routers/endpoints handle HTTP concerns and `BaseResponse`.
+
+### 7. Minimal-change principle
+
+The project is already partially implemented and working.
+
+Do not introduce architectural changes unless they are necessary.
+
+---
+
+# 3. BACKEND STRUCTURE
+
+Current structure:
+
+```text
+backend/
+├── app/
+│   ├── main.py
+│   │
+│   ├── api/
+│   │   ├── router.py
+│   │   └── endpoints/
+│   │       ├── cv.py
+│   │       └── jobs.py
+│   │
+│   ├── cache/
+│   │   ├── jobs.py
+│   │   └── redis.py
+│   │
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   ├── exceptions.py
+│   │   ├── exception_handlers.py
+│   │   ├── logger.py
+│   │   ├── messages.py
+│   │   └── status_codes.py
+│   │
+│   ├── db/
+│   │   └── session.py
+│   │
+│   ├── ingestion/
+│   │   ├── fields.py
+│   │   ├── filters.py
+│   │   ├── mappers.py
+│   │   ├── service.py
+│   │   └── sources/
+│   │       ├── airtable.py
+│   │       └── base.py
+│   │
+│   ├── middleware/
+│   │   ├── rate_limit.py
+│   │   ├── request_id.py
+│   │   └── request_logging.py
+│   │
+│   ├── models/
+│   │   ├── cv.py
+│   │   └── job.py
+│   │
+│   ├── repositories/
+│   │   └── job.py
+│   │
+│   ├── schemas/
+│   │   ├── airtable.py
+│   │   ├── common.py
+│   │   ├── cv.py
+│   │   ├── job.py
+│   │   └── match.py
+│   │
+│   ├── services/
+│   │   ├── auth.py
+│   │   ├── cv.py
+│   │   ├── health.py
+│   │   ├── job.py
+│   │   ├── ai/
+│   │   │   ├── cv_analyzer.py
+│   │   │   ├── gemini.py
+│   │   │   └── job_analyzer.py
+│   │   └── matching/
+│   │       ├── matcher.py
+│   │       ├── rules.py
+│   │       └── scorer.py
+│   │
+│   └── workers/
+│       ├── job_repository.py
+│       └── job_sync.py
+│
+├── data/
+│   ├── airtable.html
+│   ├── jobs.json
+│   └── mock_job_response.json
+│
+├── scripts/
+│   ├── export_jobs.py
+│   ├── import_jobs.py
+│   ├── init_db.py
+│   ├── reset_db.py
+│   └── seed_db.py
+│
+└── tests/
+```
+
+> The structure above represents the current implementation. Files that were removed or reorganized during development should not be recreated merely to match an older plan.
+
+---
+
+# 4. DATABASE
+
+## Job Model
+
+The `Job` model contains:
+
+```text
+id
+airtable_id
+job_id
+title
+company
+location
+remote
+description
+url
+field
+company_industry
+min_experience
+requirements
+required_skills
+language_requirement
+education_requirements
+posted
+```
+
+Additional Airtable fields such as:
+
+```text
+salary
+point_of_contact
+linkedin
+email
+phone
+```
+
+may remain part of the ingestion/source data where applicable, but should only be added to the DB model/API when actually required by the application.
+
+## ID Rules
+
+```text
+id
+↓
+internal PostgreSQL identity
+
+airtable_id
+↓
+unique Airtable record identity
+
+job_id
+↓
+external/business job identifier
+```
+
+---
+
+# 5. AIRTABLE INGESTION
+
+## Source
+
+`AirtableSource` is responsible for obtaining Airtable data.
+
+Responsibilities:
+
+* load Airtable source data
+* extract request URL
+* extract headers
+* request Airtable data
+* validate the response
+* expose rows and columns
+
+Sensitive information must never be written to logs.
+
+Do not log:
+
+* Airtable URLs containing sensitive parameters
+* request headers
+* authentication data
+* raw Airtable content
+
+---
+
+# 6. NORMALIZATION AND FILTERING
+
+The ingestion pipeline:
+
+```text
+Airtable rows
+   ↓
+date filtering
+   ↓
+field filtering
+   ↓
+experience filtering
+   ↓
+mapping / normalization
+   ↓
+jobs.json
+```
+
+## Current configuration
+
+```text
+JOB_LOOKBACK_DAYS = 90
+MAX_JOB_EXPERIENCE = 5
+```
+
+## Allowed fields
+
+```text
+Software Engineering
+Data Science, ML & Algorithms
+DevOps
+Data Engineering
+Frontend Development
+Mobile Development
+Embedded, Low Level & Firmware Engineering
+```
+
+`ALLOWED_JOB_FIELDS` is a Python `set`.
+
+Do not accidentally convert it to a string.
+
+If it becomes configurable through `.env`, use JSON and parse it with `json.loads()` before converting it to a set.
+
+Example:
+
+```text
+ALLOWED_JOB_FIELDS=["Software Engineering","Data Science, ML & Algorithms","DevOps","Data Engineering","Frontend Development","Mobile Development","Embedded, Low Level & Firmware Engineering"]
+```
+
+---
+
+# 7. CURRENT INGESTION RESULT
+
+Current Airtable dataset:
+
+```text
+approximately 27,796 raw rows
+```
+
+Current filtering result:
+
+```text
+approximately 3,066 jobs
+```
+
+Running:
+
+```powershell
+python -m app.ingestion.service
+```
+
+should produce approximately:
+
+```text
+ROWS: 27796
+Exported: ~3066 jobs
+```
+
+The exact number may change as Airtable data changes.
+
+---
+
+# 8. JOB IMPORT
+
+Current flow:
+
+```text
+jobs.json
+   ↓
+import_jobs.py
+   ↓
+Job model
+   ↓
+PostgreSQL
+```
+
+Import must preserve:
+
+```text
+airtable_id
+job_id
+```
+
+The import must be idempotent.
+
+Existing Airtable records should be updated rather than duplicated.
+
+---
+
+# 9. JOB API
+
+## GET /jobs
+
+Flow:
+
+```text
+router
+   ↓
+job service
+   ↓
+Redis cache
+   ↓
+repository
+   ↓
+PostgreSQL
+```
+
+Expected behavior:
+
+1. Check Redis.
+2. On cache HIT → return cached data.
+3. On cache MISS → query PostgreSQL.
+4. Convert SQLAlchemy models to API schemas.
+5. Store result in cache.
+6. Return `BaseResponse`.
+
+## GET /jobs/{job_id}
+
+Flow:
+
+```text
+router
+   ↓
+service
+   ↓
+repository
+   ↓
+PostgreSQL
+```
+
+If the job does not exist:
+
+```text
+JobNotFoundException
+```
+
+must be raised and converted to:
+
+```text
+404
+```
+
+## No POST /jobs
+
+Jobs are created through ingestion.
+
+---
+
+# 10. REDIS CACHING
+
+Redis is used for job listing caching.
+
+Current architecture:
+
+```text
+GET /jobs
+   ↓
+Redis
+   ↓
+cache HIT → response
+   ↓
+cache MISS
+   ↓
+PostgreSQL
+```
+
+Current logging includes:
+
+```text
+CACHE HIT
+CACHE MISS
+CACHE UPDATE
+CACHE INVALIDATION
+```
+
+Future optimization may include:
+
+* improved cache invalidation
+* production-safe serialization
+* optimized TTL strategy
+
+Do not redesign the caching architecture unless necessary.
+
+---
+
+# 11. CV API
+
+## POST /cv
+
+Authentication:
+
+```text
+Authorization: Bearer <Google ID token>
+```
+
+Flow:
+
+```text
+upload CV
+   ↓
+Google authentication
+   ↓
+CV service
+   ↓
+temporary PDF
+   ↓
+Gemini
+   ↓
+CvCandidateProfile
+   ↓
+BaseResponse
+```
+
+Authentication is required in development and production.
+
+Without a valid authorization header:
+
+```text
+401 Authentication required
+```
+
+---
+
+# 12. GOOGLE AUTHENTICATION
+
+Current authentication:
+
+```text
+Google OAuth / Google ID token
+```
+
+There is no local registration system.
+
+There is no users table currently planned.
+
+Authentication errors:
+
+```text
+401 Authentication required
+401 Invalid token
+```
+
+Do not log:
+
+* tokens
+* authorization headers
+* API keys
+
+Google `sub` may be used as a user identifier in relevant application logs where necessary.
+
+---
+
+# 13. GEMINI
+
+Current model:
+
+```text
+gemini-3.6-flash
+```
+
+Gemini is used for:
+
+### CV analysis
+
+Extract:
+
+* professional summary
+* technical skills
+* relevant job titles
+* years of experience
+* education
+* languages
+* industries
+
+### Job analysis
+
+Extract:
+
+* explicitly required skills
+* clearly mentioned bonus skills
+
+Normalize skill names where appropriate.
+
+## Error handling
+
+Gemini errors are centralized through:
+
+```text
+GeminiException
+```
+
+Current important case:
+
+```text
+429 RESOURCE_EXHAUSTED
+```
+
+The API should return a controlled error rather than exposing the raw Google exception.
+
+Do not implement unnecessary custom retry logic while the Google SDK already handles transient retries.
+
+Do not log:
+
+* CV contents
+* full prompts
+* API keys
+* Gemini response contents
+* authorization tokens
+
+---
+
+# 14. MATCHING ENGINE
+
+Current flow:
+
+```text
+Candidate profile
+   ↓
+eligibility rules
+   ↓
+eligible jobs
+   ↓
+Gemini job analysis
+   ↓
+required skills
+   ↓
+skill matching
+   ↓
+score
+   ↓
+ranking
+   ↓
+top matches
+```
+
+## Eligibility rules
+
+Current rules:
+
+```text
+role
+experience
+language
+education
+```
+
+## Skill matching
+
+Candidate skills and job skills are normalized before comparison.
+
+Example:
+
+```text
+Python
+python
+PYTHON
+```
+
+should normalize consistently.
+
+## Scoring
+
+Current scoring dimensions:
+
+```text
+skills
+experience
+role
+language
+education
+```
+
+Weights are configured through application configuration.
+
+Final results are sorted by score descending.
+
+---
+
+# 15. API RESPONSE ARCHITECTURE
+
+All API responses use:
+
+```text
+BaseResponse[T]
+```
+
+Structure:
+
+```text
+success
+status_code
+message
+data
+```
+
+Example:
+
+```python
+return BaseResponse(
+    success=True,
+    status_code=StatusCode.OK,
+    message=SuccessMessage.SUCCESS,
+    data=None,
+)
+```
+
+Pydantic models must use keyword arguments.
+
+---
+
+# 16. ERROR HANDLING
+
+Centralized exceptions and handlers are used.
+
+Current messages include:
+
+```text
+JOB_NOT_FOUND
+INVALID_REQUEST
+TOO_MANY_REQUESTS
+INTERNAL_SERVER_ERROR
+AUTHENTICATION_REQUIRED
+INVALID_TOKEN
+```
+
+Current status codes include:
+
+```text
+200 OK
+201 CREATED
+400 BAD_REQUEST
+401 UNAUTHORIZED
+404 NOT_FOUND
+422 UNPROCESSABLE_ENTITY
+429 TOO_MANY_REQUESTS
+500 INTERNAL_SERVER_ERROR
+```
+
+Errors should return the standard `BaseResponse` structure.
+
+---
+
+# 17. MIDDLEWARE
+
+Current middleware:
+
+```text
+RequestIDMiddleware
+RequestLoggingMiddleware
+RateLimitMiddleware
+```
+
+## Request ID
+
+Each request receives:
+
+```text
+X-Request-ID
+```
+
+The request ID is also available through:
+
+```text
+request.state.request_id
+```
+
+## Request logging
+
+Production logs should include useful diagnostic information such as:
+
+```text
+request_id
+service
+action
+method
+path
+status_code
+duration_ms
+```
+
+## Rate limiting
+
+Redis is used for rate limiting.
+
+Redis failure should not unnecessarily take down the API if the current fail-open strategy is intentional.
+
+Do not log client IP addresses unnecessarily.
+
+---
+
+# 18. CENTRALIZED LOGGING
+
+Central logger:
+
+```text
+app/core/logger.py
+```
+
+Usage:
+
+```python
+from app.core.logger import logger
+```
+
+Services that perform meaningful operations should use the centralized logger.
+
+Do not create separate logger instances unnecessarily.
+
+Do not log sensitive data.
+
+Important production events include:
+
+```text
+CV upload started
+CV analysis started
+CV analysis completed
+Gemini request started
+Gemini request completed
+Gemini quota exceeded
+
+Job fetch started
+Job fetch completed
+
+Cache HIT
+Cache MISS
+
+Matching started
+Matching completed
+
+Job ingestion started
+Job ingestion completed
+
+Job sync started
+Job sync completed
+```
+
+Low-level pure functions such as normalization, filtering rules, and score calculation should not produce per-item production logs.
+
+---
+
+# 19. TESTING
+
+Tests must verify actual behavior.
+
+Current principle:
+
+> Do not modify tests simply to make failures disappear.
+
+First determine whether the implementation or the test is wrong.
+
+Gemini-dependent tests should use mocks.
+
+They must not depend on:
+
+* Gemini quota
+* network availability
+* external API state
+
+Current verified tests include:
+
+```text
+test_job_ai.py
+test_cv.py
+test_jobs.py
+test_matching.py
+```
+
+The Gemini job-analysis test currently uses a mock response and passes without making a real Gemini request.
+
+---
+
+# 20. CURRENT STATUS
+
+## Completed
+
+### Ingestion
+
+* Airtable source
+* Airtable response schemas
+* field mappings
+* normalization
+* filtering
+* jobs.json generation
+* ingestion logging
+
+### Database
+
+* Job model
+* `airtable_id`
+* `job_id`
+* PostgreSQL storage
+* job repository
+* idempotent sync
+
+### API
+
+* FastAPI
+* jobs endpoints
+* CV endpoint
+* BaseResponse
+* centralized status codes
+* centralized messages
+
+### Authentication
+
+* Google ID token verification
+* authentication exception
+* 401 handling
+* authentication required in dev and production
+
+### Gemini
+
+* Gemini integration
+* CV analysis
+* job analysis
+* structured response schemas
+* 429 handling
+* centralized Gemini exception
+* Gemini mocking in tests
+
+### Matching
+
+* role matching
+* experience matching
+* language matching
+* education matching
+* skill matching
+* scoring
+* ranking
+* Gemini job analysis integration
+
+### Infrastructure
+
+* PostgreSQL
+* Redis
+* caching
+* rate limiting
+* request IDs
+* request logging
+* centralized application logger
+
+---
+
+# 21. CURRENT DEVELOPMENT PHASE
+
+The project is currently in:
+
+```text
+BACKEND STABILIZATION / FINAL REVIEW
+```
+
+Priority:
+
+```text
+CORRECTNESS
+    ↓
+TESTS
+    ↓
+STABILITY
+    ↓
+DEPLOYMENT
+    ↓
+FRONTEND
+    ↓
+OPTIMIZATION
+```
+
+---
+
+# 22. CURRENT NEXT STEPS
+
+## Phase A — Final backend review
+
+1. Verify `main.py` wiring.
+2. Verify `jobs.py` endpoints.
+3. Verify `cv.py` endpoint.
+4. Verify `job.py` service.
+5. Verify `cv.py` service.
+6. Verify authentication dependency.
+7. Verify exception handlers.
+8. Verify status codes and messages.
+9. Verify centralized logger usage.
+10. Verify middleware ordering.
+11. Verify Redis cache behavior.
+12. Verify PostgreSQL job data.
+13. Verify `airtable_id` / `job_id` behavior.
+
+---
+
+# 23. TESTING PHASE
+
+Run relevant tests after each actual change.
+
+Then run the complete suite.
+
+Gemini tests must remain mocked.
+
+Expected goal:
+
+```text
+All tests passing
+```
+
+No test should be skipped merely to hide a real implementation problem.
+
+---
+
+# 24. GIT / SOURCE CONTROL
+
+Before deployment:
+
+1. Review `git status`.
+2. Review changed files.
+3. Verify `.gitignore`.
+4. Verify `.env.example`.
+5. Ensure secrets are not committed.
+6. Commit changes with a meaningful message.
+7. Push to `main`.
+8. Confirm working tree is clean.
+
+Never commit:
+
+```text
+.env
+API keys
+OAuth secrets
+passwords
+tokens
+private credentials
+```
+
+---
+
+# 25. DEPLOYMENT
+
+After backend stabilization:
+
+```text
+GitHub
+   ↓
+Deployment
+   ↓
+PostgreSQL
+   ↓
+Redis
+   ↓
+FastAPI
+   ↓
+Production smoke tests
+```
+
+Deployment verification should include:
+
+```text
+health endpoint
+GET /jobs
+GET /jobs/{job_id}
+authentication
+CV upload
+error handling
+Redis
+database connectivity
+request IDs
+production logs
+```
+
+Gemini should be tested carefully to avoid unnecessary quota consumption.
+
+---
+
+# 26. FRONTEND
+
+Only after the backend is stable and deployed.
+
+Frontend will initially use a mock CV where necessary while Gemini availability is limited.
+
+Frontend responsibilities:
+
+```text
+Google login
+   ↓
+CV upload
+   ↓
+candidate profile / matching
+   ↓
+job results
+   ↓
+job details
+```
+
+The frontend should consume the existing backend API rather than duplicating backend business logic.
+
+---
+
+# 27. FUTURE OPTIMIZATION
+
+These are intentionally postponed until the core system is deployed and stable.
+
+### Ingestion
+
+Potential future:
+
+```text
+Airtable
+   ↓
+direct PostgreSQL upsert
+```
+
+instead of:
+
+```text
+Airtable
+   ↓
+jobs.json
+   ↓
+import
+```
+
+### Database
+
+Potential future:
+
+* additional indexes
+* improved constraints
+* additional entities/tables only when required
+
+### Redis
+
+Potential future:
+
+* cache invalidation improvements
+* TTL optimization
+* serialization improvements
+
+### Airtable
+
+Potential future:
+
+* request optimization
+* pagination/performance improvements
+* more robust source handling
+
+### Security
+
+Potential future:
+
+* production hardening
+* upload restrictions
+* stricter validation
+* secret management
+* infrastructure security
+
+### Observability
+
+Potential future:
+
+* structured JSON logging
+* centralized log aggregation
+* metrics
+* tracing
+* performance monitoring
+
+---
+
+# 28. FUTURE PRODUCT FEATURES
+
+Do not implement these before the backend foundation is stable.
+
+Possible future features:
+
+```text
+user profile
+saved jobs
+job application tracking
+additional database tables
+advanced matching
+match explanations
+job recommendations
+CV versioning
+search/filtering
+```
+
+These are separate product features and should not alter the current core architecture prematurely.
+
+---
+
+# 29. WORKING RULE
+
+Before changing anything:
+
+1. Inspect the existing code.
+2. Understand the current flow.
+3. Preserve working behavior.
+4. Make the smallest necessary change.
+5. Run the relevant test.
+6. Check the result.
+7. Continue to the next component.
+
+Do not:
+
+* rewrite working files unnecessarily
+* introduce new libraries without a reason
+* add architecture for hypothetical future requirements
+* add unnecessary database tables
+* add unnecessary source adapters
+* expose sensitive data in logs
+* make tests depend on external APIs
+* change working behavior merely to match an old project plan
+
+---
+
+# 30. MASTER ROADMAP
+
+```text
+┌─────────────────────────────┐
+│ 1. Airtable Ingestion       │ ✅
+├─────────────────────────────┤
+│ 2. Filtering / Normalizing  │ ✅
+├─────────────────────────────┤
+│ 3. PostgreSQL               │ ✅
+├─────────────────────────────┤
+│ 4. Jobs API                 │ ✅
+├─────────────────────────────┤
+│ 5. Redis Cache              │ ✅
+├─────────────────────────────┤
+│ 6. Google Authentication    │ ✅
+├─────────────────────────────┤
+│ 7. CV + Gemini              │ ✅ / VERIFY
+├─────────────────────────────┤
+│ 8. Matching Engine          │ ✅
+├─────────────────────────────┤
+│ 9. Error Handling           │ ✅
+├─────────────────────────────┤
+│10. Production Logging       │ ✅ / VERIFY
+├─────────────────────────────┤
+│11. Final Backend Tests      │ 🔄
+├─────────────────────────────┤
+│12. Git / Secrets Review     │ 🔄
+├─────────────────────────────┤
+│13. Deployment               │ NEXT
+├─────────────────────────────┤
+│14. Production Smoke Test    │ NEXT
+├─────────────────────────────┤
+│15. Frontend                 │ AFTER BACKEND
+├─────────────────────────────┤
+│16. Optimization             │ LATER
+├─────────────────────────────┤
+│17. Future Product Features  │ LATER
+└─────────────────────────────┘
+```
+
+## FINAL PRIORITY
+
+```text
+CORRECTNESS
+    ↓
+TESTS
+    ↓
+STABILITY
+    ↓
+DEPLOY
+    ↓
+FRONTEND
+    ↓
+OPTIMIZE
+    ↓
+ADD FEATURES
+```
+
+The current system should remain simple, working, testable, and deployable before additional architecture or product features are introduced.

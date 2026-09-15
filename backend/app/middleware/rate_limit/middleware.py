@@ -5,7 +5,10 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from app.middleware.rate_limit import is_allowed
 from app.core.status_codes import StatusCode
 from app.core.messages import ErrorMessage
-from app.core.logger import logger
+from app.core.logger import ServiceLogger
+
+
+logger = ServiceLogger("rate_limit_middleware")
 
 
 class RateLimitMiddleware(BaseHTTPMiddleware):
@@ -14,24 +17,18 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
 
         logger.info(
             "Rate limit check started",
-            extra={
-                "service": "rate_limit_middleware",
-                "action": "dispatch",
-                "method": request.method,
-                "path": request.url.path,
-            },
+            action="dispatch",
+            method=request.method,
+            path=request.url.path,
         )
 
         if not is_allowed(client_ip):
             logger.warning(
                 "Request blocked by rate limit",
-                extra={
-                    "service": "rate_limit_middleware",
-                    "action": "dispatch",
-                    "method": request.method,
-                    "path": request.url.path,
-                    "status_code": StatusCode.TOO_MANY_REQUESTS,
-                },
+                action="dispatch",
+                method=request.method,
+                path=request.url.path,
+                status_code=StatusCode.TOO_MANY_REQUESTS,
             )
 
             return JSONResponse(
@@ -48,13 +45,10 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
 
         logger.info(
             "Request passed rate limit",
-            extra={
-                "service": "rate_limit_middleware",
-                "action": "dispatch",
-                "method": request.method,
-                "path": request.url.path,
-                "status_code": response.status_code,
-            },
+            action="dispatch",
+            method=request.method,
+            path=request.url.path,
+            status_code=response.status_code,
         )
 
         return response

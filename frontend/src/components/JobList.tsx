@@ -65,8 +65,11 @@ export default function JobList() {
   return (
     <section className="jobs-section">
       <div className="jobs-header">
-        <h1>Jobs</h1>
-        <p>Find your next opportunity.</p>
+        <h1>Tech Jobs</h1>
+        <p>
+          Explore opportunities designed for the early stages of your tech
+          career.
+        </p>
       </div>
 
       <div className="jobs-container">

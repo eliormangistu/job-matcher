@@ -1,5 +1,53 @@
-AI Job Matcher
+<div align="center">
 
-AI-powered job matching platform that analyzes CVs and job requirements to identify relevant job opportunities based on skills, experience, education, languages, and roles.
+# ✦ AI JOB MATCHER ✦
 
-Built with Python, FastAPI, Next.js, React, PostgreSQL, Redis, and Google Gemini, with automated job data ingestion and production deployment.
+### FIND THE RIGHT TECH JOB TO GROW YOUR CAREER
+
+AI-powered job matching for early-career tech professionals.
+
+[ LIVE DEMO](https://your-vercel-url.vercel.app)
+
+</div>
+
+---
+
+## ◇ WHAT IS AI JOB MATCHER?
+
+A retro-inspired AI platform that helps you discover
+tech opportunities that actually match your profile.
+
+Upload your CV → Analyze your skills → Match with jobs → Find your next move.
+
+---
+
+## ✦ FEATURES
+
+| CV Analysis | Smart Matching | AI Job Analysis |
+|---|---|---|
+| Extract skills, roles, education & experience | Match your profile against job requirements | Analyze required skills with Gemini |
+
+---
+
+## ◇ HOW IT WORKS
+
+```text
+        YOUR CV
+           │
+           ▼
+    ┌─────────────┐
+    │ CV ANALYSIS │
+    └─────────────┘
+           │
+           ▼
+    ┌─────────────┐
+    │ JOB MATCHING│
+    └─────────────┘
+           │
+           ▼
+    ┌─────────────┐
+    │ AI ANALYSIS │
+    └─────────────┘
+           │
+           ▼
+     MATCHED JOBS

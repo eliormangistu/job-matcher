@@ -1,18 +1,17 @@
 from google.genai import types
 
 from app.schemas.cv import CvCandidateProfile
-from app.core.logger import logger
-
+from app.core.logger import ServiceLogger
 from .gemini import gemini_generate_content
+
+
+logger = ServiceLogger("cv_analyzer")
 
 
 def analyze_cv_pdf(pdf_path: str) -> CvCandidateProfile:
     logger.info(
         "CV PDF analysis started",
-        extra={
-            "service": "cv_analyzer",
-            "action": "analyze_cv_pdf",
-        },
+        action="analyze_cv_pdf",
     )
 
     try:
@@ -21,19 +20,13 @@ def analyze_cv_pdf(pdf_path: str) -> CvCandidateProfile:
 
         logger.info(
             "CV PDF loaded",
-            extra={
-                "service": "cv_analyzer",
-                "action": "load_pdf",
-                "size_bytes": len(pdf_data),
-            },
+            action="load_pdf",
+            size_bytes=len(pdf_data),
         )
 
         logger.info(
             "Sending CV to Gemini",
-            extra={
-                "service": "cv_analyzer",
-                "action": "gemini_request",
-            },
+            action="gemini_request",
         )
 
         response = gemini_generate_content(
@@ -64,20 +57,14 @@ Use only information that appears in the CV.
 
         logger.info(
             "Gemini CV analysis completed",
-            extra={
-                "service": "cv_analyzer",
-                "action": "gemini_request",
-            },
+            action="gemini_request",
         )
 
         result = CvCandidateProfile.model_validate_json(response.text)
 
         logger.info(
             "CV profile parsed successfully",
-            extra={
-                "service": "cv_analyzer",
-                "action": "parse_response",
-            },
+            action="parse_response",
         )
 
         return result
@@ -85,9 +72,6 @@ Use only information that appears in the CV.
     except Exception:
         logger.exception(
             "CV analysis failed",
-            extra={
-                "service": "cv_analyzer",
-                "action": "analyze_cv_pdf",
-            },
+            action="analyze_cv_pdf",
         )
         raise

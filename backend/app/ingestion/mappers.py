@@ -2,17 +2,19 @@ from typing import Any
 
 from app.schemas.airtable import AirtableRow, AirtableColumn
 from app.ingestion.fields import AirtableField
-from app.core.logger import logger
+from app.core.logger import ServiceLogger
 
 
-def build_choice_maps(columns: list[AirtableColumn]):
+logger = ServiceLogger("mappers")
+
+
+def build_choice_maps(
+    columns: list[AirtableColumn],
+):
     logger.info(
         "Building Airtable choice maps",
-        extra={
-            "service": "mappers",
-            "action": "build_choice_maps",
-            "columns_count": len(columns),
-        },
+        action="build_choice_maps",
+        columns_count=len(columns),
     )
 
     choice_maps = {}
@@ -29,11 +31,8 @@ def build_choice_maps(columns: list[AirtableColumn]):
 
     logger.info(
         "Airtable choice maps built",
-        extra={
-            "service": "mappers",
-            "action": "build_choice_maps",
-            "maps_count": len(choice_maps),
-        },
+        action="build_choice_maps",
+        maps_count=len(choice_maps),
     )
 
     return choice_maps

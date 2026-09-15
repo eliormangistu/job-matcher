@@ -24,7 +24,8 @@ htmlcov/
 !.env.example
 !backend/env/
 !backend/env/.env.example
-
+# Local environment
+backend/env/.env
 # =========================
 # Node / React / Next.js
 # =========================
@@ -61,6 +62,8 @@ Thumbs.db
 
 *.log
 logs/
+# Logs
+backend/logs/
 
 # =========================
 # Temporary files

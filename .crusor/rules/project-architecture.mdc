@@ -1,0 +1,24 @@
+Project: Job Matcher
+
+Architecture:
+Client
+→ FastAPI
+→ AI Service
+→ Gemini
+→ CVProfile
+→ PostgreSQL
+
+Jobs:
+Airtable
+→ Import/ETL
+→ PostgreSQL
+→ FastAPI
+→ Redis
+
+Important rules:
+- Environment configuration is handled only by app/core/config.py
+- AI integrations belong under app/services/ai/
+- API endpoints should not contain business logic
+- Database access belongs in repositories
+- Business logic belongs in services
+- Do not expose API keys

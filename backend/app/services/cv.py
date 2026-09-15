@@ -1,30 +1,28 @@
 import tempfile
+
 from pathlib import Path
 
 from fastapi import UploadFile
 
-from app.core.logger import logger
+from app.core.logger import ServiceLogger
 from app.services.ai.cv_analyzer import analyze_cv_pdf
+
+
+logger = ServiceLogger("cv")
 
 
 async def process_cv(file: UploadFile):
     logger.info(
         "CV processing started",
-        extra={
-            "service": "cv",
-            "action": "process_cv",
-        },
+        action="process_cv",
     )
 
     pdf_data = await file.read()
 
     logger.info(
         "CV file read",
-        extra={
-            "service": "cv",
-            "action": "read_file",
-            "size_bytes": len(pdf_data),
-        },
+        action="read_file",
+        size_bytes=len(pdf_data),
     )
 
     with tempfile.NamedTemporaryFile(
@@ -37,20 +35,14 @@ async def process_cv(file: UploadFile):
     try:
         logger.info(
             "CV analysis started",
-            extra={
-                "service": "cv",
-                "action": "analyze_cv",
-            },
+            action="analyze_cv",
         )
 
         result = analyze_cv_pdf(temp_path)
 
         logger.info(
             "CV analysis completed",
-            extra={
-                "service": "cv",
-                "action": "analyze_cv",
-            },
+            action="analyze_cv",
         )
 
         return result
@@ -58,10 +50,7 @@ async def process_cv(file: UploadFile):
     except Exception:
         logger.exception(
             "CV processing failed",
-            extra={
-                "service": "cv",
-                "action": "process_cv",
-            },
+            action="process_cv",
         )
         raise
 
@@ -70,8 +59,5 @@ async def process_cv(file: UploadFile):
 
         logger.info(
             "CV temporary file deleted",
-            extra={
-                "service": "cv",
-                "action": "cleanup",
-            },
+            action="cleanup",
         )

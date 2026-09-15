@@ -7,18 +7,18 @@ from app.schemas.airtable import (
     AirtableRow,
     AirtableColumn,
 )
-from app.core.logger import logger
+from app.core.logger import ServiceLogger
 from app.core.config import AIRTABLE_VIEW_URL
+
+
+logger = ServiceLogger("airtable")
 
 
 class AirtableSource(JobSource):
     def fetch_data(self) -> AirtableResponse:
         logger.info(
-            "Airtable data fetch started",
-            extra={
-                "service": "airtable",
-                "action": "fetch_data",
-            },
+            "Data fetch started",
+            action="fetch_data",
         )
 
         try:
@@ -47,12 +47,9 @@ class AirtableSource(JobSource):
             html = response.text
 
             logger.info(
-                "Airtable Shared View loaded",
-                extra={
-                    "service": "airtable",
-                    "action": "load_shared_view",
-                    "status_code": response.status_code,
-                },
+                "Shared View loaded",
+                action="load_shared_view",
+                status_code=response.status_code,
             )
 
             # Extract the internal Airtable data URL
@@ -64,10 +61,7 @@ class AirtableSource(JobSource):
             if not url_match:
                 logger.error(
                     "Airtable URL not found",
-                    extra={
-                        "service": "airtable",
-                        "action": "extract_url",
-                    },
+                    action="extract_url",
                 )
                 raise RuntimeError("Airtable URL not found")
 
@@ -80,7 +74,7 @@ class AirtableSource(JobSource):
             headers = {
                 "x-early-prefetch": "true",
                 "x-user-locale": "en",
-                "x-airtable-application-id": ("appwewqLk7iUY4azc"),
+                "x-airtable-application-id": "appwewqLk7iUY4azc",
                 "X-Requested-With": "XMLHttpRequest",
                 "x-airtable-inter-service-client": "webClient",
                 "x-airtable-accept-msgpack": "true",
@@ -91,16 +85,13 @@ class AirtableSource(JobSource):
                     "(KHTML, like Gecko) "
                     "Chrome/140.0 Safari/537.36"
                 ),
-                "Accept": ("application/json, text/plain, */*"),
+                "Accept": "application/json, text/plain, */*",
                 "Referer": AIRTABLE_VIEW_URL,
             }
 
             logger.info(
-                "Airtable data request started",
-                extra={
-                    "service": "airtable",
-                    "action": "request",
-                },
+                "Data request started",
+                action="request",
             )
 
             data_response = session.get(
@@ -112,33 +103,24 @@ class AirtableSource(JobSource):
             data_response.raise_for_status()
 
             logger.info(
-                "Airtable data request completed",
-                extra={
-                    "service": "airtable",
-                    "action": "request",
-                    "status_code": data_response.status_code,
-                },
+                "Data request completed",
+                action="request",
+                status_code=data_response.status_code,
             )
 
             data = AirtableResponse.model_validate(data_response.json())
 
             logger.info(
-                "Airtable response parsed",
-                extra={
-                    "service": "airtable",
-                    "action": "parse_response",
-                },
+                "Response parsed",
+                action="parse_response",
             )
 
             return data
 
         except Exception:
             logger.exception(
-                "Airtable data fetch failed",
-                extra={
-                    "service": "airtable",
-                    "action": "fetch_data",
-                },
+                "Data fetch failed",
+                action="fetch_data",
             )
             raise
 
@@ -149,12 +131,9 @@ class AirtableSource(JobSource):
         jobs = data.data.table.rows
 
         logger.info(
-            "Airtable jobs extracted",
-            extra={
-                "service": "airtable",
-                "action": "fetch_jobs",
-                "count": len(jobs),
-            },
+            "Jobs extracted",
+            action="fetch_jobs",
+            count=len(jobs),
         )
 
         return jobs
@@ -166,12 +145,9 @@ class AirtableSource(JobSource):
         columns = data.data.table.columns
 
         logger.info(
-            "Airtable columns extracted",
-            extra={
-                "service": "airtable",
-                "action": "fetch_columns",
-                "count": len(columns),
-            },
+            "Columns extracted",
+            action="fetch_columns",
+            count=len(columns),
         )
 
         return columns

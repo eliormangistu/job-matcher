@@ -1,17 +1,21 @@
 from sqlalchemy.orm import Session
 
-from app.models import Job
 from app.repositories import job as job_repository
 from app.schemas import JobResponse
 from app.cache import jobs as job_cache
 from app.core.exceptions import JobNotFoundException
-from app.core.logger import logger
+from app.core.logger import ServiceLogger
+
+
+logger = ServiceLogger("job_service")
 
 
 def get_jobs(db: Session, limit: int = 20, offset: int = 0):
     logger.info(
         "Fetching jobs",
-        extra={"limit": limit, "offset": offset},
+        action="get_jobs",
+        limit=limit,
+        offset=offset,
     )
 
     cached_jobs = job_cache.get_cached_jobs(limit, offset)
@@ -19,10 +23,9 @@ def get_jobs(db: Session, limit: int = 20, offset: int = 0):
     if cached_jobs is not None:
         logger.info(
             "Jobs cache hit",
-            extra={
-                "limit": limit,
-                "offset": offset,
-            },
+            action="get_jobs",
+            limit=limit,
+            offset=offset,
         )
 
         total = job_repository.count_all(db)
@@ -31,10 +34,9 @@ def get_jobs(db: Session, limit: int = 20, offset: int = 0):
 
     logger.info(
         "Jobs cache miss",
-        extra={
-            "limit": limit,
-            "offset": offset,
-        },
+        action="get_jobs",
+        limit=limit,
+        offset=offset,
     )
 
     jobs = job_repository.get_all(
@@ -47,10 +49,9 @@ def get_jobs(db: Session, limit: int = 20, offset: int = 0):
 
     logger.info(
         "Jobs fetched from database",
-        extra={
-            "count": len(jobs),
-            "total": total,
-        },
+        action="get_jobs",
+        count=len(jobs),
+        total=total,
     )
 
     jobs_data = [
@@ -69,11 +70,10 @@ def get_jobs(db: Session, limit: int = 20, offset: int = 0):
 
     logger.info(
         "Jobs cached",
-        extra={
-            "count": len(jobs_data),
-            "limit": limit,
-            "offset": offset,
-        },
+        action="get_jobs",
+        count=len(jobs_data),
+        limit=limit,
+        offset=offset,
     )
 
     return jobs_data, total
@@ -82,21 +82,31 @@ def get_jobs(db: Session, limit: int = 20, offset: int = 0):
 def get_by_id(db: Session, job_id: int):
     logger.info(
         "Fetching job",
-        extra={"job_id": job_id},
+        action="get_by_id",
+        job_id=job_id,
     )
 
-    found_job = job_repository.get_by_id(db, job_id)
+    found_job = job_repository.get_by_id(
+        db,
+        job_id,
+    )
 
     if found_job is None:
         logger.warning(
             "Job not found",
-            extra={"job_id": job_id},
+            action="get_by_id",
+            job_id=job_id,
         )
+
         raise JobNotFoundException()
 
     logger.info(
         "Job found",
-        extra={"job_id": job_id},
+        action="get_by_id",
+        job_id=job_id,
     )
 
-    return JobResponse.model_validate(found_job, from_attributes=True)
+    return JobResponse.model_validate(
+        found_job,
+        from_attributes=True,
+    )

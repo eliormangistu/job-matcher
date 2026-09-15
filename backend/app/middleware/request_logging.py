@@ -3,7 +3,10 @@ import time
 from fastapi import Request
 from starlette.middleware.base import BaseHTTPMiddleware
 
-from app.core.logger import logger
+from app.core.logger import ServiceLogger
+
+
+logger = ServiceLogger("request_logging")
 
 
 class RequestLoggingMiddleware(BaseHTTPMiddleware):
@@ -22,15 +25,12 @@ class RequestLoggingMiddleware(BaseHTTPMiddleware):
 
         logger.info(
             "Request completed",
-            extra={
-                "service": "request_logging",
-                "action": "request",
-                "method": request.method,
-                "path": request.url.path,
-                "status_code": response.status_code,
-                "duration_ms": round(duration_ms, 2),
-                "request_id": request_id,
-            },
+            action="request",
+            method=request.method,
+            path=request.url.path,
+            status_code=response.status_code,
+            duration_ms=round(duration_ms, 2),
+            request_id=request_id,
         )
 
         return response

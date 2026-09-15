@@ -1,13 +1,18 @@
 import json
+
 from datetime import datetime
 
 from app.db.session import SessionLocal
-from app.core.logger import logger
+from app.core.logger import ServiceLogger
+
 from app.workers.job_repository import (
     create_job,
     get_existing_jobs,
     update_job,
 )
+
+
+logger = ServiceLogger("job_sync")
 
 INPUT_FILE = "data/jobs.json"
 
@@ -15,11 +20,8 @@ INPUT_FILE = "data/jobs.json"
 def sync_jobs():
     logger.info(
         "Job sync started",
-        extra={
-            "service": "job_sync",
-            "action": "sync_jobs",
-            "input_file": INPUT_FILE,
-        },
+        action="sync_jobs",
+        input_file=INPUT_FILE,
     )
 
     with open(INPUT_FILE, encoding="utf-8") as f:
@@ -27,11 +29,8 @@ def sync_jobs():
 
     logger.info(
         "Jobs file loaded",
-        extra={
-            "service": "job_sync",
-            "action": "load_jobs",
-            "count": len(jobs_data),
-        },
+        action="load_jobs",
+        count=len(jobs_data),
     )
 
     airtable_ids = {
@@ -41,15 +40,15 @@ def sync_jobs():
     db = SessionLocal()
 
     try:
-        existing_jobs = get_existing_jobs(db, airtable_ids)
+        existing_jobs = get_existing_jobs(
+            db,
+            airtable_ids,
+        )
 
         logger.info(
             "Existing jobs loaded",
-            extra={
-                "service": "job_sync",
-                "action": "get_existing_jobs",
-                "count": len(existing_jobs),
-            },
+            action="get_existing_jobs",
+            count=len(existing_jobs),
         )
 
         new_jobs = 0
@@ -61,11 +60,9 @@ def sync_jobs():
             if not airtable_id:
                 logger.error(
                     "Job is missing Airtable record ID",
-                    extra={
-                        "service": "job_sync",
-                        "action": "validate_job",
-                    },
+                    action="validate_job",
                 )
+
                 raise ValueError("Each imported job must include an Airtable record ID")
 
             job_data["airtable_id"] = airtable_id
@@ -81,25 +78,29 @@ def sync_jobs():
             existing_job = existing_jobs.get(airtable_id)
 
             if existing_job:
-                changed = update_job(existing_job, job_data)
+                changed = update_job(
+                    existing_job,
+                    job_data,
+                )
 
                 if changed:
                     updated_jobs += 1
+
             else:
-                create_job(db, job_data)
+                create_job(
+                    db,
+                    job_data,
+                )
                 new_jobs += 1
 
         db.commit()
 
         logger.info(
             "Job sync completed",
-            extra={
-                "service": "job_sync",
-                "action": "sync_jobs",
-                "new_jobs": new_jobs,
-                "updated_jobs": updated_jobs,
-                "total_jobs": len(jobs_data),
-            },
+            action="sync_jobs",
+            new_jobs=new_jobs,
+            updated_jobs=updated_jobs,
+            total_jobs=len(jobs_data),
         )
 
     except Exception:
@@ -107,10 +108,7 @@ def sync_jobs():
 
         logger.exception(
             "Job sync failed",
-            extra={
-                "service": "job_sync",
-                "action": "sync_jobs",
-            },
+            action="sync_jobs",
         )
 
         raise
@@ -120,10 +118,7 @@ def sync_jobs():
 
         logger.info(
             "Job sync database session closed",
-            extra={
-                "service": "job_sync",
-                "action": "cleanup",
-            },
+            action="cleanup",
         )
 
 

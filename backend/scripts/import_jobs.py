@@ -1,28 +1,47 @@
 import json
-
 from datetime import datetime
 
+from app.core.logger import ServiceLogger
 from app.db.session import SessionLocal
 from app.models.job import Job
 
+
+logger = ServiceLogger("job_import")
 
 INPUT_FILE = "data/jobs.json"
 
 
 def import_jobs():
+    logger.info(
+        "Job import started",
+        action="import_jobs",
+        input_file=INPUT_FILE,
+    )
+
     with open(INPUT_FILE, encoding="utf-8") as f:
         jobs_data = json.load(f)
+
+    logger.info(
+        "Jobs file loaded",
+        action="load_jobs",
+        count=len(jobs_data),
+    )
 
     db = SessionLocal()
 
     created_count = 0
     updated_count = 0
+    deleted_count = 0
 
     try:
         for job_data in jobs_data:
             airtable_id = job_data.get("airtable_id") or job_data.get("id")
 
             if not airtable_id:
+                logger.error(
+                    "Job is missing Airtable record ID",
+                    action="validate_job",
+                )
                 raise ValueError("Each imported job must include an Airtable record ID")
 
             posted = (
@@ -90,6 +109,15 @@ def import_jobs():
 
         db.commit()
 
+        logger.info(
+            "Job import completed",
+            action="import_jobs",
+            created_count=created_count,
+            updated_count=updated_count,
+            deleted_count=deleted_count,
+            total_jobs=len(jobs_data),
+        )
+
         print(f"Created: {created_count}")
         print(f"Updated: {updated_count}")
         print(f"Deleted: {deleted_count}")
@@ -97,10 +125,21 @@ def import_jobs():
 
     except Exception:
         db.rollback()
+
+        logger.exception(
+            "Job import failed",
+            action="import_jobs",
+        )
+
         raise
 
     finally:
         db.close()
+
+        logger.info(
+            "Job import database session closed",
+            action="cleanup",
+        )
 
 
 if __name__ == "__main__":

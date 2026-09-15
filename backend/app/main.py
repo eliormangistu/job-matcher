@@ -18,6 +18,9 @@ from app.core.exception_handlers import (
 from app.middleware.rate_limit import RateLimitMiddleware
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import CORS_ORIGINS
+from app.core.logger import configure_logging
+
+configure_logging()
 
 app = FastAPI(title="Job Matcher")
 

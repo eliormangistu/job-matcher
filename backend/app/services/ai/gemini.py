@@ -1,27 +1,25 @@
 from app.core.config import GEMINI_MODELS, GEMINI_API_KEY
 from app.core.exceptions import GeminiException
 from app.core import ErrorMessage, StatusCode
-from app.core.logger import logger
+from app.core.logger import ServiceLogger
 
 from google import genai
 from google.genai import types
 from google.genai.errors import ClientError, ServerError
 
 
+logger = ServiceLogger("gemini")
+
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 
 def gemini_generate_content(contents, response_schema):
-
     for attempt, model in enumerate(GEMINI_MODELS, start=1):
         logger.info(
             "Gemini request started",
-            extra={
-                "service": "gemini",
-                "action": "generate_content",
-                "model": model,
-                "attempt": attempt,
-            },
+            action="generate_content",
+            model=model,
+            attempt=attempt,
         )
 
         try:
@@ -36,12 +34,9 @@ def gemini_generate_content(contents, response_schema):
 
             logger.info(
                 "Gemini request completed",
-                extra={
-                    "service": "gemini",
-                    "action": "generate_content",
-                    "model": model,
-                    "attempt": attempt,
-                },
+                action="generate_content",
+                model=model,
+                attempt=attempt,
             )
 
             return response
@@ -51,13 +46,10 @@ def gemini_generate_content(contents, response_schema):
 
             logger.warning(
                 "Gemini client error",
-                extra={
-                    "service": "gemini",
-                    "action": "generate_content",
-                    "model": model,
-                    "status_code": status_code,
-                    "attempt": attempt,
-                },
+                action="generate_content",
+                model=model,
+                status_code=status_code,
+                attempt=attempt,
             )
 
             # Quota / rate limit
@@ -76,13 +68,10 @@ def gemini_generate_content(contents, response_schema):
 
             logger.warning(
                 "Gemini server error - trying next model",
-                extra={
-                    "service": "gemini",
-                    "action": "generate_content",
-                    "model": model,
-                    "status_code": status_code,
-                    "attempt": attempt,
-                },
+                action="generate_content",
+                model=model,
+                status_code=status_code,
+                attempt=attempt,
             )
 
             # Try the next model.
@@ -91,12 +80,9 @@ def gemini_generate_content(contents, response_schema):
         except Exception as exc:
             logger.exception(
                 "Unexpected Gemini error",
-                extra={
-                    "service": "gemini",
-                    "action": "generate_content",
-                    "model": model,
-                    "attempt": attempt,
-                },
+                action="generate_content",
+                model=model,
+                attempt=attempt,
             )
 
             raise GeminiException(
@@ -106,12 +92,9 @@ def gemini_generate_content(contents, response_schema):
 
     logger.error(
         "All Gemini models failed",
-        extra={
-            "service": "gemini",
-            "action": "generate_content",
-            "models": GEMINI_MODELS,
-            "attempt": attempt,
-        },
+        action="generate_content",
+        models=GEMINI_MODELS,
+        attempt=attempt,
     )
 
     raise GeminiException(

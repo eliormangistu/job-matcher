@@ -1,16 +1,24 @@
 import json
+
 from pathlib import Path
 from datetime import datetime, timedelta, timezone
+
 from app.ingestion.sources.airtable import AirtableSource
 from app.core.config import JOB_LOOKBACK_DAYS
-from app.core.logger import logger
+from app.core.logger import ServiceLogger
 from app.ingestion.filters import (
     is_allowed_field,
     is_allowed_experience,
 )
-from app.ingestion.mappers import build_choice_maps, map_single, map_job
+from app.ingestion.mappers import (
+    build_choice_maps,
+    map_single,
+    map_job,
+)
 from app.ingestion.fields import AirtableField
 
+
+logger = ServiceLogger("ingestion")
 
 OUTPUT_FILE = Path(__file__).parents[2] / "data" / "jobs.json"
 
@@ -18,27 +26,21 @@ OUTPUT_FILE = Path(__file__).parents[2] / "data" / "jobs.json"
 def ingest_jobs():
     logger.info(
         "Job ingestion started",
-        extra={
-            "service": "ingestion",
-            "action": "ingest_jobs",
-            "lookback_days": JOB_LOOKBACK_DAYS,
-        },
+        action="ingest_jobs",
+        lookback_days=JOB_LOOKBACK_DAYS,
     )
 
     source = AirtableSource()
-    data = source.fetch_data()
 
+    data = source.fetch_data()
     rows = source.fetch_jobs(data)
     columns = source.fetch_columns(data)
 
     logger.info(
         "Airtable data loaded",
-        extra={
-            "service": "ingestion",
-            "action": "load_data",
-            "rows_count": len(rows),
-            "columns_count": len(columns),
-        },
+        action="load_data",
+        rows_count=len(rows),
+        columns_count=len(columns),
     )
 
     choice_maps = build_choice_maps(columns)
@@ -106,7 +108,11 @@ def ingest_jobs():
 
         jobs.append(job)
 
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    with open(
+        OUTPUT_FILE,
+        "w",
+        encoding="utf-8",
+    ) as f:
         json.dump(
             jobs,
             f,
@@ -116,18 +122,15 @@ def ingest_jobs():
 
     logger.info(
         "Job ingestion completed",
-        extra={
-            "service": "ingestion",
-            "action": "ingest_jobs",
-            "input_rows": len(rows),
-            "exported_jobs": len(jobs),
-            "skipped_no_posted": skipped_no_posted,
-            "skipped_invalid_date": skipped_invalid_date,
-            "skipped_old": skipped_old,
-            "skipped_field": skipped_field,
-            "skipped_experience": skipped_experience,
-            "output_file": str(OUTPUT_FILE),
-        },
+        action="ingest_jobs",
+        input_rows=len(rows),
+        exported_jobs=len(jobs),
+        skipped_no_posted=skipped_no_posted,
+        skipped_invalid_date=skipped_invalid_date,
+        skipped_old=skipped_old,
+        skipped_field=skipped_field,
+        skipped_experience=skipped_experience,
+        output_file=str(OUTPUT_FILE),
     )
 
     return jobs
