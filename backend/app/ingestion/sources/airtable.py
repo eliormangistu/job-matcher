@@ -1,7 +1,5 @@
 import re
-import json
 import requests
-from pathlib import Path
 
 from app.ingestion.sources.base import JobSource
 from app.schemas.airtable import (
@@ -10,6 +8,7 @@ from app.schemas.airtable import (
     AirtableColumn,
 )
 from app.core.logger import logger
+from app.core.config import AIRTABLE_VIEW_URL
 
 
 class AirtableSource(JobSource):
@@ -22,23 +21,41 @@ class AirtableSource(JobSource):
             },
         )
 
-        data_dir = Path(__file__).parents[3] / "data"
-
         try:
-            with open(
-                data_dir / "airtable.html",
-                encoding="utf-8",
-            ) as f:
-                html = f.read()
+            # Load the public Airtable Shared View
+            session = requests.Session()
+
+            browser_headers = {
+                "User-Agent": (
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                    "AppleWebKit/537.36 "
+                    "(KHTML, like Gecko) "
+                    "Chrome/140.0 Safari/537.36"
+                ),
+                "Accept": (
+                    "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                ),
+            }
+
+            response = session.get(
+                AIRTABLE_VIEW_URL,
+                headers=browser_headers,
+                timeout=(5, 30),
+            )
+
+            response.raise_for_status()
+            html = response.text
 
             logger.info(
-                "Airtable HTML loaded",
+                "Airtable Shared View loaded",
                 extra={
                     "service": "airtable",
-                    "action": "load_html",
+                    "action": "load_shared_view",
+                    "status_code": response.status_code,
                 },
             )
 
+            # Extract the internal Airtable data URL
             url_match = re.search(
                 r'urlWithParams:\s*"([^"]+)"',
                 html,
@@ -59,51 +76,51 @@ class AirtableSource(JobSource):
             url = url.replace(r"\u0026", "&")
             url = "https://airtable.com" + url
 
-            headers_match = re.search(
-                r"var headers = (\{.*?\});",
-                html,
-                re.S,
-            )
-
-            if not headers_match:
-                logger.error(
-                    "Airtable headers not found",
-                    extra={
-                        "service": "airtable",
-                        "action": "extract_headers",
-                    },
-                )
-                raise RuntimeError("Airtable headers not found")
-
-            headers = json.loads(headers_match.group(1))
-            headers["x-time-zone"] = "Asia/Jerusalem"
+            # Headers used by Airtable's Shared View request
+            headers = {
+                "x-early-prefetch": "true",
+                "x-user-locale": "en",
+                "x-airtable-application-id": ("appwewqLk7iUY4azc"),
+                "X-Requested-With": "XMLHttpRequest",
+                "x-airtable-inter-service-client": "webClient",
+                "x-airtable-accept-msgpack": "true",
+                "x-time-zone": "Asia/Jerusalem",
+                "User-Agent": (
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                    "AppleWebKit/537.36 "
+                    "(KHTML, like Gecko) "
+                    "Chrome/140.0 Safari/537.36"
+                ),
+                "Accept": ("application/json, text/plain, */*"),
+                "Referer": AIRTABLE_VIEW_URL,
+            }
 
             logger.info(
-                "Airtable request started",
+                "Airtable data request started",
                 extra={
                     "service": "airtable",
                     "action": "request",
                 },
             )
 
-            response = requests.get(
+            data_response = session.get(
                 url,
                 headers=headers,
                 timeout=(5, 30),
             )
 
-            response.raise_for_status()
+            data_response.raise_for_status()
 
             logger.info(
-                "Airtable request completed",
+                "Airtable data request completed",
                 extra={
                     "service": "airtable",
                     "action": "request",
-                    "status_code": response.status_code,
+                    "status_code": data_response.status_code,
                 },
             )
 
-            data = AirtableResponse.model_validate(response.json())
+            data = AirtableResponse.model_validate(data_response.json())
 
             logger.info(
                 "Airtable response parsed",
@@ -129,7 +146,6 @@ class AirtableSource(JobSource):
         self,
         data: AirtableResponse,
     ) -> list[AirtableRow]:
-
         jobs = data.data.table.rows
 
         logger.info(
@@ -147,7 +163,6 @@ class AirtableSource(JobSource):
         self,
         data: AirtableResponse,
     ) -> list[AirtableColumn]:
-
         columns = data.data.table.columns
 
         logger.info(

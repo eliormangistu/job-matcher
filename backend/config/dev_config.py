@@ -66,3 +66,11 @@ EDUCATION_WEIGHT = 5
 
 # CORS
 CORS_ORIGINS = os.getenv("CORS_ORIGINS", "").split(",")
+
+# AIRTABLE
+AIRTABLE_VIEW_URL = (
+    "https://airtable.com/embed/"
+    "appwewqLk7iUY4azc/"
+    "shrQBuWjXd0YgPqV6"
+    "?backgroundColor=cyan&viewControls=on"
+)
