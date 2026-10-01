@@ -69,3 +69,4 @@ backend/logs/
 
 *.tmp
 *.temp
+.env
