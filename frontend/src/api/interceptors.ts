@@ -1,41 +1,53 @@
 import { ApiError } from "@/lib/api-error";
 
-const AUTH_REQUIRED_ENDPOINTS = [
-    "/cv/upload_cv",
-  ];
-  
-  export function requestInterceptor(
-    endpoint: string,
-    options: RequestInit = {}
-  ): RequestInit {
-    const headers = new Headers(options.headers);
-  
-    if (AUTH_REQUIRED_ENDPOINTS.includes(endpoint)) {
-      const token = localStorage.getItem("google_id_token");
-  
-      if (token) {
-        headers.set("Authorization", `Bearer ${token}`);
-      }
+export function requestInterceptor(
+  endpoint: string,
+  options: RequestInit = {},
+): RequestInit {
+  const headers = new Headers(options.headers);
+  const method = (options.method ?? "GET").toUpperCase();
+
+  const csrfToken = document.cookie
+    .split("; ")
+    .find((cookie) => cookie.startsWith("csrf_token="))
+    ?.split("=")[1];
+
+  if (["POST", "PUT", "PATCH", "DELETE"].includes(method)) {
+    if (csrfToken) {
+      headers.set("X-CSRF-Token", decodeURIComponent(csrfToken));
     }
-  
-    return {
-      ...options,
-      headers,
-    };
   }
-  
+
+  return {
+    ...options,
+    credentials: "include",
+    headers,
+  };
+}
 
 export async function responseInterceptor(
-  response: Response
+  response: Response,
 ): Promise<Response> {
   if (response.ok) {
     return response;
   }
 
-  const errorResponse = await response.json();
+  let errorMessage = "Request failed";
 
-  throw new ApiError(
-    errorResponse.status_code,
-    errorResponse.message
-  );
+  try {
+    const errorResponse = await response.json();
+
+    errorMessage = errorResponse.message ?? errorMessage;
+
+    throw new ApiError(
+      errorResponse.status_code ?? response.status,
+      errorMessage,
+    );
+  } catch (error) {
+    if (error instanceof ApiError) {
+      throw error;
+    }
+
+    throw new ApiError(response.status, errorMessage);
+  }
 }

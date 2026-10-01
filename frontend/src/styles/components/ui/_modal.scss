@@ -1,0 +1,117 @@
+@use "../../abstracts/mixins" as *;
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    padding: var(--space-lg);
+  
+    background: rgba(59, 41, 33, 0.65);
+  }
+  
+  .modal {
+    width: min(32rem, 100%);
+  
+    padding: var(--space-xl);
+  
+    color: var(--color-brown);
+    background: var(--color-cream);
+  
+    border: var(--border-thick);
+    border-radius: var(--radius-large);
+  
+    box-shadow: 0.625rem 0.625rem 0 var(--color-brown);
+  
+    h2 {
+      margin: 0;
+  
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 900;
+  
+      text-transform: uppercase;
+    }
+  
+    p {
+      margin: var(--space-md) 0 0;
+  
+      font-weight: 700;
+      line-height: 1.5;
+    }
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-md);
+  
+    margin-top: var(--space-xl);
+  }
+  
+  .modal-cancel-button,
+  .modal-confirm-button {
+    padding: 0.625rem 1rem;
+  
+    border: var(--border-thick);
+    border-radius: var(--radius-small);
+  
+    font-family: var(--font-display);
+    font-weight: 900;
+  
+    cursor: pointer;
+  
+    box-shadow: var(--shadow-small);
+  
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.15s ease,
+      background 0.15s ease;
+  
+    &:active {
+      transform: translate(0.1875rem, 0.1875rem);
+      box-shadow: none;
+    }
+  
+    &:focus-visible {
+      outline: 0.125rem solid var(--color-orange);
+      outline-offset: 0.125rem;
+    }
+  }
+  
+  .modal-cancel-button {
+    color: var(--color-brown);
+    background: var(--color-cream);
+  
+    &:hover {
+      background: var(--color-mustard);
+    }
+  }
+  
+  .modal-confirm-button {
+    color: var(--color-cream);
+    background: var(--color-orange);
+  
+    &:hover {
+      background: var(--color-brown);
+    }
+  }
+  
+  @include respond-to(mobile) {
+    .modal {
+      padding: var(--space-lg);
+    }
+  
+    .modal-actions {
+      flex-direction: column-reverse;
+    }
+  
+    .modal-cancel-button,
+    .modal-confirm-button {
+      width: 100%;
+    }
+  }

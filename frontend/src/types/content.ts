@@ -7,6 +7,69 @@ export interface Content {
   loaderpage: LoaderPageContent;
   header: HeaderContent;
   footer: FooterContent;
+  loginpage: LoginPageContent;
+  registerpage: RegisterPageContent;
+  profilepage: ProfilePageContent;
+}
+
+export interface ProfilePageContent {
+  loadingText: string;
+
+  profileEyebrow: string;
+  welcomeText: string;
+  subtitle: string;
+
+  accountEyebrow: string;
+  yourDetailsTitle: string;
+  nameLabel: string;
+  emailLabel: string;
+
+  cvEyebrow: string;
+  cvTitle: string;
+  updateCVButton: string;
+  uploadCVButton: string;
+  noCVText: string;
+
+  resultsEyebrow: string;
+  matchedJobsTitle: string;
+  matchesLabel: string;
+  noMatchesTitle: string;
+  noMatchesText: string;
+
+  dangerZoneEyebrow: string;
+  deleteAccountTitle: string;
+  deleteAccountMessage: string;
+  deleteAccountButton: string;
+
+  deleteModalTitle: string;
+  deleteModalMessage: string;
+  deleteModalConfirm: string;
+  deleteModalCancel: string;
+}
+
+export interface RegisterPageContent {
+  title: string;
+  nameLabel: string;
+  emailLabel: string;
+  passwordLabel: string;
+  registerButton: string;
+  loadingText: string;
+  dividerText: string;
+  loginPrompt: string;
+  loginLink: string;
+  registrationError: string;
+}
+
+export interface LoginPageContent {
+  title: string;
+  emailLabel: string;
+  passwordLabel: string;
+  loginButton: string;
+  loadingText: string;
+  dividerText: string;
+  registerPrompt: string;
+  registerLink: string;
+  invalidCredentials: string;
 }
 
 export interface HomePageContent {
@@ -49,6 +112,12 @@ export interface CVPageContent {
   title: string;
   subtitle: string;
   uploadTitle: string;
+  chooseFileLabel: string;
+  uploadFileTitle: string;
+  uploadFileHint: string;
+  chooseFileButton: string;
+  uploadErrorTitle: string;
+  uploadErrorMessage: string;
 }
 
 export interface MatchPageContent {

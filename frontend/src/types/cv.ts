@@ -21,3 +21,20 @@ export interface CVUploadProps {
   onUploadComplete: (result: CVUploadData) => void;
   onUploadError: () => void;
 }
+
+export interface CVResponse {
+  id: number;
+  user_id: number;
+  filename: string;
+  file_type: string;
+  content: string | null;
+  summary: string | null;
+  skills: string[];
+  job_titles: string[];
+  years_of_experience: number | null;
+  education: string[];
+  languages: string[];
+  industries: string[];
+  created_at: string;
+  updated_at: string;
+}

@@ -1,0 +1,29 @@
+.error-page {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2.5rem 1.5rem;
+
+  background: var(--color-cream);
+}
+
+.error-page-card {
+  width: min(38.75rem, 100%);
+  min-height: 22.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: var(--color-cream);
+
+  border: var(--border-thick);
+
+  box-shadow: 0.875rem 0.875rem 0 var(--color-brown);
+}

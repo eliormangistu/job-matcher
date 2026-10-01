@@ -1,6 +1,6 @@
 "use client";
 
-import ErrorState from "@/components/ErrorState";
+import ErrorState from "@/components/error/ErrorState";
 
 import { useContent } from "@/hooks/content";
 

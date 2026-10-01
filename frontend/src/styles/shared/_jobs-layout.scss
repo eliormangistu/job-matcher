@@ -1,0 +1,148 @@
+.jobs-section {
+  width: min(68.75rem, 100%);
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 auto;
+  padding: var(--space-md);
+
+  overflow: hidden;
+}
+
+.jobs-header {
+  flex-shrink: 0;
+
+  margin-bottom: var(--space-sm);
+
+  h1 {
+    margin: 0;
+
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: var(--space-sm) 0 0;
+  }
+}
+
+.jobs-container {
+  flex: 1;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: var(--space-lg);
+
+  background: var(--color-mustard);
+
+  border: var(--border-thick);
+  border-radius: var(--radius-large);
+
+  box-shadow: var(--shadow-retro);
+
+  overflow: hidden;
+}
+
+.jobs-container-title {
+  flex-shrink: 0;
+
+  margin: 0 0 var(--space-md);
+
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 900;
+
+  text-transform: uppercase;
+}
+
+/* Scroll area */
+.jobs-list,
+.match-list {
+  flex: 1;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+
+  padding: var(--space-sm);
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-brown) var(--color-cream);
+
+  &::-webkit-scrollbar {
+    width: 0.875rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--color-cream);
+    border-left: var(--border-thick);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-brown);
+    border: 0.1875rem solid var(--color-cream);
+    border-radius: 0.625rem;
+
+    &:hover {
+      background: var(--color-orange);
+    }
+  }
+
+  .jobs-list-loader {
+    margin: var(--space-2xl);
+  }
+}
+
+.jobs-pagination {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+
+  border-top: var(--border-thick);
+
+  button {
+    padding: 0.6rem 1rem;
+
+    color: var(--color-brown);
+    background: var(--color-cream);
+
+    border: var(--border-thick);
+    border-radius: var(--radius-small);
+
+    font-family: var(--font-display);
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    &:hover:not(:disabled) {
+      color: var(--color-cream);
+      background: var(--color-orange);
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  span {
+    font-family: var(--font-display);
+    font-weight: 900;
+
+    text-transform: uppercase;
+  }
+}

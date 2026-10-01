@@ -1,0 +1,33 @@
+.match-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+
+  margin-bottom: -0.5rem;
+  padding: 0.65rem var(--space-md);
+
+  color: var(--color-cream);
+  background: var(--color-olive);
+
+  border: var(--border-thick);
+  border-bottom: none;
+  border-radius: var(--radius-large) var(--radius-large) 0 0;
+
+  font-family: var(--font-display);
+  font-weight: 900;
+}
+
+.match-score {
+  font-size: 0.9rem;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.match-skills {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  opacity: 0.9;
+}

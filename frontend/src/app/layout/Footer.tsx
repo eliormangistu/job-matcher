@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import { useContent } from "@/hooks/content";
 
-import "@/styles/layout/footer.scss";
+import "@/styles/layout/_footer.scss";
 
 export default function Footer() {
   const { content, loading } = useContent();

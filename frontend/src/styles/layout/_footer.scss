@@ -1,0 +1,19 @@
+.site-footer {
+  padding: var(--space-md);
+
+  border-top: var(--border-thick);
+
+  background: var(--color-brown);
+  color: var(--color-cream);
+
+  text-align: center;
+
+  p {
+    margin: 0;
+
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}

@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
+
 import "@/styles/main.scss";
 
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import Providers from "./providers";
+
+export const metadata: Metadata = {
+  title: "Job Matcher",
+  description: "Find jobs that match your skills and experience.",
+};
 
 export default function RootLayout({
   children,
@@ -16,7 +23,7 @@ export default function RootLayout({
           <div className="app-layout">
             <Header />
 
-            <main className="app-content">{children}</main>
+            <div className="app-content">{children}</div>
 
             <Footer />
           </div>

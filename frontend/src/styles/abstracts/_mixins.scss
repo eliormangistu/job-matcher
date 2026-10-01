@@ -1,0 +1,24 @@
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == mobile {
+      @media (max-width: 47.99rem) {
+        @content;
+      }
+    }
+  
+    @if $breakpoint == tablet {
+      @media (min-width: 48rem) and (max-width: 63.99rem) {
+        @content;
+      }
+    }
+  
+    @if $breakpoint == desktop {
+      @media (min-width: 64rem) {
+        @content;
+      }
+    }
+  }
+  
+  @mixin focus-outline {
+    outline: 0.125rem solid var(--color-orange);
+    outline-offset: 0.125rem;
+  }

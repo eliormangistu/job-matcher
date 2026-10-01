@@ -1,5 +1,4 @@
-import CVMatcher from "@/components/CVMatcher";
-import CVAuth from "@/components/CVAuth";
+import CVAuth from "@/components/cv/CVAuth";
 
 export default function CVPage() {
   return <CVAuth />;

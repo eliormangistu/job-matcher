@@ -1,0 +1,7 @@
+@function rem($pixels) {
+    @return ($pixels / 16) * 1rem;
+  }
+
+@function subtract($value, $amount) {
+    @return calc(#{$value} - #{$amount});
+  }

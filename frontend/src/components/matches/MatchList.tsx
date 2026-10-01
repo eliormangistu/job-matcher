@@ -1,0 +1,18 @@
+import { MatchListProps } from "@/types/match";
+
+import JobCard from "../jobs/JobCard";
+import MatchInfo from "./MatchInfo";
+
+export default function MatchList({ matches, onJobClick }: MatchListProps) {
+  return (
+    <div className="match-list">
+      {matches.map((match) => (
+        <div className="match-item" key={match.job_id}>
+          <MatchInfo match={match} />
+
+          <JobCard job={match.job} onClick={() => onJobClick(match.job)} />
+        </div>
+      ))}
+    </div>
+  );
+}

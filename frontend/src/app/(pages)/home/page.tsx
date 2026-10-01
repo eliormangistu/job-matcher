@@ -1,6 +1,6 @@
 "use client";
 
-import "@/styles/pages/home.scss";
+import "@/styles/pages/_home.scss";
 
 import { useContent } from "@/hooks/content";
 

@@ -1,6 +1,5 @@
+import { CONFIG } from "@/config";
 import { requestInterceptor, responseInterceptor } from "./interceptors";
-
-import { CONFIG } from "@/config/index";
 
 export async function apiClient<T>(
   endpoint: string,
