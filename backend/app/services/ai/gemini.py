@@ -4,9 +4,10 @@ from app.core import ErrorMessage, StatusCode
 from app.core.logger import ServiceLogger
 
 from google import genai
+from app.schemas.cv import CvCandidateProfile
 from google.genai import types
 from google.genai.errors import ClientError, ServerError
-
+from app.services.prompts.cv import CV_ANALYSIS_PROMPT
 
 logger = ServiceLogger("gemini")
 
@@ -100,4 +101,33 @@ def gemini_generate_content(contents, response_schema):
     raise GeminiException(
         ErrorMessage.AI_SERVICE_UNAVAILABLE,
         StatusCode.SERVICE_UNAVAILABLE,
+    )
+
+
+def analyze_cv_with_gemini(
+    pdf_data: bytes,
+) -> CvCandidateProfile:
+    logger.info(
+        "Sending CV to Gemini",
+        action="gemini_request",
+    )
+
+    response = gemini_generate_content(
+        contents=[
+            types.Part.from_bytes(
+                data=pdf_data,
+                mime_type="application/pdf",
+            ),
+            CV_ANALYSIS_PROMPT,
+        ],
+        response_schema=CvCandidateProfile,
+    )
+
+    logger.info(
+        "Gemini CV analysis completed",
+        action="gemini_request",
+    )
+
+    return CvCandidateProfile.model_validate_json(
+        response.text,
     )

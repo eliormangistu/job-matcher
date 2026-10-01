@@ -1,6 +1,6 @@
 from typing import Any
 
-from app.schemas.airtable import AirtableRow, AirtableColumn
+from app.schemas.responses.airtable import AirtableRow, AirtableColumn
 from app.ingestion.fields import AirtableField
 from app.core.logger import ServiceLogger
 

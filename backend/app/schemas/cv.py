@@ -1,6 +1,6 @@
 from pydantic import AliasChoices, BaseModel, Field
 
-from app.schemas.match import JobMatch
+from .match import JobMatch
 
 
 class CvCandidateProfile(BaseModel):
@@ -10,7 +10,7 @@ class CvCandidateProfile(BaseModel):
         default_factory=list,
         validation_alias=AliasChoices("roles", "job_titles"),
     )
-    years_of_experience: float | None = None
+    years_of_experience: int | None = None
     education: list[str] = Field(default_factory=list)
     languages: list[str] = Field(default_factory=list)
     industries: list[str] = Field(default_factory=list)

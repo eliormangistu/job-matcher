@@ -2,7 +2,7 @@ import re
 import requests
 
 from app.ingestion.sources.base import JobSource
-from app.schemas.airtable import (
+from app.schemas.responses.airtable import (
     AirtableResponse,
     AirtableRow,
     AirtableColumn,

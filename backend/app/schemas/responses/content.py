@@ -12,3 +12,6 @@ class ContentResponse(BaseModel):
     loaderpage: dict[str, Any]
     header: dict[str, Any]
     footer: dict[str, Any]
+    loginpage: dict[str, Any]
+    registerpage: dict[str, Any]
+    profilepage: dict[str, Any]

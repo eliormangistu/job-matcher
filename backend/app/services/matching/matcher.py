@@ -1,6 +1,6 @@
 from app.models import Job
-from app.schemas import JobResponse
-from app.schemas.job import JobAnalysisRequest
+from app.schemas.responses.job import JobResponse
+from app.schemas.requests.job import JobAnalysisRequest
 from app.schemas.match import JobMatch
 from app.schemas.cv import CvCandidateProfile
 

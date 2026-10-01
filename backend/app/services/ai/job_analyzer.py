@@ -1,5 +1,5 @@
-from app.schemas.job import JobAnalysisBatch, JobAnalysisRequest
-
+from app.schemas.job import JobAnalysisBatch
+from app.schemas.requests.job import JobAnalysisRequest
 from app.core.logger import ServiceLogger
 from .gemini import gemini_generate_content
 

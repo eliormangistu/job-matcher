@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from app.api.endpoints import jobs, cv, content
+from app.api.endpoints import jobs, cv, content, users, auth
 
 
 api_router = APIRouter()
@@ -8,3 +8,5 @@ api_router = APIRouter()
 api_router.include_router(jobs.router)
 api_router.include_router(cv.router)
 api_router.include_router(content.router)
+api_router.include_router(users.router)
+api_router.include_router(auth.router)

@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 
 from app.repositories import job as job_repository
-from app.schemas import JobResponse
+from app.schemas.responses.job import JobResponse
 from app.cache import jobs as job_cache
 from app.core.exceptions import JobNotFoundException
 from app.core.logger import ServiceLogger

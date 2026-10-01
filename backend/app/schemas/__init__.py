@@ -1,3 +1,3 @@
-from .common import BaseResponse
-from .job import JobResponse, JobsResponse
-from .cv import CVUploadData
+from .responses.base import BaseResponse
+from .cv import CVUploadData, CvCandidateProfile
+from .match import MatchResult

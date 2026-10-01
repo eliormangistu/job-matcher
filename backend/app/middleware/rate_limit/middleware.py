@@ -6,14 +6,14 @@ from app.middleware.rate_limit import is_allowed
 from app.core.status_codes import StatusCode
 from app.core.messages import ErrorMessage
 from app.core.logger import ServiceLogger
-
+from app.middleware.client_ip import get_client_ip
 
 logger = ServiceLogger("rate_limit_middleware")
 
 
 class RateLimitMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
-        client_ip = request.client.host if request.client else "unknown"
+        client_ip = get_client_ip(request)
 
         logger.info(
             "Rate limit check started",

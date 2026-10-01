@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, Query
 from sqlalchemy.orm import Session
 
 from app.db.session import get_db
-from app.schemas import JobResponse, JobsResponse
+from app.schemas.responses.job import JobResponse, JobsResponse
 from app.services import (
     get_jobs as get_jobs_service,
     get_by_id as get_by_id_service,

@@ -1,11 +1,12 @@
-from fastapi import APIRouter, Header, HTTPException
+from fastapi import APIRouter, Header
 
 from app.cache.content import get_content, invalidate_content
 from app.core.config import CONTENTFUL_WEBHOOK_SECRET
 from app.core.logger import ServiceLogger
 from app.schemas import BaseResponse
-from app.schemas.content import ContentResponse
+from app.schemas.responses.content import ContentResponse
 from app.core import SuccessMessage, StatusCode, ErrorMessage
+from app.core.exceptions import AuthenticationException
 
 router = APIRouter()
 
@@ -39,9 +40,9 @@ def content_webhook(
             "Invalid Contentful webhook secret",
             action="webhook_rejected",
         )
-        raise HTTPException(
-            status_code=StatusCode.UNAUTHORIZED,
-            detail=ErrorMessage.AUTHENTICATION_REQUIRED,
+
+        raise AuthenticationException(
+            ErrorMessage.AUTHENTICATION_REQUIRED,
         )
 
     invalidate_content()

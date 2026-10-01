@@ -6,6 +6,8 @@ class ErrorMessage:
     AI_SERVICE_UNAVAILABLE = "AI service is temporarily unavailable"
     AUTHENTICATION_REQUIRED = "Authentication required"
     INVALID_TOKEN = "Invalid token"
+    INVALID_CSRF_TOKEN = "Invalid csrf token"
+    INVALID_FILE = "Invalid file"
 
 
 class SuccessMessage:
@@ -15,3 +17,10 @@ class SuccessMessage:
     SUCCESS = "Success"
     CV_UPLOADED = "CV uploaded successfully"
     CONTENT = "Content fetched successfully"
+    CV_FETCHED = "Cv fetched successfully"
+    CV_MATCHES_FETCHED = "Cv matches fetched successfully"
+    USER_FETCHED = "User fetched successfully"
+    LOGIN_SUCCESSFUL = "User login successful"
+    REGISTRATION_SUCCESSFUL = "User register successful"
+    LOGOUT_SUCCESSFUL = "User logout successful"
+    ACCOUNT_DELETED = "User account deleted successfully"

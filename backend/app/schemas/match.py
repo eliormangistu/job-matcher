@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from app.schemas.job import JobResponse
+from app.schemas.responses.job import JobResponse
 
 
 class MatchResult(BaseModel):
