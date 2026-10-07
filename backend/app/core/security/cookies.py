@@ -32,6 +32,8 @@ def delete_access_token_cookie(
     response.delete_cookie(
         key=ACCESS_TOKEN_COOKIE,
         path="/",
+        secure=COOKIE_SECURE,
+        samesite=COOKIE_SAMESITE,
     )
 
 
@@ -56,4 +58,6 @@ def delete_csrf_token_cookie(
     response.delete_cookie(
         key=CSRF_TOKEN_COOKIE,
         path="/",
+        secure=COOKIE_SECURE,
+        samesite=COOKIE_SAMESITE,
     )
