@@ -4,7 +4,7 @@ from datetime import datetime
 from app.core.logger import ServiceLogger
 from app.db.session import SessionLocal
 from app.models.job import Job
-
+from app.models.cv_match import CVMatch
 
 logger = ServiceLogger("job_import")
 
@@ -104,8 +104,15 @@ def import_jobs():
 
         deleted_count = len(jobs_to_delete)
 
-        for job in jobs_to_delete:
-            db.delete(job)
+        job_ids_to_delete = [job.id for job in jobs_to_delete]
+
+        if job_ids_to_delete:
+            db.query(CVMatch).filter(CVMatch.job_id.in_(job_ids_to_delete)).delete(
+                synchronize_session=False
+            )
+
+            for job in jobs_to_delete:
+                db.delete(job)
 
         db.commit()
 
